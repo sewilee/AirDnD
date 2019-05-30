@@ -5875,3 +5875,12 @@ Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.0ms)
 >>>>>>> 3668c6ea3902ded4ce4917fc20298c4ddddb6180
 
 
+Started GET "/" for ::1 at 2019-05-30 00:12:28 -0400
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macbookpro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 1411ms (Views: 1408.9ms | ActiveRecord: 0.0ms)
+
+
