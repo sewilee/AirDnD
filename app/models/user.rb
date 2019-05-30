@@ -10,7 +10,7 @@ class User < ApplicationRecord
     attr_reader :password
 
     def validate_age
-        if (self.birthday + 18.year) < Date.current
+        if self.birthday && (self.birthday + 18.year) < Date.current
             return true
         else
             errors.add(:birthday, "You need to be over 18 to Sign Up!")
