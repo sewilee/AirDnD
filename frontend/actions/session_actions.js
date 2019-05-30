@@ -34,11 +34,11 @@ export const signup = (user) => {
 
 export const login = (user) => {
   return (dispatch) => {
-    APIUtil.login(user).then( 
-      res => {
-        dispatch(receiveCurrentUser(res));
-    }, err => {
-      dispatch(receiveErrors(err.responseJSON))
+    return APIUtil.login(user).then( 
+      (res) => {
+      return dispatch(receiveCurrentUser(res));
+    }, (err) => {
+      return dispatch(receiveErrors(err.responseJSON))
     })
   }
 }
