@@ -36,7 +36,7 @@ const Modal = (props) => {
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={(e) => e.stopPropagation()}>
-                <button className="login-form-close" onClick={closeModal}>X</button>
+                <button className="login-form-close" onClick={closeModal}>&times;</button>
                 { component }
             </div>
         </div>
