@@ -9,7 +9,7 @@ const mapStateToProps = (props) => {
   const {  errors } = props
   return {
     errors: errors.session,
-    formType: 'signup',
+    formType: 'Sign up',
   };
 };
 

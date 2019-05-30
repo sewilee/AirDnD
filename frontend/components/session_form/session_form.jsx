@@ -43,22 +43,28 @@ class SessionForm extends React.Component {
   render() {
     let signUp, birthday = null;
     let password = "Password"
-    if (this.props.formType === "signup"){
+    if (this.props.formType === "Sign up"){
       password = "Create a Password";
       signUp = (
         <>
-          <input type="text" 
-            className="login-input"
-            value={this.state.fname} 
-            onChange={this.update("fname")} 
-            placeholder="First name"
-          />
-          <input type="text" 
-            className="login-input"
-            value={this.state.lname} 
-            onChange={this.update("lname")} 
-            placeholder="Last name"
-          />
+          <li className="login-items">
+            <input type="text"
+              className="login-input"
+              value={this.state.fname} 
+              onChange={this.update("fname")} 
+              placeholder="First name"
+            />
+            <i class="fas fa-dragon"></i>
+          </li>
+          <li className="login-items">
+            <input type="text" 
+              className="login-input"
+              value={this.state.lname} 
+              onChange={this.update("lname")} 
+              placeholder="Last name"
+            />
+            <i class="fas fa-dragon"></i>
+          </li>
         </>
       );
       birthday = (
@@ -79,24 +85,31 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           {this.renderErrors()}
           <div className="login-form">
+            <ul className="login-input-container">
+                <li className="login-items">
+                  <input type="text"
+                    className="login-input"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    placeholder="Email address"
+                  />
+                <i class="fas fa-dice-d20"></i>
+                </li>
 
-            <input type="text"
-              className="login-input"
-              value={this.state.email}
-              onChange={this.update('email')}
-              placeholder="Email address"
-            />
+                {signUp}  
 
-            {signUp}
+                <li className="login-items">
+                  <input type="password"
+                    className="login-input"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    placeholder={password}
+                  />
+                <i class="fas fa-dungeon"></i>
+                </li>
 
-            <input type="password"
-              className="login-input"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder={password}
-            />
-
-            {birthday}
+                {birthday}
+            </ul>
 
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
