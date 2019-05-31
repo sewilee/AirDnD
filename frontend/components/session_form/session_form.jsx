@@ -4,6 +4,7 @@ import {
 } from './session_form_items';
 import Birthday from './session_form_birthday';
 import { merge } from 'lodash';
+import { validateUser } from './error_user_validation';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -14,7 +15,9 @@ class SessionForm extends React.Component {
       fname: "",
       lname: "",
       birthday: "",
+      userError: null,
     };
+    // debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleBirthday = this.handleBirthday.bind(this);
@@ -22,6 +25,7 @@ class SessionForm extends React.Component {
   } 
 
   componentDidMount(){
+    // debugger
     this.props.clearErrors()
   }
 
@@ -33,16 +37,15 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = merge({}, this.state);
-    // const userError = validateUser(user)
-    // {
-    //   username: "Username is required"
-    //   lasName: "Lastname is required"
-    //   password: null
-    //   confirmationPassword: "Must match password"
-    //   error: true
-    // }
-    this.props.processForm(user);
+    e.stopPropagation();
+    let user = merge({}, this.state);
+    const newErrors = validateUser(user, this.props.formType)
+    if (newErrors) {
+      this.setState({ userError: newErrors }, () => {
+      })
+    } else {
+      this.props.processForm(user);
+    }
   }
 
   handleBirthday(field) {
@@ -65,7 +68,6 @@ class SessionForm extends React.Component {
         email: "demouser@demo.com",
         password: "password",
     }
-    debugger
     this.props.demoLogin(user);
   }
 
@@ -82,13 +84,14 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    const { email, password, formType, fname, lname, openModal } = this.props
-    const { birthday } = this.state
+    // debugger
+    const { formType, openModal } = this.props;
+    const { fname, lname, email, password, birthday, userError } = this.state;
     const LogIn = (
       <>
         <h3 className="login-header" >Log in to continue</h3>
-        <EmailAddress email={email} update={this.update} />
-        <Password password={password} update={this.update} formType={formType} />
+        <EmailAddress email={email} update={this.update} userError={userError}/>
+        <Password password={password} update={this.update} formType={formType} userError={userError}/>
       </>
     );
 
@@ -98,15 +101,15 @@ class SessionForm extends React.Component {
          <span onClick={this.handleDemo}>Demo</span> 
         </p>
         <p className="login-text-inline"><span>or</span></p>
-        <EmailAddress email={email} update={this.update}/>
-        <FirstName fname={fname} update={this.update}/>
-        <LastName lname={lname} update={this.update} />
-        <Password password={password} update={this.update} formType={formType}/>
+        <EmailAddress email={email} update={this.update} userError={userError}/>
+        <FirstName fname={fname} update={this.update} userError={userError}/>
+        <LastName lname={lname} update={this.update} userError={userError}/>
+        <Password password={password} update={this.update} formType={formType} userError={userError}/>
 
         <li className="login-birthday-items">
           <label className="login-text-label">Birthday</label>
           <p className="login-text-p">To sign up, you must be Level 18 or higher.</p>
-          <Birthday birthday={birthday} handleBirthday={this.handleBirthday}/>
+          <Birthday birthday={birthday} handleBirthday={this.handleBirthday} userError={userError}/>
         </li>
 
         <li className="login-items">
