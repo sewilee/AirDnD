@@ -23,6 +23,7 @@ time, mark, audio, video {
     /* font: inherit; */
     font-family: 'Raleway', sans-serif;
 	vertical-align: baseline;
+	list-style: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -47,3 +48,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+input:focus,
+button:focus{
+	outline: none;
+}
+

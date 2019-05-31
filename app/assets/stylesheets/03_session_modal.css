@@ -6,6 +6,8 @@
     left: 0;
     background: rgba(0, 0, 0, 0.7);
     z-index: 10;
+    box-sizing: border-box;
+    padding: 64px;
 }
 
 .modal-child {
@@ -18,8 +20,9 @@
 /* sign up */
 
 .login-form-container {
+    position: relative;
     width: 570px;
-    padding: 50px 28px 28px 28px;
+    padding: 70px 32px 32px 32px;
     box-sizing: border-box;
     background-color: white;
 }
@@ -40,35 +43,38 @@
 
 .login-input {
     width: 100%;
-    height: 50px;
-    padding: 10px;
-    margin: 10px 0;
+    height: 46px;
+    padding: 11px;
+    margin: 11px 0;
     box-sizing: border-box;
     border: 1px solid #e7e7e7;
     border-radius: 5px;
 }
 
 .login-items input[type="text"],
-.login-items input[type="password"]{
+.login-items input[type="password"],
+.login-birthday-input {
     font-size: 16px;
     color: #8a8a8a;
+    font-weight: lighter;
 }
 
 .login-items i {
-    top: 25px;
+    top: 27px;
     font-size: 16px;
     position: absolute;
     color: #8f8f8f;
-    right: 25px;
+    right: 11px;
 }
 
 /* submit */
 
-.session-submit{
+.session-submit,
+.session-demo{
     width: 100%;
-    height: 50px;
-    padding: 10px;
-    margin: 10px 0;
+    height: 46px;
+    padding: 11px;
+    margin: 11px 0;
     display: flex;
     box-sizing: border-box;
     justify-content: center;
@@ -83,53 +89,168 @@
     border: none;
 }
 
-/* birthday input */
+.session-demo{
+    background-color: white;
+    border-radius: 5px;
+    color: #565656;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #565656;
+}
 
-.login-birthday {
+.login-text-label {
     width: 100%;
-    padding: 10px 0;
+    /* padding: 11px 0; */
+    margin: 11px 0;
     font-size: 16px;
     color: #484848;
     font-weight: bold;
 }
 
-.login-birthday-text {
+.login-text-p {
     width: 100%;
     color: #565656;
-    font-size: 12px;
+    font-size: 14px;
+    /* padding-top: 11px; */
+    margin: 15px 0;
 }
 
 .login-form input[type="date"]{
     width: 100%;
-    height: 50px;
+    height: 46px;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     font-weight: bold;
     color: #484848;
 }
 
+/* text */
+
+
+.login-text-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #484848;
+    font-weight: bolder;
+    padding-bottom: 11px;
+}
+
+
+p.login-text-inline {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #e7e7e7; 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+   font-size: 14px;
+   font-weight: bolder;
+   color: #8f8f8f;
+} 
+
+p.login-text-inline-behind span { 
+    background:#fff; 
+    padding:0 10px; 
+}
+
+p.login-text-inline-behind {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #e7e7e7; 
+   line-height: 0.1em;
+   margin: 22px 0 22px; 
+   font-size: 14px;
+   font-weight: bolder;
+   color: #8f8f8f;
+} 
+
+p.login-text-inline span { 
+    background:#fff; 
+    padding:0 10px; 
+}
+
+
+.login-text-head span {
+    margin-left: 5px;
+    color: #008489;
+    font-weight: bolder;
+    text-shadow: 0.125px 0.125px #008489;
+}
+
+.login-footer{
+    /* list-style: none; */
+    padding-top: 11px;
+}
+
+.login-footer-text {
+    font-size: 16px;
+    color: #484848;
+    font-weight: lighter;
+}
+
+.signup-link{
+    margin-left: 10px;
+    color: #008489;
+    font-weight: bold;
+    text-shadow: 0.125px 0.125px #008489;
+}
+
+.signup-link:hover,
+.login-text-p span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+hr { 
+    /* padding-top: 11px; */
+    display: block;
+    /* color: #e7e7e7; */
+    margin-top: 22px;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border: 0.5px solid #e7e7e7;
+}
+
+.login-input:focus {
+    border-color: #008489;
+    outline:none;
+}
+
+.login-header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    padding: 17px 0;
+}
+
+
 /* close x */
 
 .login-form-close {
-    width: 50px;
-    height: 50px;
+    display: flex;
+    align-items: stretch;
+    width: 36px;
+    height: 36px;
     font-size: 36px;
     color: #8f8f8f;
     font-weight: 100;
     border: none;
-    padding: 3px;
+    padding: 0;
+    margin: 0;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 16px;
+    left: 32px;
+    z-index: 11;
 }
 
 .login-form-close:hover {
     cursor: pointer;
 }
 
-/* .login-form-close:active {
-    border-radius: 25px;
-    border: 1px solid #e9e9e9;
-    box-shadow: 0px 4px 7px -1px #e9e9e9;
 
-} */
+
+

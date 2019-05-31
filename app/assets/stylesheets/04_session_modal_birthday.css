@@ -1,0 +1,65 @@
+/* birthday input */
+.login-birthday-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.login-birthday-items label {
+    margin-bottom: 0;
+}
+
+.login-birthday {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.login-birthday-dropdown {
+    position: relative;
+    /* display: flex; */
+}
+
+.login-birthday-input:focus{
+    outline: none;
+    border-color: #008489;
+}
+
+.login-birthday-dropdown i {
+    top: 17px;
+    font-size: 16px;
+    position: absolute;
+    color: #8f8f8f;
+    right: 11px;
+}
+
+.login-birthday-input{
+    box-sizing: border-box;
+    height: 46px;
+    width: 100%;
+    /* margin: 0; */
+    background-color: white;
+    border: 1px solid #e7e7e7;
+    color: #484848;
+    padding: 11px 40px 11px 11px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+.login-birthday-dropdown:first-child{
+    width: 40%;
+}
+
+.login-birthday-dropdown:nth-child(2){
+    margin: 0 11px;
+    width: 22%;
+}
+
+.login-birthday-dropdown:last-child{
+    width: 33%;
+}

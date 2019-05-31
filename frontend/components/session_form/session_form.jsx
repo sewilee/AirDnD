@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+  EmailAddress, Password,FirstName, LastName, SignUpLink, LogInLink,
+} from './session_form_items';
+import Birthday from './session_form_birthday';
+import { merge } from 'lodash';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -11,21 +16,57 @@ class SessionForm extends React.Component {
       birthday: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
+    this.handleBirthday = this.handleBirthday.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
+  } 
+
+  componentDidMount(){
+    this.props.clearErrors()
   }
 
   update(field) {
-    return e => this.setState({
+    return (e) => this.setState({
       [field]: e.currentTarget.value
     });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    const user = merge({}, this.state);
+    // const userError = validateUser(user)
+    // {
+    //   username: "Username is required"
+    //   lasName: "Lastname is required"
+    //   password: null
+    //   confirmationPassword: "Must match password"
+    //   error: true
+    // }
     this.props.processForm(user);
-    if (!this.props.errors.length){
-      this.props.closeModal();
+  }
+
+  handleBirthday(field) {
+    const { birthday } = this.state
+    
+    return (e) => {
+      let birthArr = birthday.split('-');
+      const birthObj = {year: 0, month: 1, day: 2};
+
+      birthArr[birthObj[field]] = e.currentTarget.value;
+      
+      this.setState({
+        birthday: birthArr.join('-'),
+      })
     }
+  }
+
+  handleDemo(){
+    const user = {
+        email: "demouser@demo.com",
+        password: "password",
+    }
+    debugger
+    this.props.demoLogin(user);
   }
 
   renderErrors() {
@@ -40,82 +81,75 @@ class SessionForm extends React.Component {
     );
   }
 
-  render() {
-    let signUp, birthday = null;
-    let password = "Password"
-    if (this.props.formType === "Sign up"){
-      password = "Create a Password";
-      signUp = (
+  render(){
+    const { email, password, formType, fname, lname, openModal } = this.props
+    const { birthday } = this.state
+    const LogIn = (
+      <>
+        <h3 className="login-header" >Log in to continue</h3>
+        <EmailAddress email={email} update={this.update} />
+        <Password password={password} update={this.update} formType={formType} />
+      </>
+    );
+
+    const SignUp = (
+      <>
+        <p className="login-text-head" >Sign up with 
+         <span onClick={this.handleDemo}>Demo</span> 
+        </p>
+        <p className="login-text-inline"><span>or</span></p>
+        <EmailAddress email={email} update={this.update}/>
+        <FirstName fname={fname} update={this.update}/>
+        <LastName lname={lname} update={this.update} />
+        <Password password={password} update={this.update} formType={formType}/>
+
+        <li className="login-birthday-items">
+          <label className="login-text-label">Birthday</label>
+          <p className="login-text-p">To sign up, you must be Level 18 or higher.</p>
+          <Birthday birthday={birthday} handleBirthday={this.handleBirthday}/>
+        </li>
+
+        <li className="login-items">
+          <p className="login-text-p">
+            I have an intelligence of six. I know what I’m doing.
+          </p>
+        </li>
+      </>
+    );
+
+    let modal, otherLink, demo = null;
+    if (formType === "Log in"){ 
+      modal = LogIn;
+      otherLink = <SignUpLink openModal={openModal}/>;
+      demo = (
         <>
-          <li className="login-items">
-            <input type="text"
-              className="login-input"
-              value={this.state.fname} 
-              onChange={this.update("fname")} 
-              placeholder="First name"
-            />
-            <i class="fas fa-dragon"></i>
-          </li>
-          <li className="login-items">
-            <input type="text" 
-              className="login-input"
-              value={this.state.lname} 
-              onChange={this.update("lname")} 
-              placeholder="Last name"
-            />
-            <i class="fas fa-dragon"></i>
-          </li>
+          <p className="login-text-inline-behind" ><span>or continue with</span></p>
+          <button className="session-demo" onClick={this.handleDemo}>Demo</button>
         </>
       );
-      birthday = (
-        <>
-          <label className="login-birthday">Birthday</label>
-          <p className="login-birthday-text">To sign up, you must be 18 or older. Other people won't see your birthday.</p>
-          <input type="date" 
-            className="login-input"
-            value={this.state.birthday} 
-            onChange={this.update("birthday")} 
-          />
-        </>
-      );
+    }
+    if (formType === "Sign up"){ 
+      modal = SignUp; 
+      otherLink = <LogInLink openModal={openModal}/>;
     }
 
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           {this.renderErrors()}
-          <div className="login-form">
-            <ul className="login-input-container">
-                <li className="login-items">
-                  <input type="text"
-                    className="login-input"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    placeholder="Email address"
-                  />
-                <i class="fas fa-dice-d20"></i>
-                </li>
+            <div className="login-form">
 
-                {signUp}  
+              <ul className="login-input-container">
+                {modal}
+              </ul>
 
-                <li className="login-items">
-                  <input type="password"
-                    className="login-input"
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    placeholder={password}
-                  />
-                <i class="fas fa-dungeon"></i>
-                </li>
-
-                {birthday}
-            </ul>
-
-            <input className="session-submit" type="submit" value={this.props.formType} />
-          </div>
+              <input className="session-submit" type="submit" value={this.props.formType} />
+            </div>
         </form>
+        {demo}
+        {otherLink}
       </div>
-    );
+    )
   }
 }
 
