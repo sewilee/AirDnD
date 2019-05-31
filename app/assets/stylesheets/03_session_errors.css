@@ -1,0 +1,29 @@
+.errors input[type="text"],
+.errors input[type="password"],
+.errors select {
+    border: 1px solid #fb642d;
+    background-color: #fff8f6;
+}
+
+.error-text{
+    color: #d93900;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
+
+.login-birthday-items div.error-text {
+    padding-top: 11px;
+    font-weight: ligher;
+}
+
+.errors input:focus,
+.errors input:focus,
+.errors select:focus {
+    border-color: #008489;
+    background-color: white;
+    outline:none;
+}
