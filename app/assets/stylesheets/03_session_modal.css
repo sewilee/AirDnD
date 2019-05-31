@@ -197,7 +197,8 @@ p.login-text-inline span {
 }
 
 .signup-link:hover,
-.login-text-p span:hover {
+.login-text-p span:hover,
+.login-text-head span:hover {
     text-decoration: underline;
     cursor: pointer;
 }
@@ -247,7 +248,9 @@ hr {
     z-index: 11;
 }
 
-.login-form-close:hover {
+.login-form-close:hover,
+.session-demo:hover,
+.session-submit:hover {
     cursor: pointer;
 }
 

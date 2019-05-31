@@ -33,19 +33,27 @@ const NavBar = (props) => {
                 <nav className="nav-rightside">
                     <ul>
                         <li className="nav-btn">
-                            {becomeAHostButton}
+                            <div className="nav-service">
+                                {becomeAHostButton}
+                            </div>
                         </li>
 
                         <li className="nav-btn">
-                            {helpButton}
+                            <div className="nav-service">
+                                {helpButton}
+                            </div>
                         </li>
 
                         <li className="nav-btn">
-                            <button onClick={() => openModal("signup")}>Sign up</button>
+                            <div className="nav-service">
+                                <button onClick={() => openModal("signup")}>Sign up</button>
+                            </div>
                         </li>
 
                         <li className="nav-btn">
-                            <button onClick={() => openModal("login")}>Log in</button>
+                            <div className="nav-service">
+                                <button onClick={() => openModal("login")}>Log in</button>
+                            </div>
                         </li>
                     </ul>
                 </nav>
@@ -60,23 +68,33 @@ const NavBar = (props) => {
                 <nav className="nav-rightside">
                     <ul>
                         <li className="nav-btn">
-                            {becomeAHostButton}
+                            <div className="nav-service">
+                                {becomeAHostButton}
+                            </div>
                         </li>
 
                         <li className="nav-btn">
-                            <button>Saved</button>      {/*place holder*/}
+                            <div className="nav-service">
+                                <button>Saved</button>      {/*place holder*/}
+                            </div>
                         </li>
 
                         <li className="nav-btn">
-                            <button>Trips</button>   {/*place holder*/}
+                            <div className="nav-service">
+                                <button>Trips</button>   {/*place holder*/}
+                            </div>
                         </li>
 
                         <li className="nav-btn">
-                            {helpButton}
+                            <div className="nav-service">
+                                {helpButton}
+                            </div>
                         </li>
 
                         <li className="nav-btn">
-                            <button onClick={logout}>Log out</button>
+                            <div className="nav-service">
+                                <button onClick={logout}>Log out</button>
+                            </div>
                         </li>
                     </ul>
                 </nav>

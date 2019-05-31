@@ -1,4 +1,6 @@
 import React from 'react';
+import { checkClass, checkErrors } from './error_user_validation';
+
 
 function range (start, end){
     const arr = [];
@@ -28,6 +30,8 @@ const dndMonths = {
 };
 
 const Birthday = (props) => {
+    const className = checkClass(props.userError, "birthday");
+    const renderError = checkErrors(props.userError, "birthday");
 
     const { handleBirthday, birthday } = props;
 
@@ -60,29 +64,32 @@ const Birthday = (props) => {
     }
     
     return (
-        <div className="login-birthday">
-            <div className="login-birthday-dropdown">
-                <select className="login-birthday-input" onChange={handleBirthday("month")} value={birthArr[1]}>
-                    <option value="" disabled>Month</option>
-                    {birthMonth}
-                </select>
-                <i className="fas fa-chevron-down"></i>
+        <>
+            <div className="login-birthday">
+                <div className="login-birthday-dropdown">
+                    <select className="login-birthday-input" onChange={handleBirthday("month")} value={birthArr[1]}>
+                        <option value="" disabled>Month</option>
+                        {birthMonth}
+                    </select>
+                    <i className="fas fa-chevron-down"></i>
+                </div>
+                <div className="login-birthday-dropdown">
+                    <select className="login-birthday-input" onChange={handleBirthday("day")} value={birthArr[2]}>
+                        <option value="" disabled>Day</option>
+                        {birthDay}
+                    </select>
+                    <i className="fas fa-chevron-down"></i>
+                </div>
+                <div className="login-birthday-dropdown">
+                    <select className="login-birthday-input" onChange={handleBirthday("year")} value={birthArr[0]}>
+                        <option value="" disabled>Year</option>
+                        {birthYear}
+                    </select>
+                    <i className="fas fa-chevron-down"></i>
+                </div>
             </div>
-            <div className="login-birthday-dropdown">
-                <select className="login-birthday-input" onChange={handleBirthday("day")} value={birthArr[2]}>
-                    <option value="" disabled>Day</option>
-                    {birthDay}
-                </select>
-                <i className="fas fa-chevron-down"></i>
-            </div>
-            <div className="login-birthday-dropdown">
-                <select className="login-birthday-input" onChange={handleBirthday("year")} value={birthArr[0]}>
-                    <option value="" disabled>Year</option>
-                    {birthYear}
-                </select>
-                <i className="fas fa-chevron-down"></i>
-            </div>
-        </div>
+            { renderError }
+        </>
     )
 }
 

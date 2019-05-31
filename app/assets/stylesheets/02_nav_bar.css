@@ -1,10 +1,14 @@
+
 .landing-page{
+    /* temp ^^^^^^*/
     background-image: url('castle_02.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 800px;
+    z-index: -1;
 }
+
 
 .nav-bar{
     display:flex;

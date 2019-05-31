@@ -1,17 +1,15 @@
 import React from 'react';
+import { checkClass, checkErrors } from './error_user_validation';
 
 export const EmailAddress = (props) => {
-    const { email, update, error } = props;
-    // const className = this.props.error ? "login-items error" : "login-items";
+    const { email, update, userError } = props;
+    
+    const className = checkClass(userError, "email");
+    const renderError = checkErrors(userError, "email");
 
-    // const renderedError = this.props.error ? (
-    //     <li>
-    //         {this.props.error}
-    //     </li>
-    // ) : null;
     return (
         <>
-            <li className="login-items">
+            <li className={`login-items${className}`}>
                 <input type="text"
                     className="login-input"
                     value={email}
@@ -20,57 +18,79 @@ export const EmailAddress = (props) => {
                 />
                 <i className="fas fa-dice-d20"></i>
             </li>
-            {/* {renderedError} */}
+            {renderError}
         </>
     )
 };
 
 export const Password = (props) => {
-    const { password, update, formType } = props;
-    let passwordText = "Password"
+    const { password, update, formType, userError } = props;
+    const className = checkClass(userError, "password");
+    const renderError = checkErrors(userError, "password");
+
+    let passwordText = "Password";
+
     if (formType === "Sign up"){
         passwordText = "Create a Password";
-    }
+    };
+    
     return (
-        <li className="login-items">
-            <input type="password"
-                className="login-input"
-                value={ password }
-                onChange={update('password')}
-                placeholder={passwordText}
-            />
-            <i className="fas fa-dungeon"></i>
-        </li>
-    )
+        <>
+            <li className={`login-items ${className}`}>
+                <input type="password"
+                    className="login-input"
+                    value={ password }
+                    onChange={update('password')}
+                    placeholder={passwordText}
+                    />
+                <i className="fas fa-dungeon"></i>
+            </li>
+            {renderError}
+        </>
+    );
 };
 
 export const FirstName = (props) => {
-    const { fname, update } = props;
+    const { fname, update, userError } = props;
+
+    const className = checkClass(userError, "fname");
+    const renderError = checkErrors(userError, "fname");
+
     return (
-        <li className="login-items">
-            <input type="text"
-                className="login-input"
-                value={fname}
-                onChange={update("fname")}
-                placeholder="First name"
-            />
-            <i className="fas fa-dragon"></i>
-        </li>
+        <>
+            <li className={`login-items ${className}`}>
+                <input type="text"
+                    className="login-input"
+                    value={fname}
+                    onChange={update("fname")}
+                    placeholder="First name"
+                />
+                <i className="fas fa-dragon"></i>
+            </li>
+            {renderError}
+        </>
     );
 };
 
 export const LastName = (props) => {
-    const { lname, update } = props;
+    const { lname, update, userError } = props;
+
+    const className = checkClass(userError, "lname");
+    const renderError = checkErrors(userError, "lname");
+
     return (
-        <li className="login-items">
-            <input type="text"
-                className="login-input"
-                value={lname}
-                onChange={update("lname")}
-                placeholder="Last name"
-            />
-            <i className="fas fa-dragon"></i>
-        </li>
+        <>
+            <li className={`login-items ${className}`}>
+                <input type="text"
+                    className="login-input"
+                    value={lname}
+                    onChange={update("lname")}
+                    placeholder="Last name"
+                />
+                <i className="fas fa-dragon"></i>
+            </li>
+            {renderError}
+        </>
     );
 };
 
