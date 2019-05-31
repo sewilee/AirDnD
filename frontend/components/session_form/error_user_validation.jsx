@@ -17,7 +17,7 @@ export const validateUser = (props, formType) => {
 export const checkErrors = (userError, errorType) => {
     let errors = null;
     if (userError && userError[errorType]) {
-        errors = <li>{userError[errorType]}</li>
+        errors = <div className="error-text">{userError[errorType]}</div>
     };
     return errors;
     // (userError && userError[errorType]) ? <li>{userError[errorType]}</li> : null;

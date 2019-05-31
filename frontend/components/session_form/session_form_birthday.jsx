@@ -66,21 +66,21 @@ const Birthday = (props) => {
     return (
         <>
             <div className="login-birthday">
-                <div className="login-birthday-dropdown">
+                <div className={`login-birthday-dropdown ${className}`}>
                     <select className="login-birthday-input" onChange={handleBirthday("month")} value={birthArr[1]}>
                         <option value="" disabled>Month</option>
                         {birthMonth}
                     </select>
                     <i className="fas fa-chevron-down"></i>
                 </div>
-                <div className="login-birthday-dropdown">
+                <div className={`login-birthday-dropdown ${className}`}>
                     <select className="login-birthday-input" onChange={handleBirthday("day")} value={birthArr[2]}>
                         <option value="" disabled>Day</option>
                         {birthDay}
                     </select>
                     <i className="fas fa-chevron-down"></i>
                 </div>
-                <div className="login-birthday-dropdown">
+                <div className={`login-birthday-dropdown ${className}`}>
                     <select className="login-birthday-input" onChange={handleBirthday("year")} value={birthArr[0]}>
                         <option value="" disabled>Year</option>
                         {birthYear}

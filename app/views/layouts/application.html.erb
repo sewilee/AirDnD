@@ -12,6 +12,11 @@
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag 'favicon.png' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <!--<img src="<%= image_url('castle_02.jpg') %>" />-->
+
+    <script type="text/javascript">
+      window.castleURL = "<%= image_url('castle_02.jpg') %>"
+    </script>
 
 
   </head>

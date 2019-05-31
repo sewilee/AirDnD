@@ -5,7 +5,8 @@ const Landing = (props) => {
     return (
         <div className="landing-page">
             < NavBarContainer />
-            <h1>testing from landing</h1>
+            {/* <img src={window.castleURL} />; */}
+            <h1></h1>
 
         </div>
     )
