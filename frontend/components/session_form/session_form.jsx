@@ -1,13 +1,9 @@
 import React from 'react';
 import {
-  EmailAddress,
-  Password,
-  FirstName,
-  LastName,
-  SignUpLink,
-  LogInLink,
+  EmailAddress, Password,FirstName, LastName, SignUpLink, LogInLink,
 } from './session_form_items';
 import Birthday from './session_form_birthday';
+import { merge } from 'lodash';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -22,6 +18,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleBirthday = this.handleBirthday.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   } 
 
   componentDidMount(){
@@ -36,7 +33,15 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    const user = merge({}, this.state);
+    // const userError = validateUser(user)
+    // {
+    //   username: "Username is required"
+    //   lasName: "Lastname is required"
+    //   password: null
+    //   confirmationPassword: "Must match password"
+    //   error: true
+    // }
     this.props.processForm(user);
   }
 
@@ -44,7 +49,6 @@ class SessionForm extends React.Component {
     const { birthday } = this.state
     
     return (e) => {
-      
       let birthArr = birthday.split('-');
       const birthObj = {year: 0, month: 1, day: 2};
 
@@ -54,6 +58,15 @@ class SessionForm extends React.Component {
         birthday: birthArr.join('-'),
       })
     }
+  }
+
+  handleDemo(){
+    const user = {
+        email: "demouser@demo.com",
+        password: "password",
+    }
+    debugger
+    this.props.demoLogin(user);
   }
 
   renderErrors() {
@@ -73,7 +86,7 @@ class SessionForm extends React.Component {
     const { birthday } = this.state
     const LogIn = (
       <>
-        <h3>Log in to continue</h3>
+        <h3 className="login-header" >Log in to continue</h3>
         <EmailAddress email={email} update={this.update} />
         <Password password={password} update={this.update} formType={formType} />
       </>
@@ -81,36 +94,44 @@ class SessionForm extends React.Component {
 
     const SignUp = (
       <>
-        <p>Sign Up with Demo</p>
-        <p>or</p>
+        <p className="login-text-head" >Sign up with 
+         <span onClick={this.handleDemo}>Demo</span> 
+        </p>
+        <p className="login-text-inline"><span>or</span></p>
         <EmailAddress email={email} update={this.update}/>
         <FirstName fname={fname} update={this.update}/>
         <LastName lname={lname} update={this.update} />
-        <Password password={password} update={this.update} formType={formType}
-        />
+        <Password password={password} update={this.update} formType={formType}/>
 
-        <li>
-          <label className="login-birthday">Birthday</label>
-          <p className="login-text">To sign up, you must be 18 or older. Other people won't see your birthday.</p>
+        <li className="login-birthday-items">
+          <label className="login-text-label">Birthday</label>
+          <p className="login-text-p">To sign up, you must be Level 18 or higher.</p>
           <Birthday birthday={birthday} handleBirthday={this.handleBirthday}/>
         </li>
 
         <li className="login-items">
-          <p className="login-text">
-            Something Something Something...Marketing
+          <p className="login-text-p">
+            I have an intelligence of six. I know what I’m doing.
           </p>
         </li>
       </>
     );
 
-    let modal = null;
-    if (formType === "Log in"){ modal = LogIn }
-    if (formType === "Sign up"){ modal = SignUp }
-
-    let otherLink = null;
-    
-    if (formType === "Log in") { otherLink = <SignUpLink openModal={openModal}/> }
-    if (formType === "Sign up") { otherLink = <LogInLink openModal={openModal}/> }
+    let modal, otherLink, demo = null;
+    if (formType === "Log in"){ 
+      modal = LogIn;
+      otherLink = <SignUpLink openModal={openModal}/>;
+      demo = (
+        <>
+          <p className="login-text-inline-behind" ><span>or continue with</span></p>
+          <button className="session-demo" onClick={this.handleDemo}>Demo</button>
+        </>
+      );
+    }
+    if (formType === "Sign up"){ 
+      modal = SignUp; 
+      otherLink = <LogInLink openModal={openModal}/>;
+    }
 
     return (
       <div className="login-form-container">
@@ -125,6 +146,7 @@ class SessionForm extends React.Component {
               <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
         </form>
+        {demo}
         {otherLink}
       </div>
     )

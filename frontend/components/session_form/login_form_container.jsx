@@ -16,11 +16,12 @@ const mapDispatchToProps = dispatch => {
   return {
     processForm: (user) => dispatch(login(user)),
     openModal: (modal) => dispatch(openModal(modal)),
+    clearErrors: () => dispatch(clearErrors()),
+    demoLogin: (user) => dispatch(login(user)),
     // otherType: (
     //   <button onClick={openModal("login")}>Log in</button>
     // ),
     // closeModal: () => dispatch(closeModal()),
-    clearErrors: () => dispatch(clearErrors()),
   };
 };
 

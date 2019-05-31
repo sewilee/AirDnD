@@ -11,23 +11,23 @@ User.delete_all
 User.create(
     email: "demouser@demo.com",
     password: "password",
-    first_name: "Stranger",
-    last_name: "Danger",
+    fname: "Stranger",
+    lname: "Danger",
     birthday: Date.new(1992, 06, 06)
 )
 
 User.create(
     email: "abc@abc.com",
     password: "password",
-    first_name: "Dead",
-    last_name: "Pool",
+    fname: "Dead",
+    lname: "Pool",
     birthday: Date.new(2000, 01, 01)
 )
 
 User.create(
     email: "1234@abc.com",
     password: "password",
-    first_name: "Dead",
-    last_name: "Pool",
+    fname: "Dead",
+    lname: "Pool",
     birthday: Date.new(2000, 01, 01)
 )
