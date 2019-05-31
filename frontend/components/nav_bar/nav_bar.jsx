@@ -8,10 +8,10 @@ const LeftNav = (props) => {
                 <li className="home-btn">
                     <Link to='/'>&#38;</Link>   
                 </li>
-                <li className="search-bar"> 
+                {/* <li className="search-bar"> 
                     <i className="fas fa-search"></i>
                     <input type="search" placeholder="Search"/>
-                </li>
+                </li> */}
             </ul>
         </nav>
     )
@@ -67,8 +67,8 @@ const NavBar = (props) => {
                             <button>Saved</button>      {/*place holder*/}
                         </li>
 
-                        <li className="nav-link">
-                            <Link to="/">Trips</Link>   {/*place holder*/}
+                        <li className="nav-btn">
+                            <button>Trips</button>   {/*place holder*/}
                         </li>
 
                         <li className="nav-btn">
