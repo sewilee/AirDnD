@@ -9,6 +9,11 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+    has_many :listings,
+    primary_key: :id, 
+    foreign_key: :host_id,
+    class_name: :Listing
+
     def validate_age
         if self.birthday && (self.birthday + 18.year) < Date.current
             return true
