@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
       birthday: "",
       userError: null,
     };
-    // debugger
+    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleBirthday = this.handleBirthday.bind(this);
@@ -25,7 +25,6 @@ class SessionForm extends React.Component {
   } 
 
   componentDidMount(){
-    // debugger
     this.props.clearErrors()
   }
 
@@ -38,12 +37,15 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     e.stopPropagation();
+    this.props.clearErrors();
+    this.setState({ userError: null }, () => {});
+
     let user = merge({}, this.state);
     const newErrors = validateUser(user, this.props.formType)
-    if (newErrors) {
+    if (newErrors) {  
       this.setState({ userError: newErrors }, () => {
       })
-    } else {
+    } else {  
       this.props.processForm(user);
     }
   }
@@ -72,10 +74,11 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    // debugger
     return(
-      <ul>
+      <ul className="login-items errors">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={`error-${i}`} className="error-text">
             {error}
           </li>
         ))}
@@ -84,17 +87,17 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    // debugger
     const { formType, openModal } = this.props;
     const { fname, lname, email, password, birthday, userError } = this.state;
     const LogIn = (
       <>
         <h3 className="login-header" >Log in to continue</h3>
         <EmailAddress email={email} update={this.update} userError={userError}/>
+        {this.renderErrors()}
         <Password password={password} update={this.update} formType={formType} userError={userError}/>
       </>
     );
-
+    
     const SignUp = (
       <>
         <p className="login-text-head" >Sign up with 
@@ -102,6 +105,7 @@ class SessionForm extends React.Component {
         </p>
         <p className="login-text-inline"><span>or</span></p>
         <EmailAddress email={email} update={this.update} userError={userError}/>
+        {this.renderErrors()}
         <FirstName fname={fname} update={this.update} userError={userError}/>
         <LastName lname={lname} update={this.update} userError={userError}/>
         <Password password={password} update={this.update} formType={formType} userError={userError}/>
@@ -119,7 +123,7 @@ class SessionForm extends React.Component {
         </li>
       </>
     );
-
+    
     let modal, otherLink, demo = null;
     if (formType === "Log in"){ 
       modal = LogIn;
@@ -135,14 +139,14 @@ class SessionForm extends React.Component {
       modal = SignUp; 
       otherLink = <LogInLink openModal={openModal}/>;
     }
-
+    
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderErrors()}
             <div className="login-form">
 
               <ul className="login-input-container">
+                {/* {this.renderErrors()} */}
                 {modal}
               </ul>
 

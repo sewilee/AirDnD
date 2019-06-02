@@ -1,7 +1,7 @@
 
 .landing-page{
     /* temp ^^^^^^*/
-    background-image: image-url("castle_02.jpg");
+    background-image: image-url('castle_02.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -28,48 +28,86 @@
 
 /* right side */
 
+.nav-service{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    // padding: 0 11px;
+    position: relative;
+}
+
 .nav-link a,
-.nav-btn button {
+.nav-btn div button{
+    height: 100%;
     /* box-sizing: border-box; */
+    /* margin: 0 15px; */
     text-decoration: none;
     border: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: #484848;
-    /* margin: 0 15px; */
-    padding: 30px 15px;
+    // padding: 0 15px;
     background-color: rgba(0, 0, 0, 0);
 }
 
-.nav-btn button:hover, 
-.nav-link a:hover {
-    border-bottom: 2px solid #767676;
-    cursor: pointer;
-
+.nav-btn{
+    padding: 0 11px;
+    height: 79px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-.nav-leftside >ul:last-child{
-    margin: 0 7px;
+.nav-service-text{
+    // letter-spacing: 0.5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #484848;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.nav-service button{
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.nav-service:hover{
+    cursor: pointer;
+}
+
+.nav-service button:hover {
+    border-bottom: 2px solid #767676;
+}
+
+.nav-service-text img{
+    padding: 8px;
+    width: 28px;
+    height: 28px;
+}
+
+.nav-leftside > ul:last-child{
+    margin: 0 11px;
 }
 
 /* left side */
 
 /* --->home */
-.home-btn{
-    width: 75px;
-    height: 80px;
+.home-btn img{
+    width: 34px;
+    height: 34px;
+    padding: 21.5px;
 }
 
 .home-btn a {
+    height: 78px;
+    width: 78px;
     text-decoration: none;
     border: none;
     box-sizing: border-box;
-    color: #ff5a5f;
+    /* color: #ff5a5f; */
     display: flex;
     justify-content: center;
     align-content: center;
-    font-size: 40px;
-    padding: 20px;
+    /* font-size: 40px; */
+    /* padding: auto; */
 }
 
 /* --->search */

@@ -85,7 +85,7 @@
     border-radius: 5px;
     color: white;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     border: none;
 }
 
@@ -94,7 +94,7 @@
     border-radius: 5px;
     color: #565656;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     border: 2px solid #565656;
 }
 
@@ -104,7 +104,7 @@
     margin: 11px 0;
     font-size: 16px;
     color: #484848;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .login-text-p {
@@ -120,7 +120,7 @@
     height: 46px;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     color: #484848;
 }
 
@@ -133,7 +133,7 @@
     align-items: center;
     font-size: 14px;
     color: #484848;
-    font-weight: bolder;
+    font-weight: 600;
     padding-bottom: 11px;
 }
 
@@ -145,7 +145,7 @@ p.login-text-inline {
    line-height: 0.1em;
    margin: 10px 0 20px; 
    font-size: 14px;
-   font-weight: bolder;
+   font-weight: 600;
    color: #8f8f8f;
 } 
 
@@ -161,7 +161,7 @@ p.login-text-inline-behind {
    line-height: 0.1em;
    margin: 22px 0 22px; 
    font-size: 14px;
-   font-weight: bolder;
+   font-weight: 600;
    color: #8f8f8f;
 } 
 
@@ -174,8 +174,7 @@ p.login-text-inline span {
 .login-text-head span {
     margin-left: 5px;
     color: #008489;
-    font-weight: bolder;
-    text-shadow: 0.125px 0.125px #008489;
+    font-weight: 600;
 }
 
 .login-footer{
@@ -192,8 +191,7 @@ p.login-text-inline span {
 .signup-link{
     margin-left: 10px;
     color: #008489;
-    font-weight: bold;
-    text-shadow: 0.125px 0.125px #008489;
+    font-weight: 600;
 }
 
 .signup-link:hover,
@@ -222,7 +220,7 @@ hr {
 
 .login-header {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
     text-align: left;
     width: 100%;
     padding: 17px 0;
@@ -232,6 +230,7 @@ hr {
 /* close x */
 
 .login-form-close {
+    background: rgba(0, 0, 0, 0);
     display: flex;
     align-items: stretch;
     width: 36px;
