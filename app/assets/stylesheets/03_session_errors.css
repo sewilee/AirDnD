@@ -5,7 +5,8 @@
     background-color: #fff8f6;
 }
 
-.error-text{
+.error-text,
+.error-text-backend{
     color: #d93900;
     font-size: 14px;
     font-weight: 600;

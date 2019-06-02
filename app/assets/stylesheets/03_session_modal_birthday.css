@@ -17,8 +17,10 @@
     align-items: baseline;
 }
 
-.login-birthday-dropdown {
+.login-birthday-pulldown {
     position: relative;
+    /* height: 46px; */
+    /* border: 1px solid red; */
     /* display: flex; */
 }
 
@@ -27,7 +29,7 @@
     border-color: #008489;
 }
 
-.login-birthday-dropdown i {
+.login-birthday-pulldown i {
     top: 17px;
     font-size: 16px;
     position: absolute;
@@ -51,15 +53,15 @@
     appearance: none;
 }
 
-.login-birthday-dropdown:first-child{
+.login-birthday-pulldown:first-child{
     width: 40%;
 }
 
-.login-birthday-dropdown:nth-child(2){
+.login-birthday-pulldown:nth-child(2){
     margin: 0 11px;
     width: 22%;
 }
 
-.login-birthday-dropdown:last-child{
+.login-birthday-pulldown:last-child{
     width: 33%;
 }

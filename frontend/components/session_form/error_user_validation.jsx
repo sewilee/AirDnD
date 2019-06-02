@@ -2,16 +2,17 @@ import React from 'react';
 import { merge } from 'lodash';
 
 export const validateUser = (props, formType) => {
-    // const errors = { errors: false }
+    let errors;
     const Email = validateEmail(props.email)
     const Birth = validateBirthday(props.birthday)
     const FName = validateFirstName(props.fname)
     const LName = validateLastName(props.lname)
     const Password = validatePassword(props.password)
 
-    if (formType === "Sign up") return merge({}, Email, Birth, FName, LName, Password);
-    if (formType === "Log in") return merge({}, Email, Password);
-    return null;
+    if (formType === "Sign up") errors = merge({}, Email, Birth, FName, LName, Password);
+    if (formType === "Log in") errors = merge({}, Email, Password);
+    
+    return (Object.keys(errors).length) ? errors : null;
 };
 
 export const checkErrors = (userError, errorType) => {
@@ -45,16 +46,19 @@ const validateEmail = (email) => {
 };
 
 const validateBirthday = (birthday) => {
-    const day = birthday.split("-")[2];
-    const date = new Date(birthday);
-    const isValidDate = (Boolean(+date) && date.getDate() == day)
+    const day = Number(birthday.split("-")[2]);
+    const date = new Date(`${birthday} 00:00:00 GMT-04:00`);
+    const isValidDate = (Boolean(+date) && date.getDate() === day)
 
-    if(!isValidDate || birthday === null || birthday === ""){
-        return ({
-            birthday: "Enter a valid birthday",
-            // errors: true
-        })
-    }
+    const validAge = new Date(birthday);
+    validAge.setFullYear(validAge.getFullYear() + 18);
+
+    // debugger
+
+    if (birthday === null || birthday === "") return {birthday: "Birthday cannot be blank"};
+    if (!isValidDate) return { birthday: "Enter a valid birthday" };
+    if (validAge > new Date()) return { birthday: "You must be at least Level 18 to sign up"};
+
     return true
 };
 
@@ -82,9 +86,7 @@ const validateLastName = (lname) => {
 };
 
 const validatePassword = (password) => {
-    // debugger
     if (password.length < 6 || password === null || password === ""){
-        // debugger
         return ({
             password: "Enter a valid password",
             // errors: true

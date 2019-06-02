@@ -3,18 +3,22 @@
   <head>
     <title>AirDnD</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyAPjYkDq0-iiCd6W5-qCw46J-r0EW39L1U"%>
     <%= csrf_meta_tags %>
     <%# csp_meta_tag %>
     <%= javascript_include_tag 'application' %>
-    <%= favicon_link_tag 'favicon.png' %>
+    <%= favicon_link_tag 'logo-ampersand-red.png' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
 
     <script type="text/javascript">
       window.castle02_URL = "<%=image_url('castle_02.jpg')%>"
+      window.logo_black = "<%= image_url('logo-ampersand-black') %>"
+      window.logo_red = "<%= image_url('logo-ampersand-red') %>"
+      window.user_icon_beholder = "<%= image_url('user-beholder') %>"
+      window.user_icon_d20 = "<%= image_url('user-d20') %>"
     </script>
 
 
