@@ -53,8 +53,6 @@ const validateBirthday = (birthday) => {
     const validAge = new Date(birthday);
     validAge.setFullYear(validAge.getFullYear() + 18);
 
-    // debugger
-
     if (birthday === null || birthday === "") return {birthday: "Birthday cannot be blank"};
     if (!isValidDate) return { birthday: "Enter a valid birthday" };
     if (validAge > new Date()) return { birthday: "You must be at least Level 18 to sign up"};

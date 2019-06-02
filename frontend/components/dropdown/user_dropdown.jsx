@@ -5,11 +5,10 @@ const UserDropdown = (props) => {
     const { logout, closeAllDropdown } = props;
 
     const onClick = (e) => {
-        // debugger
         closeAllDropdown();
         logout();
     }
-    // debugger
+    
     return (
         <div className="user-dropdown">
             <ul>
