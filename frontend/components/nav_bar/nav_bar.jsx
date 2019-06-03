@@ -21,7 +21,7 @@ const LeftNav = (props) => {
         <nav className="nav-leftside">
             <ul>
                 <li className="home-btn">
-                    <Link to='/api/listings'><img src={window.logo_red} /></Link>   
+                    <Link to='/listings'><img src={window.logo_red} /></Link>   
                 </li>
                 {search}
             </ul>

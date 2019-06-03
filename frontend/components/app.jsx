@@ -1,5 +1,4 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import {
     Route,
     Redirect,
@@ -10,6 +9,7 @@ import {
 import Modal from './modal/modal';
 import Splash from './pages/splash';
 import Landing from './pages/landing';
+import Show from './pages/show'
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -19,7 +19,8 @@ const App = () => {
             <Modal />
             <div>
                 <Switch>
-                    <Route path="/api/listings" component={Landing}/>
+                    <Route path="/listings/:id" component={Show} />
+                    <Route path="/listings" component={Landing}/>
                     <Route exact path ="/" component={Splash}/>
                 </Switch>
             </div>

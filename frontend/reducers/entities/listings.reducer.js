@@ -1,4 +1,4 @@
-import merge from 'lodash';
+import { merge } from 'lodash';
 import { 
     RECEIVE_LISTINGS, 
     RECEIVE_LISTING 
@@ -6,14 +6,14 @@ import {
 
 const listingReducer = (state = {}, action) => {
     Object.freeze(state);
-    
     switch(action.type){
         case RECEIVE_LISTINGS:
             return action.listings;
 
         case RECEIVE_LISTING:
             const newListing = { [action.listing.id]: action.listing }
-            return merge( {}, state, newListing );
+            const newState = merge( {}, state, newListing );
+            return newState
 
         default:
             return state;

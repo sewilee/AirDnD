@@ -14,6 +14,9 @@ class Api::ListingsController < ApplicationController
 
     def show
         @listing = Listing.find(params[:id])
+        @host = User.find(@listing.host_id)
+        debugger
+        render :show
     end
 
     # def update
@@ -40,6 +43,7 @@ class Api::ListingsController < ApplicationController
             :language,
             :min_players,
             :max_players,
+            photos: []
         )
     end
 end

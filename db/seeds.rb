@@ -1,3 +1,4 @@
+require 'open-uri'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -81,6 +82,9 @@ user9 = User.create(
     birthday: Date.new(1982, 6, 29)
 )
 
+file1 = open('https://airdnd-dev.s3.amazonaws.com/nikita-yakushev-forest-village.jpg')
+file2 = open('https://airdnd-dev.s3.amazonaws.com/greyskull_keep.jpg')
+
 listing1 = Listing.create(
     host_id: user4[:id],
     title: "The Air Ashari, but not really",
@@ -96,6 +100,7 @@ listing1 = Listing.create(
     max_players: 6
 )
 
+
 listing2 = Listing.create(
     host_id: user8[:id],
     title: "Greyskull Keep",
@@ -109,4 +114,7 @@ listing2 = Listing.create(
     expansion: "false",
     edition_num: 5,
     max_players: 8
-)
+    )
+
+listing1.photos.attach(io: file1, filename: "tree-house.png")
+listing2.photos.attach(io: file2, filename: "greyskull.jpg")

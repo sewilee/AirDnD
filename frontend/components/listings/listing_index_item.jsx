@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 const ratingIcon = (
         <div className="listing-item-rating-icon">
@@ -10,35 +11,46 @@ const ratingIcon = (
         </div>
     )
 
-const ListingIndexItem = (props) => {
-    const { title, rate, location_type, city }  = props.listing
-    // debugger
-    return (
-        <li className="listing-item-container">
-            <div className="listing-item">
-                <img src={window.air_ashari}/>
-            </div>
+class ListingIndexItem extends React.Component{
+    constructor(props){
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
 
-            <div className="listing-item-info">
-                <div>
-                    <h4>{location_type} &#183; {city}</h4>
+    handleClick(){
+        const listingId = this.props.listing.id;
+        this.props.history.push(`/listings/${listingId}`)
+    }
+
+    render(){
+        const { title, rate, location_type, city} = this.props.listing;
+        return(
+            <li className="listing-index-items-li" onClick={this.handleClick}>
+                <div className="listing-item">
+                    <img src={window.air_ashari} />
                 </div>
-                <div>
-                    <h3>{title}</h3>
-                </div>
-                <div>
-                    <p className="listing-item-text">
-                        <i className="fas fa-coins"></i>
-                        {rate} GP per night
+
+                <div className="listing-item-info">
+                    <div>
+                        <h4>{location_type} &#183; {city}</h4>
+                    </div>
+                    <div>
+                        <h3>{title}</h3>
+                    </div>
+                    <div>
+                        <p className="listing-item-text">
+                            <i className="fas fa-coins"></i>
+                            {rate} GP per night
                     </p>
+                    </div>
+                    <div className="listing-item-rating">
+                        {ratingIcon}
+                        <span>10</span>
+                    </div>
                 </div>
-                <div className="listing-item-rating">
-                    {ratingIcon}
-                    <span>10</span>
-                </div>
-            </div>
-        </li>
-    )
+            </li>
+        )
+    }
 }
 
-export default ListingIndexItem;
+export default withRouter(ListingIndexItem);

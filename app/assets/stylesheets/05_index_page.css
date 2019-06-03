@@ -1,4 +1,4 @@
-.listing-landing-page{
+.listing-page{
     position: absolute;
     top: 80px;
     padding: 0 80px;
@@ -25,6 +25,11 @@
 .listing-index-items {
     display: flex;
     justify-content: space-between;
+}
+
+.listing-index-items-li {
+    box-sizing: border-box;
+    padding: 8px 8px 12px;
 }
 
 .listing-item-container {
