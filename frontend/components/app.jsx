@@ -5,11 +5,11 @@ import {
     Redirect,
     Switch,
     Link,
-    HashRouter
 } from 'react-router-dom';
 
 import Modal from './modal/modal';
-import Landing from './pages/landing/landing';
+import Splash from './pages/splash';
+import Landing from './pages/landing';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -18,10 +18,13 @@ const App = () => {
         <div>
             <Modal />
             <div>
-                <Landing/>
+                <Switch>
+                    <Route path="/api/listings" component={Landing}/>
+                    <Route exact path ="/" component={Splash}/>
+                </Switch>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default App;
