@@ -15,7 +15,6 @@ class Api::ListingsController < ApplicationController
     def show
         @listing = Listing.find(params[:id])
         @host = User.find(@listing.host_id)
-        debugger
         render :show
     end
 

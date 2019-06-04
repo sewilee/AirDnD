@@ -1,5 +1,7 @@
 json.partial! 'api/listings/listing', listing: @listing
-json.photoUrls @listing.photos.map {|file| url_for(file)}
+# if (@listing.photos)
+#     json.photoUrls @listing.photos.map {|file| url_for(file)}
+# end
 
 # json.hostInfo do 
 #     json.extract! @hostInfo, :fname

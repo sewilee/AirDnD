@@ -23,11 +23,13 @@ class ListingIndexItem extends React.Component{
     }
 
     render(){
-        const { title, rate, location_type, city} = this.props.listing;
+        const { title, rate, location_type, city, } = this.props.listing;
+        let image_link = window.img_notfound;
+        if (this.props.listing.photoUrls.length) { image_link = this.props.listing.photoUrls[0] }
         return(
             <li className="listing-index-items-li" onClick={this.handleClick}>
                 <div className="listing-item">
-                    <img src={window.air_ashari} />
+                    <img src={image_link} />
                 </div>
 
                 <div className="listing-item-info">
@@ -41,7 +43,7 @@ class ListingIndexItem extends React.Component{
                         <p className="listing-item-text">
                             <i className="fas fa-coins"></i>
                             {rate} GP per night
-                    </p>
+                        </p>
                     </div>
                     <div className="listing-item-rating">
                         {ratingIcon}

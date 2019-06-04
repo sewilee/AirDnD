@@ -82,8 +82,8 @@ user9 = User.create(
     birthday: Date.new(1982, 6, 29)
 )
 
-file1 = open('https://airdnd-dev.s3.amazonaws.com/nikita-yakushev-forest-village.jpg')
-file2 = open('https://airdnd-dev.s3.amazonaws.com/greyskull_keep.jpg')
+
+
 
 listing1 = Listing.create(
     host_id: user4[:id],
@@ -98,8 +98,15 @@ listing1 = Listing.create(
     expansion: "false",
     edition_num: 5,
     max_players: 6
-)
+    )
+    
+ashari1 = open('https://airdnd-prod.s3.amazonaws.com/Air+Ashari/forest-village.jpg')
+ashari2 = open('https://airdnd-prod.s3.amazonaws.com/Air+Ashari/forest-village-inside.jpg')
+ashari3 = open('https://airdnd-prod.s3.amazonaws.com/Air+Ashari/forest-village-bed.jpg')
 
+listing1.photos.attach(io: ashari1, filename: "tree-house.jpg")
+listing1.photos.attach(io: ashari2, filename: "tree-house-inside.jpg")
+listing1.photos.attach(io: ashari3, filename: "tree-house-bed.jpg")
 
 listing2 = Listing.create(
     host_id: user8[:id],
@@ -115,6 +122,36 @@ listing2 = Listing.create(
     edition_num: 5,
     max_players: 8
     )
+        
+greyskull1 = open("https://airdnd-prod.s3.amazonaws.com/Greyskull_keep/greyskull_keep.jpg")
+greyskull2 = open("https://airdnd-prod.s3.amazonaws.com/Greyskull_keep/greyskull_keep01.jpg")
+greyskull3 = open("https://airdnd-prod.s3.amazonaws.com/Greyskull_keep/greyskull_keep02.jpg")
 
-listing1.photos.attach(io: file1, filename: "tree-house.png")
-listing2.photos.attach(io: file2, filename: "greyskull.jpg")
+listing2.photos.attach(io: greyskull1, filename: "greyskull-01.jpg")
+listing2.photos.attach(io: greyskull2, filename: "greyskull-02.jpg")
+listing2.photos.attach(io: greyskull3, filename: "greyskull-03.jpg")
+    
+listing3 = Listing.create(
+    host_id: user2[:id],
+    title: "The Leaky Tap",
+    rate: 25,
+    city: "New York, New York",
+    address: "45 Zadash Gate",
+    location_type: "City",
+    latitude: 44.32372,
+    longitude: -75.92967,
+    num_bath: 2,
+    expansion: "false",
+    edition_num: 5,
+    max_players: 6
+    )
+        
+leaky1 = open("https://airdnd-prod.s3.amazonaws.com/leaky_tap/leaky_tap01.jpg")
+leaky2 = open("https://airdnd-prod.s3.amazonaws.com/leaky_tap/leaky_tap02.jpg")
+leaky3 = open("https://airdnd-prod.s3.amazonaws.com/leaky_tap/leaky_tap03.jpg")
+
+listing3.photos.attach(io: leaky1, filename: "leaky-01.jpg")
+listing3.photos.attach(io: leaky2, filename: "leaky-02.jpg")
+listing3.photos.attach(io: leaky3, filename: "leaky-03.jpg")
+            
+            

@@ -15,7 +15,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
     return (
-        <div>
+        <div className="main">
             <Modal />
             <div>
                 <Switch>
