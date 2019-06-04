@@ -5,22 +5,31 @@ import HostDropdown from '../dropdown/host_dropdown';
 import { remove } from 'lodash';
 
 const LeftNav = (props) => {
+    const { page } = props
+    let search = null;
+    
+    if(page != "splash"){
+        search = (
+            <li className="search-bar"> 
+                <i className="fas fa-search"></i>
+                <input type="search" placeholder="Search"/>
+            </li> 
+        );
+    }
+
     return (
         <nav className="nav-leftside">
             <ul>
                 <li className="home-btn">
-                    <Link to='/'><img src={window.logo_red} /></Link>   
+                    <Link to='/listings'><img src={window.logo_red} /></Link>   
                 </li>
-                {/* <li className="search-bar"> 
-                    <i className="fas fa-search"></i>
-                    <input type="search" placeholder="Search"/>
-                </li> */}
+                {search}
             </ul>
         </nav>
     )
 };
 
-const helpButton = (<button>Help</button>)                      //place holder
+// const helpButton = (<button>Help</button>)                      //place holder
 
 class NavBar extends React.Component{
     constructor(props){
@@ -72,10 +81,13 @@ class NavBar extends React.Component{
             </button>
         );
         const { currentUser, openModal } = this.props;
-
+        
+        let navBarClass = "";
+        if (this.props.page === "splash"){ navBarClass = " splash" }
+        
         const loggedOut = (
-            <header className="nav-bar">
-                <LeftNav />
+            <header className={`nav-bar${navBarClass}`}>
+                <LeftNav page={this.props.page}/>
                 <nav className="nav-rightside">
                     <ul>
                         <li className="nav-btn">
@@ -114,10 +126,10 @@ class NavBar extends React.Component{
                 </nav>
             </header>
         );
-
+        
         const loggedIn = (
-            <header className="nav-bar">
-                <LeftNav />
+            <header className={`nav-bar${navBarClass}`}>
+                <LeftNav page={this.props.page}/>
                 <nav className="nav-rightside">
                     <ul>
                         <li className="nav-btn">

@@ -13,7 +13,7 @@ function range (start, end){
 const currentYear = new Date().getFullYear();
 const months = range(1, 12);
 const days = range(1, 31);
-const years = range(currentYear - 100, currentYear).reverse();
+const years = range(currentYear - 200, currentYear).reverse();
 const dndMonths = {
     1: "Hammer",
     2: "Alturiak",
