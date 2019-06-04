@@ -33593,3 +33593,1269 @@ Processing by Api::ListingsController#show as JSON
 Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/" for ::1 at 2019-06-04 10:14:37 -0400
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macbookpro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2icS3FQ6yteaRWKPaijbrg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (19.3ms)
+Started GET "/" for ::1 at 2019-06-04 10:14:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2icS3FQ6yteaRWKPaijbrg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 2874ms (Views: 2868.9ms | ActiveRecord: 3.7ms)
+
+
+Completed 200 OK in 890ms (Views: 886.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 10:14:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2icS3FQ6yteaRWKPaijbrg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 10:15:44 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2icS3FQ6yteaRWKPaijbrg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 869ms (Views: 865.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/listings/2" for ::1 at 2019-06-04 10:15:45 -0400
+Processing by Api::ListingsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mListing Load (1.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/listings_controller.rb:16
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/listings_controller.rb:17
+  Rendering api/listings/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Listing"], ["name", "photos"]]
+  ↳ app/views/api/listings/_listing.json.jbuilder:3
+  Rendered api/listings/_listing.json.jbuilder (75.7ms)
+  Rendered api/listings/show.json.jbuilder (77.0ms)
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 21.3ms)
+
+
+
+ArgumentError - Cannot load `Rails.config.active_storage.service`:
+missing required option :name:
+  app/views/api/listings/_listing.json.jbuilder:3:in `block in _app_views_api_listings__listing_json_jbuilder___2991113698764961230_70285389206440'
+  app/views/api/listings/_listing.json.jbuilder:3:in `_app_views_api_listings__listing_json_jbuilder___2991113698764961230_70285389206440'
+  app/views/api/listings/show.json.jbuilder:1:in `_app_views_api_listings_show_json_jbuilder__2577787222060567326_70285401786420'
+  app/controllers/api/listings_controller.rb:18:in `show'
+
+  [1m[36mListing Load (1.0ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mListing Load (0.9ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" ORDER BY "listings"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Listing"], ["name", "photos"], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-06-04 10:24:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2icS3FQ6yteaRWKPaijbrg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 48ms (Views: 45.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/listings/2" for ::1 at 2019-06-04 10:24:56 -0400
+Processing by Api::ListingsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mListing Load (1.0ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/listings_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/listings_controller.rb:17
+  Rendering api/listings/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Listing"], ["name", "photos"]]
+  ↳ (byebug):1
+  Rendered api/listings/_listing.json.jbuilder (257390.5ms)
+  Rendered api/listings/show.json.jbuilder (257406.5ms)
+Completed 500 Internal Server Error in 257442ms (ActiveRecord: 4.5ms)
+
+
+
+SystemExit - exit:
+  (byebug):1:in `_app_views_api_listings__listing_json_jbuilder___2991113698764961230_70285402456400'
+  app/views/api/listings/_listing.json.jbuilder:4:in `_app_views_api_listings__listing_json_jbuilder___2991113698764961230_70285402456400'
+  app/views/api/listings/show.json.jbuilder:1:in `_app_views_api_listings_show_json_jbuilder__2577787222060567326_70285389795820'
+  app/controllers/api/listings_controller.rb:18:in `show'
+
+  [1m[35m (25.3ms)[0m  [1m[35mCREATE DATABASE "AirDnD_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "AirDnD_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (41.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (51.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (5.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "listings" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "listings" ("id" bigserial primary key, "host_id" integer NOT NULL, "title" character varying NOT NULL, "description" text, "rate" integer NOT NULL, "city" character varying NOT NULL, "address" character varying NOT NULL, "location_type" character varying NOT NULL, "longitude" float NOT NULL, "latitude" float NOT NULL, "num_bath" integer NOT NULL, "expansion" character varying NOT NULL, "edition_num" integer NOT NULL, "language" character varying, "min_players" integer, "max_players" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_listings_on_address" ON "listings"  ("address")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_city" ON "listings"  ("city")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_host_id" ON "listings"  ("host_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "by_lat_long" ON "listings"  ("latitude", "longitude")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "fname" character varying NOT NULL, "lname" character varying NOT NULL, "img_url" character varying, "birthday" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:77
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (48.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "listings" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "listings" ("id" bigserial primary key, "host_id" integer NOT NULL, "title" character varying NOT NULL, "description" text, "rate" integer NOT NULL, "city" character varying NOT NULL, "address" character varying NOT NULL, "location_type" character varying NOT NULL, "longitude" float NOT NULL, "latitude" float NOT NULL, "num_bath" integer NOT NULL, "expansion" character varying NOT NULL, "edition_num" integer NOT NULL, "language" character varying, "min_players" integer, "max_players" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_listings_on_address" ON "listings"  ("address")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_city" ON "listings"  ("city")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_host_id" ON "listings"  ("host_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "by_lat_long" ON "listings"  ("latitude", "longitude")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "fname" character varying NOT NULL, "lname" character varying NOT NULL, "img_url" character varying, "birthday" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:77
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-06-04 14:29:31.913184"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-06-04 14:29:31.917551"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mListing Destroy (0.8ms)[0m  [1m[31mDELETE FROM "listings"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "cgR9cG8tgkMZHzbrpjqcLQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "demouser@demo.com"], ["password_digest", "$2a$10$MTCPsVZDYIkZ2WoLX07f1ea0kRNR6yuRdIhjD7FcO4N.vOa0KvHYK"], ["session_token", "cgR9cG8tgkMZHzbrpjqcLQ"], ["fname", "Stranger"], ["lname", "Danger"], ["birthday", "1992-06-06"], ["created_at", "2019-06-04 14:29:32.030970"], ["updated_at", "2019-06-04 14:29:32.030970"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "grog@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zfZme3xTJoyf0lNOx3q4jw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "grog@critroll.com"], ["password_digest", "$2a$10$smk62E130phk1aeEH4WlTOZjuB85lRehhWckTwWye/GCdVy7fzYkK"], ["session_token", "zfZme3xTJoyf0lNOx3q4jw"], ["fname", "Grog"], ["lname", "Strongjaw"], ["birthday", "1969-08-03"], ["created_at", "2019-06-04 14:29:32.098962"], ["updated_at", "2019-06-04 14:29:32.098962"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "burtreynolds@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "y5rgrvpFsEMKiqsgHL3WbQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "burtreynolds@critroll.com"], ["password_digest", "$2a$10$81cO96VhwJQeGZqQhVh4GOs6/S0zrTsc/ifA7XgTM0yefkm6Itx1i"], ["session_token", "y5rgrvpFsEMKiqsgHL3WbQ"], ["fname", "Scanlan"], ["lname", "Shorthalt"], ["birthday", "1949-10-09"], ["created_at", "2019-06-04 14:29:32.165267"], ["updated_at", "2019-06-04 14:29:32.165267"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "keyleth@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4KoMdCIPoGE5t4Ccwx4K0Q"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "keyleth@critroll.com"], ["password_digest", "$2a$10$lyOzllhjSbsc3i7oJYKsxex1saAf4odNqRg4xgW730bmiDUQLaGAK"], ["session_token", "4KoMdCIPoGE5t4Ccwx4K0Q"], ["fname", "Keyleth"], ["lname", "of the Air Ashari"], ["birthday", "1996-05-10"], ["created_at", "2019-06-04 14:29:32.231693"], ["updated_at", "2019-06-04 14:29:32.231693"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "percy@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pORmLhNKUs4OwGdq1LoG7A"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "percy@critroll.com"], ["password_digest", "$2a$10$/rGWdJCM1KNGedH2CtDgw.qnvRFZsd6jCmzNYTKF5FjqHd3h6ybv2"], ["session_token", "pORmLhNKUs4OwGdq1LoG7A"], ["fname", "Percival Fredrickstein"], ["lname", "von Musel Klossowski de Rolo"], ["birthday", "1994-01-19"], ["created_at", "2019-06-04 14:29:32.298645"], ["updated_at", "2019-06-04 14:29:32.298645"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pike@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:53
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "i2ovE9lcXlEf5CsDkE8hvg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:53
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "pike@critroll.com"], ["password_digest", "$2a$10$k0A6LU4CmlYvlg9neToTyOWv61JLyJlmWS.qcrCkhsoM13Zb4BQEi"], ["session_token", "i2ovE9lcXlEf5CsDkE8hvg"], ["fname", "Pike"], ["lname", "Trickfoot"], ["birthday", "1983-08-09"], ["created_at", "2019-06-04 14:29:32.365106"], ["updated_at", "2019-06-04 14:29:32.365106"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vax@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3KY1R1hNQU4BOt6S5hZ7pA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "vax@critroll.com"], ["password_digest", "$2a$10$Hm5wLfHM15u2HoX0kwh/tuxykjEPXgO5rM7navKV0ZuwOVSO8fw86"], ["session_token", "3KY1R1hNQU4BOt6S5hZ7pA"], ["fname", "Vax'ildan"], ["lname", "Vessar"], ["birthday", "1991-05-28"], ["created_at", "2019-06-04 14:29:32.431494"], ["updated_at", "2019-06-04 14:29:32.431494"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vex@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xA5NR3WG0x3mhtRxcnHYCQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "vex@critroll.com"], ["password_digest", "$2a$10$OjruEw3w/SURNgEhU56jReUBMO4ScIsVsCqn0hJu6/5EljIqBC2Hu"], ["session_token", "xA5NR3WG0x3mhtRxcnHYCQ"], ["fname", "Vex'ahlia"], ["lname", "de Rolo"], ["birthday", "1991-05-28"], ["created_at", "2019-06-04 14:29:32.497384"], ["updated_at", "2019-06-04 14:29:32.497384"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:77
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gilmore@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-_260aFoAqcbB08zOuMwhQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "gilmore@critroll.com"], ["password_digest", "$2a$10$jfqI7OHDo9U6vnnB3jtR.eU3BPK1r10jWSO2lVtYKIExV5.IW.EtG"], ["session_token", "-_260aFoAqcbB08zOuMwhQ"], ["fname", "Shaun"], ["lname", "Gilmore"], ["birthday", "1982-06-29"], ["created_at", "2019-06-04 14:29:32.565540"], ["updated_at", "2019-06-04 14:29:32.565540"]]
+  ↳ db/seeds.rb:77
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:77
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:88
+  [1m[36mListing Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "listings" WHERE "listings"."address" = $1 LIMIT $2[0m  [["address", "103 Headquarters Road"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:88
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:88
+  [1m[36mListing Create (1.0ms)[0m  [1m[32mINSERT INTO "listings" ("host_id", "title", "rate", "city", "address", "location_type", "longitude", "latitude", "num_bath", "expansion", "edition_num", "max_players", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["host_id", 4], ["title", "The Air Ashari, but not really"], ["rate", 50], ["city", "Moose, Wyoming"], ["address", "103 Headquarters Road"], ["location_type", "Wilderness"], ["longitude", -110.998935], ["latitude", 44.131347], ["num_bath", 0], ["expansion", "false"], ["edition_num", 5], ["max_players", 6], ["created_at", "2019-06-04 14:29:32.594691"], ["updated_at", "2019-06-04 14:29:32.594691"]]
+  ↳ db/seeds.rb:88
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:88
+Started GET "/" for ::1 at 2019-06-04 10:30:03 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macbookpro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2icS3FQ6yteaRWKPaijbrg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 1555ms (Views: 1549.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/listings/2" for ::1 at 2019-06-04 10:30:05 -0400
+Processing by Api::ListingsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mListing Load (1.1ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/listings_controller.rb:16
+Completed 404 Not Found in 19ms (ActiveRecord: 8.7ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Listing with 'id'=2:
+  app/controllers/api/listings_controller.rb:16:in `show'
+
+Started GET "/api/listings" for ::1 at 2019-06-04 10:31:41 -0400
+Processing by Api::ListingsController#index as JSON
+  Rendering api/listings/index.json.jbuilder
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/api/listings/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Listing"], ["name", "photos"]]
+  ↳ (byebug):1
+  Rendered api/listings/_listing.json.jbuilder (91491.8ms)
+  Rendered api/listings/index.json.jbuilder (91513.4ms)
+Completed 200 OK in 91524ms (Views: 91516.7ms | ActiveRecord: 3.0ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "AirDnD_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "AirDnD_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (5.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (3.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "listings" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "listings" ("id" bigserial primary key, "host_id" integer NOT NULL, "title" character varying NOT NULL, "description" text, "rate" integer NOT NULL, "city" character varying NOT NULL, "address" character varying NOT NULL, "location_type" character varying NOT NULL, "longitude" float NOT NULL, "latitude" float NOT NULL, "num_bath" integer NOT NULL, "expansion" character varying NOT NULL, "edition_num" integer NOT NULL, "language" character varying, "min_players" integer, "max_players" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_listings_on_address" ON "listings"  ("address")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_city" ON "listings"  ("city")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_host_id" ON "listings"  ("host_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "by_lat_long" ON "listings"  ("latitude", "longitude")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "fname" character varying NOT NULL, "lname" character varying NOT NULL, "img_url" character varying, "birthday" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:77
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (46.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "listings" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "listings" ("id" bigserial primary key, "host_id" integer NOT NULL, "title" character varying NOT NULL, "description" text, "rate" integer NOT NULL, "city" character varying NOT NULL, "address" character varying NOT NULL, "location_type" character varying NOT NULL, "longitude" float NOT NULL, "latitude" float NOT NULL, "num_bath" integer NOT NULL, "expansion" character varying NOT NULL, "edition_num" integer NOT NULL, "language" character varying, "min_players" integer, "max_players" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_listings_on_address" ON "listings"  ("address")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_city" ON "listings"  ("city")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_host_id" ON "listings"  ("host_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "by_lat_long" ON "listings"  ("latitude", "longitude")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "fname" character varying NOT NULL, "lname" character varying NOT NULL, "img_url" character varying, "birthday" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:77
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-06-04 14:33:27.858487"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-06-04 14:33:27.861820"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mListing Destroy (0.8ms)[0m  [1m[31mDELETE FROM "listings"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pblfgPjSfqnsWXLceBKXaw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "demouser@demo.com"], ["password_digest", "$2a$10$h8CMBZOh384T5xqyNpvRm./BoK9EVCDEY30jogoBEDymLG8GL4N76"], ["session_token", "pblfgPjSfqnsWXLceBKXaw"], ["fname", "Stranger"], ["lname", "Danger"], ["birthday", "1992-06-06"], ["created_at", "2019-06-04 14:33:27.974948"], ["updated_at", "2019-06-04 14:33:27.974948"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "grog@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "84eiRnti8Nou92rx9zvGPg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "grog@critroll.com"], ["password_digest", "$2a$10$ydHBNE4NDypb/xwfUrmhb.6MjmLs/pzWXI6a5gWnqpDU5Dk2hle02"], ["session_token", "84eiRnti8Nou92rx9zvGPg"], ["fname", "Grog"], ["lname", "Strongjaw"], ["birthday", "1969-08-03"], ["created_at", "2019-06-04 14:33:28.041569"], ["updated_at", "2019-06-04 14:33:28.041569"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "burtreynolds@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sUoYKl1Oe8lQxZ-h3EUUvg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "burtreynolds@critroll.com"], ["password_digest", "$2a$10$/7CSGPDFsIKwmSUVd4lE6uO70BhBNpiGDPpqP7tTBjPzFL/KfpTB."], ["session_token", "sUoYKl1Oe8lQxZ-h3EUUvg"], ["fname", "Scanlan"], ["lname", "Shorthalt"], ["birthday", "1949-10-09"], ["created_at", "2019-06-04 14:33:28.107339"], ["updated_at", "2019-06-04 14:33:28.107339"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "keyleth@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "se0FQqYkZHiinMOG0xkVNA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "keyleth@critroll.com"], ["password_digest", "$2a$10$LSg.IAikclYivqzAVu3aouKGDME1A3T/9DECJtJJCvEqIPzgLvn3e"], ["session_token", "se0FQqYkZHiinMOG0xkVNA"], ["fname", "Keyleth"], ["lname", "of the Air Ashari"], ["birthday", "1996-05-10"], ["created_at", "2019-06-04 14:33:28.172916"], ["updated_at", "2019-06-04 14:33:28.172916"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "percy@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4HvGCHtfi5V5tFtrBPlx-A"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "percy@critroll.com"], ["password_digest", "$2a$10$hIZNw.6z2N0Iz/TfOF3QJuqBflO9ajjLc4c5bLC9SjnwDta0yeQES"], ["session_token", "4HvGCHtfi5V5tFtrBPlx-A"], ["fname", "Percival Fredrickstein"], ["lname", "von Musel Klossowski de Rolo"], ["birthday", "1994-01-19"], ["created_at", "2019-06-04 14:33:28.238659"], ["updated_at", "2019-06-04 14:33:28.238659"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pike@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:53
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BFya59ddT6LOMAu5npQJzA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:53
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "pike@critroll.com"], ["password_digest", "$2a$10$.87fZa7cPc.NjhkGX.s21.eKT25rLLsZXwMTjaJvYYraWGar4rtsO"], ["session_token", "BFya59ddT6LOMAu5npQJzA"], ["fname", "Pike"], ["lname", "Trickfoot"], ["birthday", "1983-08-09"], ["created_at", "2019-06-04 14:33:28.304912"], ["updated_at", "2019-06-04 14:33:28.304912"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vax@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yhJOaOmxzWq5vEmT3mo6uQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "vax@critroll.com"], ["password_digest", "$2a$10$LehoBqAFfOttVDEKlieu0.rTWUxL0LYWdsPDtn.bFIEDnkUZEil5C"], ["session_token", "yhJOaOmxzWq5vEmT3mo6uQ"], ["fname", "Vax'ildan"], ["lname", "Vessar"], ["birthday", "1991-05-28"], ["created_at", "2019-06-04 14:33:28.370833"], ["updated_at", "2019-06-04 14:33:28.370833"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vex@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9MfrvmLqey0iHOx9ESFCRA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "vex@critroll.com"], ["password_digest", "$2a$10$3dx0.uUhyulhYkVRSZG3JOLqyl2Q1XzUR3xysO3k7PZcfpCkjDYmG"], ["session_token", "9MfrvmLqey0iHOx9ESFCRA"], ["fname", "Vex'ahlia"], ["lname", "de Rolo"], ["birthday", "1991-05-28"], ["created_at", "2019-06-04 14:33:28.437210"], ["updated_at", "2019-06-04 14:33:28.437210"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:77
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gilmore@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NmPUFyMMBESDMKLLKTVwhA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "gilmore@critroll.com"], ["password_digest", "$2a$10$VJAFKeItjBrZjeZSKdgolOITIeAUBMqYs5zBQZ187mYMqxoOVnr.2"], ["session_token", "NmPUFyMMBESDMKLLKTVwhA"], ["fname", "Shaun"], ["lname", "Gilmore"], ["birthday", "1982-06-29"], ["created_at", "2019-06-04 14:33:28.503972"], ["updated_at", "2019-06-04 14:33:28.503972"]]
+  ↳ db/seeds.rb:77
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:77
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:88
+  [1m[36mListing Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "listings" WHERE "listings"."address" = $1 LIMIT $2[0m  [["address", "103 Headquarters Road"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:88
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:88
+  [1m[36mListing Create (0.9ms)[0m  [1m[32mINSERT INTO "listings" ("host_id", "title", "rate", "city", "address", "location_type", "longitude", "latitude", "num_bath", "expansion", "edition_num", "max_players", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["host_id", 4], ["title", "The Air Ashari, but not really"], ["rate", 50], ["city", "Moose, Wyoming"], ["address", "103 Headquarters Road"], ["location_type", "Wilderness"], ["longitude", -110.998935], ["latitude", 44.131347], ["num_bath", 0], ["expansion", "false"], ["edition_num", 5], ["max_players", 6], ["created_at", "2019-06-04 14:33:28.531590"], ["updated_at", "2019-06-04 14:33:28.531590"]]
+  ↳ db/seeds.rb:88
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:88
+Started GET "/" for ::1 at 2019-06-04 10:33:37 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macbookpro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2icS3FQ6yteaRWKPaijbrg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 1017ms (Views: 1012.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 10:33:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2icS3FQ6yteaRWKPaijbrg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/listings" for ::1 at 2019-06-04 10:33:52 -0400
+Processing by Api::ListingsController#index as JSON
+  Rendering api/listings/index.json.jbuilder
+  [1m[36mListing Load (1.0ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/views/api/listings/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Listing"], ["name", "photos"]]
+  ↳ (byebug):1
+  Rendered api/listings/_listing.json.jbuilder (24570.7ms)
+  Rendered api/listings/index.json.jbuilder (24600.2ms)
+Completed 200 OK in 24615ms (Views: 24595.7ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/api/listings/1" for ::1 at 2019-06-04 10:34:20 -0400
+Processing by Api::ListingsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/listings_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/listings_controller.rb:17
+  Rendering api/listings/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Listing"], ["name", "photos"]]
+  ↳ app/views/api/listings/_listing.json.jbuilder:4
+  Rendered api/listings/_listing.json.jbuilder (13020.1ms)
+  Rendered api/listings/show.json.jbuilder (13021.5ms)
+Completed 200 OK in 13044ms (Views: 13027.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 10:36:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2icS3FQ6yteaRWKPaijbrg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/listings/1" for ::1 at 2019-06-04 10:36:52 -0400
+Processing by Api::ListingsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mListing Load (0.6ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/listings_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/listings_controller.rb:17
+  Rendering api/listings/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Listing"], ["name", "photos"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Listing"], ["name", "photos"]]
+  ↳ app/views/api/listings/_listing.json.jbuilder:4
+  Rendered api/listings/_listing.json.jbuilder (71830.7ms)
+  Rendered api/listings/show.json.jbuilder (71832.2ms)
+Completed 200 OK in 71842ms (Views: 71835.4ms | ActiveRecord: 5.2ms)
+
+
+  [1m[36mListing Load (1.1ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mListing Load (0.6ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" ORDER BY "listings"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7961790138206322180)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7961790138206322180)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mListing Load (0.9ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" ORDER BY "listings"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE DATABASE "AirDnD_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE "AirDnD_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (7.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "listings" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "listings" ("id" bigserial primary key, "host_id" integer NOT NULL, "title" character varying NOT NULL, "description" text, "rate" integer NOT NULL, "city" character varying NOT NULL, "address" character varying NOT NULL, "location_type" character varying NOT NULL, "longitude" float NOT NULL, "latitude" float NOT NULL, "num_bath" integer NOT NULL, "expansion" character varying NOT NULL, "edition_num" integer NOT NULL, "language" character varying, "min_players" integer, "max_players" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_listings_on_address" ON "listings"  ("address")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_city" ON "listings"  ("city")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_host_id" ON "listings"  ("host_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "by_lat_long" ON "listings"  ("latitude", "longitude")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "fname" character varying NOT NULL, "lname" character varying NOT NULL, "img_url" character varying, "birthday" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:77
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (37.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "listings" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "listings" ("id" bigserial primary key, "host_id" integer NOT NULL, "title" character varying NOT NULL, "description" text, "rate" integer NOT NULL, "city" character varying NOT NULL, "address" character varying NOT NULL, "location_type" character varying NOT NULL, "longitude" float NOT NULL, "latitude" float NOT NULL, "num_bath" integer NOT NULL, "expansion" character varying NOT NULL, "edition_num" integer NOT NULL, "language" character varying, "min_players" integer, "max_players" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_listings_on_address" ON "listings"  ("address")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_city" ON "listings"  ("city")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_listings_on_host_id" ON "listings"  ("host_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "by_lat_long" ON "listings"  ("latitude", "longitude")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (3.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "fname" character varying NOT NULL, "lname" character varying NOT NULL, "img_url" character varying, "birthday" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:77
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-06-04 14:48:26.339037"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-06-04 14:48:26.342695"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mListing Destroy (1.0ms)[0m  [1m[31mDELETE FROM "listings"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demouser@demo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aMdgumhTBAnG4EEPvV5_9A"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "demouser@demo.com"], ["password_digest", "$2a$10$RE44DUpTwQCO.Ru6gdANrufV94w1zFM36RtYDON1qj9oqm7bJC.cO"], ["session_token", "aMdgumhTBAnG4EEPvV5_9A"], ["fname", "Stranger"], ["lname", "Danger"], ["birthday", "1992-06-06"], ["created_at", "2019-06-04 14:48:26.457801"], ["updated_at", "2019-06-04 14:48:26.457801"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "grog@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "F1gQR2mNyc3OIIxumjacYw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "grog@critroll.com"], ["password_digest", "$2a$10$td0sD6w5cbfWfDVMj8VTUefy3cv0CUL5/ooMOmTtEurpNAHSBl54m"], ["session_token", "F1gQR2mNyc3OIIxumjacYw"], ["fname", "Grog"], ["lname", "Strongjaw"], ["birthday", "1969-08-03"], ["created_at", "2019-06-04 14:48:26.526318"], ["updated_at", "2019-06-04 14:48:26.526318"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "burtreynolds@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nKTt6pD94eYXYIOtGnc2Ag"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "burtreynolds@critroll.com"], ["password_digest", "$2a$10$skdevtXiQIeyCN11vFww5unQywd5P9I37gBsobGaOCghd71Z41J7m"], ["session_token", "nKTt6pD94eYXYIOtGnc2Ag"], ["fname", "Scanlan"], ["lname", "Shorthalt"], ["birthday", "1949-10-09"], ["created_at", "2019-06-04 14:48:26.592704"], ["updated_at", "2019-06-04 14:48:26.592704"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "keyleth@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "v3LXXBdqdk6b1HfCkYOGNg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "keyleth@critroll.com"], ["password_digest", "$2a$10$OnnCq395a0zmo9Z9dfEObOWSmoj/2nSEQTcFrCFEIyqCT3Cb.sspO"], ["session_token", "v3LXXBdqdk6b1HfCkYOGNg"], ["fname", "Keyleth"], ["lname", "of the Air Ashari"], ["birthday", "1996-05-10"], ["created_at", "2019-06-04 14:48:26.658337"], ["updated_at", "2019-06-04 14:48:26.658337"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "percy@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zLrCixa6kG-QkKOpqsLEcA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "percy@critroll.com"], ["password_digest", "$2a$10$xuwRfDAsERzTH44qdi0U8.xVfqwf8f1xz0nR6WipOk0YTrCYnQnt2"], ["session_token", "zLrCixa6kG-QkKOpqsLEcA"], ["fname", "Percival Fredrickstein"], ["lname", "von Musel Klossowski de Rolo"], ["birthday", "1994-01-19"], ["created_at", "2019-06-04 14:48:26.724171"], ["updated_at", "2019-06-04 14:48:26.724171"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pike@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:53
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "d1VGiiWgT2Uo6hntpj-grg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:53
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "pike@critroll.com"], ["password_digest", "$2a$10$fXAf4ob/bKMQk6klUaVTVupbfSWjP0dcpnerlntgRTGi88PoumGB6"], ["session_token", "d1VGiiWgT2Uo6hntpj-grg"], ["fname", "Pike"], ["lname", "Trickfoot"], ["birthday", "1983-08-09"], ["created_at", "2019-06-04 14:48:26.791050"], ["updated_at", "2019-06-04 14:48:26.791050"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vax@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5ZN0I8kNUFJW7G_W3aWyJw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "vax@critroll.com"], ["password_digest", "$2a$10$pQrvZdPf.SgxPHxt57ryU.W7N/r33gOA1oQnWLSiKatluRJg60qnC"], ["session_token", "5ZN0I8kNUFJW7G_W3aWyJw"], ["fname", "Vax'ildan"], ["lname", "Vessar"], ["birthday", "1991-05-28"], ["created_at", "2019-06-04 14:48:26.857845"], ["updated_at", "2019-06-04 14:48:26.857845"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vex@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uGGwp6-QlV0u51xnt_kBBA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "vex@critroll.com"], ["password_digest", "$2a$10$kRuEtv7FuIMDxT4aH0oS/OyaVeeZWDdGylZC5QpYFXHKyY5t6/wgq"], ["session_token", "uGGwp6-QlV0u51xnt_kBBA"], ["fname", "Vex'ahlia"], ["lname", "de Rolo"], ["birthday", "1991-05-28"], ["created_at", "2019-06-04 14:48:26.924991"], ["updated_at", "2019-06-04 14:48:26.924991"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:77
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gilmore@critroll.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ud_6tWqty-56tiuARtHCBA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "fname", "lname", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "gilmore@critroll.com"], ["password_digest", "$2a$10$gMxfciC8hrhY76OGspdEj..0HWNomV.H7cypsMx9Qlp3zIEHXPeiO"], ["session_token", "ud_6tWqty-56tiuARtHCBA"], ["fname", "Shaun"], ["lname", "Gilmore"], ["birthday", "1982-06-29"], ["created_at", "2019-06-04 14:48:26.990542"], ["updated_at", "2019-06-04 14:48:26.990542"]]
+  ↳ db/seeds.rb:77
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:77
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:88
+  [1m[36mListing Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "listings" WHERE "listings"."address" = $1 LIMIT $2[0m  [["address", "103 Headquarters Road"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:88
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:88
+  [1m[36mListing Create (0.9ms)[0m  [1m[32mINSERT INTO "listings" ("host_id", "title", "rate", "city", "address", "location_type", "longitude", "latitude", "num_bath", "expansion", "edition_num", "max_players", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["host_id", 4], ["title", "The Air Ashari, but not really"], ["rate", 50], ["city", "Moose, Wyoming"], ["address", "103 Headquarters Road"], ["location_type", "Wilderness"], ["longitude", -110.998935], ["latitude", 44.131347], ["num_bath", 0], ["expansion", "false"], ["edition_num", 5], ["max_players", 6], ["created_at", "2019-06-04 14:48:27.019016"], ["updated_at", "2019-06-04 14:48:27.019016"]]
+  ↳ db/seeds.rb:88
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:88
+[36m  S3 Storage (229.4ms) [0m[32mUploaded file to key: qBb8nuFGt8nChRroA2fEdoiQ (checksum: YlxSX7qZ/xEg685u8Icrxw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:107
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "qBb8nuFGt8nChRroA2fEdoiQ"], ["filename", "tree-house.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 119763], ["checksum", "YlxSX7qZ/xEg685u8Icrxw=="], ["created_at", "2019-06-04 14:48:27.830390"]]
+  ↳ db/seeds.rb:107
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:107
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:107
+  [1m[36mActiveStorage::Attachment Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Listing"], ["record_id", 1], ["blob_id", 1], ["created_at", "2019-06-04 14:48:27.846260"]]
+  ↳ db/seeds.rb:107
+  [1m[36mListing Update (0.4ms)[0m  [1m[33mUPDATE "listings" SET "updated_at" = $1 WHERE "listings"."id" = $2[0m  [["updated_at", "2019-06-04 14:48:27.848423"], ["id", 1]]
+  ↳ db/seeds.rb:107
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:107
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:107
+[ActiveJob] [ActiveStorage::AnalyzeJob] [966a59b1-ef3a-46b0-a141-c7c8adebadcc] Performing ActiveStorage::AnalyzeJob (Job ID: 966a59b1-ef3a-46b0-a141-c7c8adebadcc) from Inline(default) with arguments: #<GlobalID:0x00007f88de0705d0 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [966a59b1-ef3a-46b0-a141-c7c8adebadcc] [36m  S3 Storage (73.7ms) [0m[34mDownloaded file from key: qBb8nuFGt8nChRroA2fEdoiQ[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [966a59b1-ef3a-46b0-a141-c7c8adebadcc] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [966a59b1-ef3a-46b0-a141-c7c8adebadcc]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [966a59b1-ef3a-46b0-a141-c7c8adebadcc]   ↳ db/seeds.rb:107
+[ActiveJob] [ActiveStorage::AnalyzeJob] [966a59b1-ef3a-46b0-a141-c7c8adebadcc]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [966a59b1-ef3a-46b0-a141-c7c8adebadcc]   ↳ db/seeds.rb:107
+[ActiveJob] [ActiveStorage::AnalyzeJob] [966a59b1-ef3a-46b0-a141-c7c8adebadcc]   [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [966a59b1-ef3a-46b0-a141-c7c8adebadcc]   ↳ db/seeds.rb:107
+[ActiveJob] [ActiveStorage::AnalyzeJob] [966a59b1-ef3a-46b0-a141-c7c8adebadcc] Performed ActiveStorage::AnalyzeJob (Job ID: 966a59b1-ef3a-46b0-a141-c7c8adebadcc) from Inline(default) in 162.28ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 966a59b1-ef3a-46b0-a141-c7c8adebadcc) to Inline(default) with arguments: #<GlobalID:0x00007f88dbdf6ae0 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/1>>
+[36m  S3 Storage (78.8ms) [0m[32mUploaded file to key: yA4QfqcD4uzqVifDVW6DSMRS (checksum: QiC1VKloRDB0euFjnpJz7Q==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "yA4QfqcD4uzqVifDVW6DSMRS"], ["filename", "tree-house-inside.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 131107], ["checksum", "QiC1VKloRDB0euFjnpJz7Q=="], ["created_at", "2019-06-04 14:48:28.139523"]]
+  ↳ db/seeds.rb:108
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Listing"], ["record_id", 1], ["blob_id", 2], ["created_at", "2019-06-04 14:48:28.144244"]]
+  ↳ db/seeds.rb:108
+  [1m[36mListing Update (0.4ms)[0m  [1m[33mUPDATE "listings" SET "updated_at" = $1 WHERE "listings"."id" = $2[0m  [["updated_at", "2019-06-04 14:48:28.145749"], ["id", 1]]
+  ↳ db/seeds.rb:108
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:108
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd] Performing ActiveStorage::AnalyzeJob (Job ID: 1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd) from Inline(default) with arguments: #<GlobalID:0x00007f88dbaa7560 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd] [36m  S3 Storage (60.6ms) [0m[34mDownloaded file from key: yA4QfqcD4uzqVifDVW6DSMRS[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd]   ↳ db/seeds.rb:108
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd]   ↳ db/seeds.rb:108
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd]   [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd]   ↳ db/seeds.rb:108
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd] Performed ActiveStorage::AnalyzeJob (Job ID: 1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd) from Inline(default) in 114.29ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 1e47d9af-6ef7-4f9a-8d11-a3bbbfdd77bd) to Inline(default) with arguments: #<GlobalID:0x00007f88dba22a90 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/2>>
+[36m  S3 Storage (139.8ms) [0m[32mUploaded file to key: 99ewjXkcgZRp4W3SvVVzQR9T (checksum: tkf23T5JHfu4IRAOTR49hQ==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:109
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "99ewjXkcgZRp4W3SvVVzQR9T"], ["filename", "tree-house-bed.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 154483], ["checksum", "tkf23T5JHfu4IRAOTR49hQ=="], ["created_at", "2019-06-04 14:48:28.408026"]]
+  ↳ db/seeds.rb:109
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:109
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:109
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Listing"], ["record_id", 1], ["blob_id", 3], ["created_at", "2019-06-04 14:48:28.413359"]]
+  ↳ db/seeds.rb:109
+  [1m[36mListing Update (0.4ms)[0m  [1m[33mUPDATE "listings" SET "updated_at" = $1 WHERE "listings"."id" = $2[0m  [["updated_at", "2019-06-04 14:48:28.415239"], ["id", 1]]
+  ↳ db/seeds.rb:109
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:109
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:109
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7cfab04c-42b9-432e-bef8-b03b71b257a0] Performing ActiveStorage::AnalyzeJob (Job ID: 7cfab04c-42b9-432e-bef8-b03b71b257a0) from Inline(default) with arguments: #<GlobalID:0x00007f88dbb1ad30 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7cfab04c-42b9-432e-bef8-b03b71b257a0] [36m  S3 Storage (56.6ms) [0m[34mDownloaded file from key: 99ewjXkcgZRp4W3SvVVzQR9T[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7cfab04c-42b9-432e-bef8-b03b71b257a0] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7cfab04c-42b9-432e-bef8-b03b71b257a0]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7cfab04c-42b9-432e-bef8-b03b71b257a0]   ↳ db/seeds.rb:109
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7cfab04c-42b9-432e-bef8-b03b71b257a0]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7cfab04c-42b9-432e-bef8-b03b71b257a0]   ↳ db/seeds.rb:109
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7cfab04c-42b9-432e-bef8-b03b71b257a0]   [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7cfab04c-42b9-432e-bef8-b03b71b257a0]   ↳ db/seeds.rb:109
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7cfab04c-42b9-432e-bef8-b03b71b257a0] Performed ActiveStorage::AnalyzeJob (Job ID: 7cfab04c-42b9-432e-bef8-b03b71b257a0) from Inline(default) in 108.94ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 7cfab04c-42b9-432e-bef8-b03b71b257a0) to Inline(default) with arguments: #<GlobalID:0x00007f88d7a3b170 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/3>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:111
+  [1m[36mListing Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "listings" WHERE "listings"."address" = $1 LIMIT $2[0m  [["address", "1 Heart Island"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:111
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:111
+  [1m[36mListing Create (0.4ms)[0m  [1m[32mINSERT INTO "listings" ("host_id", "title", "rate", "city", "address", "location_type", "longitude", "latitude", "num_bath", "expansion", "edition_num", "max_players", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["host_id", 8], ["title", "Greyskull Keep"], ["rate", 600], ["city", "Alexandria Bay, New York"], ["address", "1 Heart Island"], ["location_type", "Fortification"], ["longitude", -75.922657], ["latitude", 44.344372], ["num_bath", 1], ["expansion", "false"], ["edition_num", 5], ["max_players", 8], ["created_at", "2019-06-04 14:48:28.536040"], ["updated_at", "2019-06-04 14:48:28.536040"]]
+  ↳ db/seeds.rb:111
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:111
+[36m  S3 Storage (192.5ms) [0m[32mUploaded file to key: TG1EEdQeuvRdEug5NxR9ZQNi (checksum: w/RspfLwTK1Kg++aZIT7CA==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:130
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "TG1EEdQeuvRdEug5NxR9ZQNi"], ["filename", "greyskull-01.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 553288], ["checksum", "w/RspfLwTK1Kg++aZIT7CA=="], ["created_at", "2019-06-04 14:48:29.197595"]]
+  ↳ db/seeds.rb:130
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:130
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:130
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Listing"], ["record_id", 2], ["blob_id", 4], ["created_at", "2019-06-04 14:48:29.203898"]]
+  ↳ db/seeds.rb:130
+  [1m[36mListing Update (0.4ms)[0m  [1m[33mUPDATE "listings" SET "updated_at" = $1 WHERE "listings"."id" = $2[0m  [["updated_at", "2019-06-04 14:48:29.205979"], ["id", 2]]
+  ↳ db/seeds.rb:130
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:130
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:130
+[ActiveJob] [ActiveStorage::AnalyzeJob] [90ba00b2-629e-4f08-9959-17c3e0865389] Performing ActiveStorage::AnalyzeJob (Job ID: 90ba00b2-629e-4f08-9959-17c3e0865389) from Inline(default) with arguments: #<GlobalID:0x00007f88de168910 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [90ba00b2-629e-4f08-9959-17c3e0865389] [36m  S3 Storage (107.5ms) [0m[34mDownloaded file from key: TG1EEdQeuvRdEug5NxR9ZQNi[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [90ba00b2-629e-4f08-9959-17c3e0865389] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [90ba00b2-629e-4f08-9959-17c3e0865389]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [90ba00b2-629e-4f08-9959-17c3e0865389]   ↳ db/seeds.rb:130
+[ActiveJob] [ActiveStorage::AnalyzeJob] [90ba00b2-629e-4f08-9959-17c3e0865389]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [90ba00b2-629e-4f08-9959-17c3e0865389]   ↳ db/seeds.rb:130
+[ActiveJob] [ActiveStorage::AnalyzeJob] [90ba00b2-629e-4f08-9959-17c3e0865389]   [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [90ba00b2-629e-4f08-9959-17c3e0865389]   ↳ db/seeds.rb:130
+[ActiveJob] [ActiveStorage::AnalyzeJob] [90ba00b2-629e-4f08-9959-17c3e0865389] Performed ActiveStorage::AnalyzeJob (Job ID: 90ba00b2-629e-4f08-9959-17c3e0865389) from Inline(default) in 170.33ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 90ba00b2-629e-4f08-9959-17c3e0865389) to Inline(default) with arguments: #<GlobalID:0x00007f88de284fd8 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/4>>
+[36m  S3 Storage (93.8ms) [0m[32mUploaded file to key: nbX4nWLeP66ERq8SALVJxrdJ (checksum: e0HvqYt8NvH7wONbka//tg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:131
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "nbX4nWLeP66ERq8SALVJxrdJ"], ["filename", "greyskull-02.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 109571], ["checksum", "e0HvqYt8NvH7wONbka//tg=="], ["created_at", "2019-06-04 14:48:29.477445"]]
+  ↳ db/seeds.rb:131
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:131
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:131
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Listing"], ["record_id", 2], ["blob_id", 5], ["created_at", "2019-06-04 14:48:29.481255"]]
+  ↳ db/seeds.rb:131
+  [1m[36mListing Update (0.4ms)[0m  [1m[33mUPDATE "listings" SET "updated_at" = $1 WHERE "listings"."id" = $2[0m  [["updated_at", "2019-06-04 14:48:29.482583"], ["id", 2]]
+  ↳ db/seeds.rb:131
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:131
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:131
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1508ca45-b2f5-46d7-9889-f42afde7f6dd] Performing ActiveStorage::AnalyzeJob (Job ID: 1508ca45-b2f5-46d7-9889-f42afde7f6dd) from Inline(default) with arguments: #<GlobalID:0x00007f88de1f8150 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1508ca45-b2f5-46d7-9889-f42afde7f6dd] [36m  S3 Storage (53.3ms) [0m[34mDownloaded file from key: nbX4nWLeP66ERq8SALVJxrdJ[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1508ca45-b2f5-46d7-9889-f42afde7f6dd] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1508ca45-b2f5-46d7-9889-f42afde7f6dd]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1508ca45-b2f5-46d7-9889-f42afde7f6dd]   ↳ db/seeds.rb:131
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1508ca45-b2f5-46d7-9889-f42afde7f6dd]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1508ca45-b2f5-46d7-9889-f42afde7f6dd]   ↳ db/seeds.rb:131
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1508ca45-b2f5-46d7-9889-f42afde7f6dd]   [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1508ca45-b2f5-46d7-9889-f42afde7f6dd]   ↳ db/seeds.rb:131
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1508ca45-b2f5-46d7-9889-f42afde7f6dd] Performed ActiveStorage::AnalyzeJob (Job ID: 1508ca45-b2f5-46d7-9889-f42afde7f6dd) from Inline(default) in 102.98ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 1508ca45-b2f5-46d7-9889-f42afde7f6dd) to Inline(default) with arguments: #<GlobalID:0x00007f88de1726e0 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/5>>
+[36m  S3 Storage (77.7ms) [0m[32mUploaded file to key: JWdbhcsdL5k1g8ySgB5P6kpY (checksum: 5gfiteJhx9TOpt0a7VYIAg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "JWdbhcsdL5k1g8ySgB5P6kpY"], ["filename", "greyskull-03.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 114932], ["checksum", "5gfiteJhx9TOpt0a7VYIAg=="], ["created_at", "2019-06-04 14:48:29.670640"]]
+  ↳ db/seeds.rb:132
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Listing"], ["record_id", 2], ["blob_id", 6], ["created_at", "2019-06-04 14:48:29.675041"]]
+  ↳ db/seeds.rb:132
+  [1m[36mListing Update (0.5ms)[0m  [1m[33mUPDATE "listings" SET "updated_at" = $1 WHERE "listings"."id" = $2[0m  [["updated_at", "2019-06-04 14:48:29.676510"], ["id", 2]]
+  ↳ db/seeds.rb:132
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:132
+[ActiveJob] [ActiveStorage::AnalyzeJob] [05b0d798-bbd7-4c17-b6cf-4df11a85d86c] Performing ActiveStorage::AnalyzeJob (Job ID: 05b0d798-bbd7-4c17-b6cf-4df11a85d86c) from Inline(default) with arguments: #<GlobalID:0x00007f88dd00af10 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [05b0d798-bbd7-4c17-b6cf-4df11a85d86c] [36m  S3 Storage (52.0ms) [0m[34mDownloaded file from key: JWdbhcsdL5k1g8ySgB5P6kpY[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [05b0d798-bbd7-4c17-b6cf-4df11a85d86c] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [05b0d798-bbd7-4c17-b6cf-4df11a85d86c]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [05b0d798-bbd7-4c17-b6cf-4df11a85d86c]   ↳ db/seeds.rb:132
+[ActiveJob] [ActiveStorage::AnalyzeJob] [05b0d798-bbd7-4c17-b6cf-4df11a85d86c]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [05b0d798-bbd7-4c17-b6cf-4df11a85d86c]   ↳ db/seeds.rb:132
+[ActiveJob] [ActiveStorage::AnalyzeJob] [05b0d798-bbd7-4c17-b6cf-4df11a85d86c]   [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [05b0d798-bbd7-4c17-b6cf-4df11a85d86c]   ↳ db/seeds.rb:132
+[ActiveJob] [ActiveStorage::AnalyzeJob] [05b0d798-bbd7-4c17-b6cf-4df11a85d86c] Performed ActiveStorage::AnalyzeJob (Job ID: 05b0d798-bbd7-4c17-b6cf-4df11a85d86c) from Inline(default) in 103.82ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 05b0d798-bbd7-4c17-b6cf-4df11a85d86c) to Inline(default) with arguments: #<GlobalID:0x00007f88de043918 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/6>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:134
+  [1m[36mListing Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "listings" WHERE "listings"."address" = $1 LIMIT $2[0m  [["address", "45 Zadash Gate"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:134
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:134
+  [1m[36mListing Create (0.6ms)[0m  [1m[32mINSERT INTO "listings" ("host_id", "title", "rate", "city", "address", "location_type", "longitude", "latitude", "num_bath", "expansion", "edition_num", "max_players", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["host_id", 2], ["title", "The Leaky Tap"], ["rate", 25], ["city", "New York, New York"], ["address", "45 Zadash Gate"], ["location_type", "City"], ["longitude", -75.92967], ["latitude", 44.32372], ["num_bath", 2], ["expansion", "false"], ["edition_num", 5], ["max_players", 6], ["created_at", "2019-06-04 14:48:29.789625"], ["updated_at", "2019-06-04 14:48:29.789625"]]
+  ↳ db/seeds.rb:134
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:134
+[36m  S3 Storage (122.5ms) [0m[32mUploaded file to key: R84Q7Am9ZeASYe2hqwyzTtDk (checksum: On+FddZw459OkEkUXFfNwg==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:153
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "R84Q7Am9ZeASYe2hqwyzTtDk"], ["filename", "leaky-01.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 164941], ["checksum", "On+FddZw459OkEkUXFfNwg=="], ["created_at", "2019-06-04 14:48:30.419371"]]
+  ↳ db/seeds.rb:153
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:153
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:153
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Listing"], ["record_id", 3], ["blob_id", 7], ["created_at", "2019-06-04 14:48:30.425822"]]
+  ↳ db/seeds.rb:153
+  [1m[36mListing Update (0.5ms)[0m  [1m[33mUPDATE "listings" SET "updated_at" = $1 WHERE "listings"."id" = $2[0m  [["updated_at", "2019-06-04 14:48:30.427498"], ["id", 3]]
+  ↳ db/seeds.rb:153
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:153
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:153
+[ActiveJob] [ActiveStorage::AnalyzeJob] [55604657-ef4d-4423-b454-121de7b168a5] Performing ActiveStorage::AnalyzeJob (Job ID: 55604657-ef4d-4423-b454-121de7b168a5) from Inline(default) with arguments: #<GlobalID:0x00007f88d8a51d20 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [55604657-ef4d-4423-b454-121de7b168a5] [36m  S3 Storage (49.2ms) [0m[34mDownloaded file from key: R84Q7Am9ZeASYe2hqwyzTtDk[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [55604657-ef4d-4423-b454-121de7b168a5] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [55604657-ef4d-4423-b454-121de7b168a5]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [55604657-ef4d-4423-b454-121de7b168a5]   ↳ db/seeds.rb:153
+[ActiveJob] [ActiveStorage::AnalyzeJob] [55604657-ef4d-4423-b454-121de7b168a5]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [55604657-ef4d-4423-b454-121de7b168a5]   ↳ db/seeds.rb:153
+[ActiveJob] [ActiveStorage::AnalyzeJob] [55604657-ef4d-4423-b454-121de7b168a5]   [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [55604657-ef4d-4423-b454-121de7b168a5]   ↳ db/seeds.rb:153
+[ActiveJob] [ActiveStorage::AnalyzeJob] [55604657-ef4d-4423-b454-121de7b168a5] Performed ActiveStorage::AnalyzeJob (Job ID: 55604657-ef4d-4423-b454-121de7b168a5) from Inline(default) in 97.58ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 55604657-ef4d-4423-b454-121de7b168a5) to Inline(default) with arguments: #<GlobalID:0x00007f88dbe17d80 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/7>>
+[36m  S3 Storage (358.1ms) [0m[32mUploaded file to key: p7EsbvhDWD4NGzcdbmGcpbfJ (checksum: uUq9vhABo4etV0kTK673uw==)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:154
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "p7EsbvhDWD4NGzcdbmGcpbfJ"], ["filename", "leaky-02.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 140031], ["checksum", "uUq9vhABo4etV0kTK673uw=="], ["created_at", "2019-06-04 14:48:30.891175"]]
+  ↳ db/seeds.rb:154
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:154
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:154
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Listing"], ["record_id", 3], ["blob_id", 8], ["created_at", "2019-06-04 14:48:30.895769"]]
+  ↳ db/seeds.rb:154
+  [1m[36mListing Update (0.4ms)[0m  [1m[33mUPDATE "listings" SET "updated_at" = $1 WHERE "listings"."id" = $2[0m  [["updated_at", "2019-06-04 14:48:30.897188"], ["id", 3]]
+  ↳ db/seeds.rb:154
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:154
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:154
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2787dd55-8169-4c8a-ad81-6380be8394fe] Performing ActiveStorage::AnalyzeJob (Job ID: 2787dd55-8169-4c8a-ad81-6380be8394fe) from Inline(default) with arguments: #<GlobalID:0x00007f88dbc36570 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2787dd55-8169-4c8a-ad81-6380be8394fe] [36m  S3 Storage (196.9ms) [0m[34mDownloaded file from key: p7EsbvhDWD4NGzcdbmGcpbfJ[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2787dd55-8169-4c8a-ad81-6380be8394fe] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2787dd55-8169-4c8a-ad81-6380be8394fe]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2787dd55-8169-4c8a-ad81-6380be8394fe]   ↳ db/seeds.rb:154
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2787dd55-8169-4c8a-ad81-6380be8394fe]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 8]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2787dd55-8169-4c8a-ad81-6380be8394fe]   ↳ db/seeds.rb:154
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2787dd55-8169-4c8a-ad81-6380be8394fe]   [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2787dd55-8169-4c8a-ad81-6380be8394fe]   ↳ db/seeds.rb:154
+[ActiveJob] [ActiveStorage::AnalyzeJob] [2787dd55-8169-4c8a-ad81-6380be8394fe] Performed ActiveStorage::AnalyzeJob (Job ID: 2787dd55-8169-4c8a-ad81-6380be8394fe) from Inline(default) in 245.84ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 2787dd55-8169-4c8a-ad81-6380be8394fe) to Inline(default) with arguments: #<GlobalID:0x00007f88db977d48 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/8>>
+[36m  S3 Storage (148.2ms) [0m[32mUploaded file to key: Y6Uoy9yw8P2Zj34As89tTvvC (checksum: zrUVI80txbyFrOZybdjHcw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:155
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "Y6Uoy9yw8P2Zj34As89tTvvC"], ["filename", "leaky-03.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 154922], ["checksum", "zrUVI80txbyFrOZybdjHcw=="], ["created_at", "2019-06-04 14:48:31.298579"]]
+  ↳ db/seeds.rb:155
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:155
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:155
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Listing"], ["record_id", 3], ["blob_id", 9], ["created_at", "2019-06-04 14:48:31.304474"]]
+  ↳ db/seeds.rb:155
+  [1m[36mListing Update (0.5ms)[0m  [1m[33mUPDATE "listings" SET "updated_at" = $1 WHERE "listings"."id" = $2[0m  [["updated_at", "2019-06-04 14:48:31.306109"], ["id", 3]]
+  ↳ db/seeds.rb:155
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:155
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:155
+[ActiveJob] [ActiveStorage::AnalyzeJob] [234b13b8-9ff6-4a2b-aaad-2a809f3b8e05] Performing ActiveStorage::AnalyzeJob (Job ID: 234b13b8-9ff6-4a2b-aaad-2a809f3b8e05) from Inline(default) with arguments: #<GlobalID:0x00007f88d88d2558 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [234b13b8-9ff6-4a2b-aaad-2a809f3b8e05] [36m  S3 Storage (52.2ms) [0m[34mDownloaded file from key: Y6Uoy9yw8P2Zj34As89tTvvC[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [234b13b8-9ff6-4a2b-aaad-2a809f3b8e05] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [234b13b8-9ff6-4a2b-aaad-2a809f3b8e05]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [234b13b8-9ff6-4a2b-aaad-2a809f3b8e05]   ↳ db/seeds.rb:155
+[ActiveJob] [ActiveStorage::AnalyzeJob] [234b13b8-9ff6-4a2b-aaad-2a809f3b8e05]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 9]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [234b13b8-9ff6-4a2b-aaad-2a809f3b8e05]   ↳ db/seeds.rb:155
+[ActiveJob] [ActiveStorage::AnalyzeJob] [234b13b8-9ff6-4a2b-aaad-2a809f3b8e05]   [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [234b13b8-9ff6-4a2b-aaad-2a809f3b8e05]   ↳ db/seeds.rb:155
+[ActiveJob] [ActiveStorage::AnalyzeJob] [234b13b8-9ff6-4a2b-aaad-2a809f3b8e05] Performed ActiveStorage::AnalyzeJob (Job ID: 234b13b8-9ff6-4a2b-aaad-2a809f3b8e05) from Inline(default) in 110.66ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 234b13b8-9ff6-4a2b-aaad-2a809f3b8e05) to Inline(default) with arguments: #<GlobalID:0x00007f88d8b32c08 @uri=#<URI::GID gid://air-dn-d/ActiveStorage::Blob/9>>
+  [1m[36mListing Load (0.9ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" ORDER BY "listings"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Listing"], ["name", "photos"], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-06-04 10:49:35 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macbookpro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2icS3FQ6yteaRWKPaijbrg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 1063ms (Views: 1056.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/listings/1" for ::1 at 2019-06-04 10:49:37 -0400
+Processing by Api::ListingsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mListing Load (0.9ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/listings_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/listings_controller.rb:17
+  Rendering api/listings/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Listing"], ["name", "photos"], ["LIMIT", 1]]
+  ↳ app/views/api/listings/_listing.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Listing"], ["name", "photos"]]
+  ↳ app/views/api/listings/_listing.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/listings/_listing.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/listings/_listing.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/listings/_listing.json.jbuilder:4
+  Rendered api/listings/_listing.json.jbuilder (5552.6ms)
+  Rendered api/listings/show.json.jbuilder (5554.4ms)
+Completed 200 OK in 5617ms (Views: 5548.2ms | ActiveRecord: 28.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ae83bcf52e11c98c314c683d14e0c6542592ba45/tree-house.jpg" for ::1 at 2019-06-04 10:49:42 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--703741c824d7df0f5151c8e1c01208d68811e059/tree-house-inside.jpg" for ::1 at 2019-06-04 10:49:42 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ca7cf06e4410cb91072e420841ae765f4599d4c4/tree-house-bed.jpg" for ::1 at 2019-06-04 10:49:42 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--703741c824d7df0f5151c8e1c01208d68811e059", "filename"=>"tree-house-inside"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ae83bcf52e11c98c314c683d14e0c6542592ba45", "filename"=>"tree-house"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/macbookpro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (3.0ms) [0m[34mGenerated URL for file at key: qBb8nuFGt8nChRroA2fEdoiQ (https://airdnd-dev.s3.amazonaws.com/qBb8nuFGt8nChRroA2fEdoiQ?response-content-disposition=inline%3B%20filename%3D%22tree-house.jpg%22%3B%20filename%2A%3DUTF-8%27%27tree-house.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWCK5IEPIJMIEFT7A%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T144942Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cb71a39d0482dc9282cd4131bf85c44ffe8ddfdd5ebd5008ecebf7532e51b154)[0m
+Redirected to https://airdnd-dev.s3.amazonaws.com/qBb8nuFGt8nChRroA2fEdoiQ?response-content-disposition=inline%3B%20filename%3D%22tree-house.jpg%22%3B%20filename%2A%3DUTF-8%27%27tree-house.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWCK5IEPIJMIEFT7A%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T144942Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cb71a39d0482dc9282cd4131bf85c44ffe8ddfdd5ebd5008ecebf7532e51b154
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/macbookpro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.6ms) [0m[34mGenerated URL for file at key: yA4QfqcD4uzqVifDVW6DSMRS (https://airdnd-dev.s3.amazonaws.com/yA4QfqcD4uzqVifDVW6DSMRS?response-content-disposition=inline%3B%20filename%3D%22tree-house-inside.jpg%22%3B%20filename%2A%3DUTF-8%27%27tree-house-inside.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWCK5IEPIJMIEFT7A%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T144942Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=419de9b86cd26c28a83341e1a54db8b7e5ada7be939ad41c78611bb662ec1958)[0m
+Redirected to https://airdnd-dev.s3.amazonaws.com/yA4QfqcD4uzqVifDVW6DSMRS?response-content-disposition=inline%3B%20filename%3D%22tree-house-inside.jpg%22%3B%20filename%2A%3DUTF-8%27%27tree-house-inside.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWCK5IEPIJMIEFT7A%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T144942Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=419de9b86cd26c28a83341e1a54db8b7e5ada7be939ad41c78611bb662ec1958
+Completed 302 Found in 14ms (ActiveRecord: 2.4ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ca7cf06e4410cb91072e420841ae765f4599d4c4", "filename"=>"tree-house-bed"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/macbookpro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (0.9ms) [0m[34mGenerated URL for file at key: 99ewjXkcgZRp4W3SvVVzQR9T (https://airdnd-dev.s3.amazonaws.com/99ewjXkcgZRp4W3SvVVzQR9T?response-content-disposition=inline%3B%20filename%3D%22tree-house-bed.jpg%22%3B%20filename%2A%3DUTF-8%27%27tree-house-bed.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWCK5IEPIJMIEFT7A%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T144942Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=631c84dde6e6afc8ba6d0723f5c48aea60ec7150d3f7878ebb7c2ac46f4ae3ee)[0m
+Redirected to https://airdnd-dev.s3.amazonaws.com/99ewjXkcgZRp4W3SvVVzQR9T?response-content-disposition=inline%3B%20filename%3D%22tree-house-bed.jpg%22%3B%20filename%2A%3DUTF-8%27%27tree-house-bed.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWCK5IEPIJMIEFT7A%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T144942Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=631c84dde6e6afc8ba6d0723f5c48aea60ec7150d3f7878ebb7c2ac46f4ae3ee
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+

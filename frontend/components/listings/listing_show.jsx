@@ -32,8 +32,8 @@ class ListingShow extends React.Component{
         let images, blurb = null;
         if (photoUrls) { images = <ListingImages photoUrls={this.props.listing.photoUrls}/>}
         if (description){ blurb = description}
-        // const edition = phbEdition(edition_num); only if you're hosting a campaign
-        // let expansions = Core rules only" only if you're hosting a campaign
+        const edition = phbEdition(edition_num);
+        let expansions = "Core rules only"
 
         return(
             <div className="listing-show-page">
@@ -60,6 +60,8 @@ class ListingShow extends React.Component{
                                 {/* <span>{expansions}</span> */}
                                 <div className="listing-details">
                                     <span className="listing-info-text">{`${max_players} players max`}</span>
+                                    <span className="listing-info-text">{`PHB ${edition}`}</span>
+                                    <span className="listing-info-text">{expansions}</span>
                                     <span className="listing-info-text">{`${num_bath} bath`}</span>
                                 </div>
                             </li>
