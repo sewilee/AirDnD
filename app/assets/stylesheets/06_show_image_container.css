@@ -1,0 +1,58 @@
+
+.image-container{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 440px;
+}
+
+.main-image{
+    width: 50%;
+    height: calc(100% + 1px);
+}
+
+.side-image{
+    width: 25%;
+    height: 100%;
+}
+
+.up-1,
+.up-2{
+    display: block;
+    width: 100%;
+    height: 50%;
+    border-bottom: 1px solid #484848;
+    border-left: 1px solid #484848;
+    background-size: cover;
+}
+
+.down-1,
+.down-2{
+    display: block;
+    width: 100%;
+    height: 50%;
+    border-left: 1px solid #484848;
+    background-size: cover;
+}
+
+.listing-show-img{
+    border-top: 1px solid #484848;
+    border-bottom: 1px solid #484848;
+}
+
+/* .main-image:hover, 
+.image-down-1:hover,
+.image-down-2:hover,
+.image-up-1:hover,
+.image-up-2:hover{
+    transform: scale(1.1);
+
+} */
+
+/* .main-image, 
+.image-down-1,
+.image-down-2,
+.image-up-1,
+.image-up-2{
+    transition: all 1s ease-in-out;
+} */

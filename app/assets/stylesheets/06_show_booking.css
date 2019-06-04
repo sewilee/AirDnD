@@ -1,0 +1,46 @@
+.listing-show-book{
+    /* box-sizing: border-box; */
+    /* width: 355px; */
+    /* height: 375px; */
+    border: 1px solid #484848;
+    padding: 24px;
+}
+
+.booking-cost,
+.booking-rate i{
+    color: #484848;
+    font-size: 22px;
+    font-weight: 800px;
+}
+
+.booking-text-small{
+    color: #484848;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 0;
+}
+
+.booking-calendar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #7c7c7c;
+
+}
+
+.booking-calendar i{
+    font-size: 24px;
+    color: #484848;
+    padding-right: 8px;
+}
+
+.booking-calendar input[type="text"]{
+    height: 40px;
+    width: 150px;
+    font-size: 20px;
+    border: none;
+    font-weight: 300;
+    padding: 8px;
+    box-sizing: border-box;
+}
