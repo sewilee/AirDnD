@@ -8,7 +8,10 @@ class Search extends React.Component{
         this.handleSearch = this.handleSearch.bind(this);
     }
 
+    
+
     handleSearch(e){
+        debugger
         e.preventDefault();
         this.props.path.history.push('/search')
     }
