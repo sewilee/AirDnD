@@ -1,9 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-
-
-
 class ListingFilteredItem extends React.Component {
     constructor(props) {
         super(props);
@@ -40,10 +37,11 @@ class ListingFilteredItem extends React.Component {
         const edition = this.phbEdition(edition_num);
         let expansions = "Core rules only"
         if (!Object.keys(this.props.listing).length) {
-            return null;
+            return null;s
         }
 
         if (this.props.listing.photoUrls.length) { image_link = this.props.listing.photoUrls[0] }
+
         return (
             <li className="filter-index-items-li" onClick={this.handleClick}>
                 <div className="filter-item">
@@ -52,22 +50,20 @@ class ListingFilteredItem extends React.Component {
 
                 <div className="filter-item-info">
                     <div className="filter-listing-info">
-                        <h4>{location_type}</h4>
+                        <i className="fas fa-scroll"></i>
+                        <h4>{location_type.toUpperCase()}</h4>
                         <h3>{title}</h3>
                         <div className="filter-details">
-                            <span className="filter-info-text">{`${max_players} players max`}</span>
-                            <span className="filter-info-text">{`PHB ${edition}`}</span>
-                            <span className="filter-info-text">{expansions}</span>
-                            <span className="filter-info-text">{`${num_bath} bath`}</span>
+                            <p className="filter-info-text"> {`${max_players} players max`} &#183; {`PHB ${edition}`} &#183; {expansions} &#183; {`${num_bath} bath`}</p>
                         </div>
                     </div>
                     <div className="filter-item-rating">
                         <div className="filter-rating-icon">
                             {ratingIcon}<span>10</span>
                         </div>
-                        <p className="filter-item-text">
+                        <p className="filter-rates-text">
                             <i className="fas fa-coins"></i>
-                            {rate} GP per night
+                            {rate} GP/night
                         </p>
                     </div>
                 </div>
