@@ -5,7 +5,9 @@ import NavBar from './nav_bar';
 
 const msp = (state, ownProps) => {
     const { session, entities:{users} } = state;
+    const { path } = ownProps
     return ({
+        path,
         currentUser: users[session.id] || null,
     });
 };

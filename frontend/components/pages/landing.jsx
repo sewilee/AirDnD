@@ -4,10 +4,10 @@ import ListingIndexContainer from '../listings/listing_index_container';
 
 const Landing = (props) => {
     return (
-        <div className="landing-page">
-            < NavBarContainer />
+        <>
+            < NavBarContainer path={props}/>
             < ListingIndexContainer />
-        </div>
+        </>
     )
 }
 

@@ -3,7 +3,7 @@ class Listing < ApplicationRecord
     validates :address, presence: true, uniqueness: true
     validates :city, :longitude, :latitude, presence: true
     validates :num_bath, :expansion, :edition_num, :max_players, presence: true
-    validates :location_type, inclusion: { in: ["City", "Fortification", "Religious Locations", "Wilderness", "The Underdark"],
+    validates :location_type, inclusion: { in: ["City", "Fortification", "Religious Location", "Wilderness", "The Underdark"],
         message: "%{value} is not a valid location type" }
     validates :expansion, inclusion: { in: ["true", "false"] }
 

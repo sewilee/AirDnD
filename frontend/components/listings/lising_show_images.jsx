@@ -13,8 +13,8 @@ const ListingImages = (props) => {
             <div className="side-image">
                 {/* <img src={photoUrls[3]} className="image-up-2" />
                 <img src={photoUrls[4]} className="image-down-3" /> */}
-                <img src={window.img_notfound} className="image up-2" />
-                <img src={window.img_notfound} className="image down-2" />
+                <img src={photoUrls[3]} className="image up-2" />
+                <img src={photoUrls[4]} className="image down-2" />
             </div>
         </div>
         // <div className="listing-image-container">

@@ -11,8 +11,8 @@ class BookingBox extends React.Component{
             <div className="booking-container">
                 <section className="booking-rate">
                     <i className="fas fa-coins"></i>
-                    <span className="booking-cost">{rate}</span>
-                    <span className="booking-text-small">GP per night</span> 
+                    <span className="booking-cost">  {rate}</span>
+                    <span className="booking-text-small">  GP per night</span> 
                 </section>
                 <section className="booking-info">
                     <div className="booking-date">
@@ -24,16 +24,16 @@ class BookingBox extends React.Component{
                         </div>
                     </div>
                     <div className="booking-players">
-                        <p className="booking-text-small">Players</p>
-                        <div>
-                            <select>
+                        <p className="booking-text-small">Party Size</p>
+                        <div className="booking-players-dd">
+                            <select className="booking-players-input">
                                 <option value="">players</option>
                             </select>
                             <i className="fas fa-chevron-down"></i>
                         </div>
                     </div>
-                    <button>Roll for it</button>
                 </section>
+                <button className="booking-submit">Roll for it</button>
             </div>
         )
     }

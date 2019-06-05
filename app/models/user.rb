@@ -14,6 +14,8 @@ class User < ApplicationRecord
     foreign_key: :host_id,
     class_name: :Listing
 
+    has_one_attached :photo
+    
     def validate_age
         if self.birthday && (self.birthday + 18.year) < Date.current
             return true

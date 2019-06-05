@@ -1,16 +1,32 @@
 .listing-show-book{
-    /* box-sizing: border-box; */
-    /* width: 355px; */
-    /* height: 375px; */
-    border: 1px solid #484848;
+    box-sizing: border-box;
+    height: 375px;
+    border: 1px solid #e7e7e7;
     padding: 24px;
+    /* height: 100%; */
+}
+
+.booking-rate{
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.booking-info{
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .booking-cost,
 .booking-rate i{
-    color: #484848;
+    color: #7c7c7c;
     font-size: 22px;
     font-weight: 800px;
+}
+
+.booking-cost{
+    color: #484848;
 }
 
 .booking-text-small{
@@ -25,13 +41,13 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: 1px solid #7c7c7c;
+    border: 1px solid#e7e7e7;
 
 }
 
 .booking-calendar i{
     font-size: 24px;
-    color: #484848;
+    color: #7c7c7c;
     padding-right: 8px;
 }
 
@@ -43,4 +59,60 @@
     font-weight: 300;
     padding: 8px;
     box-sizing: border-box;
+}
+
+.booking-players {
+    padding-top: 11px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.booking-players-dd{
+    position: relative;
+    width: 100%;
+}
+
+.booking-players-dd i {
+    top: 17px;
+    font-size: 16px;
+    position: absolute;
+    color: #8f8f8f;
+    right: 11px;
+}
+
+.booking-players-input{
+    box-sizing: border-box;
+    height: 46px;
+    width: 100%;
+    /* margin: 0; */
+    background-color: white;
+    border: 1px solid #e7e7e7;
+    color: #7c7c7c;
+    padding: 11px 40px 11px 11px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    font-size: 20px;
+}
+
+.booking-submit{
+    width: 100%;
+    height: 46px;
+    padding: 11px;
+    margin: 11px 0;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    background-color: #ff5a5f;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
 }

@@ -7,8 +7,8 @@
     background-image: image-url('castle_02.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    height: 800px;
+    // background-position: center;
+    height: 1000px;
     z-index: -1;
     width: 100%;
 }
@@ -153,11 +153,16 @@
     width:600px;
 }
 
+.search-bar form{
+    position: relative;
+}
+
 
 .search-bar i{
     font-size: 18px;
     position: absolute;
     color: #484848;
     left: 15px;
+    top: 15px;
 }
 

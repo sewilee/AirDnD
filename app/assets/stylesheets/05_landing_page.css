@@ -1,0 +1,109 @@
+.listing-page{
+    box-sizing: border-box;
+    position: absolute;
+    top: 80px;
+    padding: 0 80px;
+    height: 100%;
+    /* width: 100%; */
+}
+
+.listing-index {
+    height: 100%;
+    width: 100%;
+    padding: 11px 0;
+}
+
+.listing-index h1 {
+    /* width: 100%; */
+    font-size: 24px;
+    color: #484848;
+    font-weight: 800;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 8px 8px 0px 8px;
+
+}
+
+.listing-index-items {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.listing-index-items li {
+    /* display: inline; */
+    box-sizing: border-box;
+    padding: 8px 8px 12px;
+}
+
+/* .listing-index-items li:nth-child(4n):after { 
+    content: '\a';
+    display: block;
+} */
+
+.listing-item-container {
+    /* height: 360px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.listing-item {
+    width: 292.5px;
+    height: 240px;
+}
+
+.listing-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    /* max-width: 100%; */
+    /* max-height: 100%; */
+}
+
+.listing-item-info {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+}
+
+.listing-item-info div {
+    /* width: 100%; */
+}
+
+.listing-item-info h4 {
+    color: #767676;
+    font-size: 12px;
+    font-weight: 800px;
+}
+
+.listing-item-info h3 {
+    color: #484848;
+    font-size: 16px;
+    font-weight: 800px;
+    margin: 8px 0;
+}
+
+.listing-item-info p {
+    color: #484848;
+    font-size: 14px;
+    /* margin: 8px 0; */
+}
+
+.listing-index-items p i {
+    color: #767676;
+    padding-right: 5px;
+}
+
+.listing-item-rating {
+    display: flex;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.listing-item-rating-icon {
+    padding-right: 5px;
+}
+

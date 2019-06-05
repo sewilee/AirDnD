@@ -5,7 +5,7 @@ import ListingShowContainer from '../listings/listing_show_container';
 const Show = (props) => {
     return (
         <div className="show-page">
-            < NavBarContainer />
+            < NavBarContainer path={props}/>
             < ListingShowContainer listing={props}/>
         </div>
     )

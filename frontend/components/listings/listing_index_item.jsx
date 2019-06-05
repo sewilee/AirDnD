@@ -25,6 +25,7 @@ class ListingIndexItem extends React.Component{
     render(){
         const { title, rate, location_type, city, } = this.props.listing;
         let image_link = window.img_notfound;
+    
         if (this.props.listing.photoUrls.length) { image_link = this.props.listing.photoUrls[0] }
         return(
             <li className="listing-index-items-li" onClick={this.handleClick}>

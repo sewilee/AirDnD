@@ -2,18 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UserDropdown from '../dropdown/user_dropdown';
 import HostDropdown from '../dropdown/host_dropdown';
+import Search from '../search/search';
 import { remove } from 'lodash';
 
 const LeftNav = (props) => {
-    const { page } = props
+    const { page, path } = props;
     let search = null;
-    
     if(page != "splash"){
         search = (
-            <li className="search-bar"> 
-                <i className="fas fa-search"></i>
-                <input type="search" placeholder="Search"/>
-            </li> 
+            <Search path={path}/>
         );
     }
 
@@ -87,7 +84,7 @@ class NavBar extends React.Component{
         
         const loggedOut = (
             <header className={`nav-bar${navBarClass}`}>
-                <LeftNav page={this.props.page}/>
+                <LeftNav page={this.props.page} path={this.props.path}/>
                 <nav className="nav-rightside">
                     <ul>
                         <li className="nav-btn">
