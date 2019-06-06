@@ -19,7 +19,8 @@ const App = () => {
         <div className="main">
             <Modal />
             <Switch>
-                <Route exact path="/search" component={Filtered}/>
+                <Route path="/search/:type" component={Filtered}/>
+                <Route path="/search" component={Filtered}/>
                 <Route path="/listings/:id" component={Show} />
                 <Route path="/listings" component={Landing}/>
                 <Route exact path ="/" component={Splash}/>

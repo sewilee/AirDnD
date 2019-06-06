@@ -7,13 +7,14 @@
 
 .filtered-listings{
     box-sizing: border-box;
-    width: 45%;
+    width: 775px;
     padding: 24px;
 }
 
 .filtered-map{
     /* padding: 24px; */
-    width: 55%;
+    /* width: 58.5%; */
+    width: calc(100% - 775px);
     height: 90%;
     position: fixed;
     right: 0;
@@ -46,7 +47,7 @@
 }
 
 .filter-item{
-    width: 37%;
+    width: 300px;
 }
 
 .filter-item img{
@@ -93,7 +94,7 @@
 .filter-rating-icon{
     font-size: 12px;
     display: flex;
-    color: #cb3e4cc2;
+    color: #006c70;
 }
 
 .filter-rating-icon span{
@@ -107,6 +108,11 @@
     font-weight: 600;
 }
 
+.filter-rates-text .fa-coins{
+    padding-right: 5px;
+    font-size: 12px;
+}
+
 .filter-index-items-li:hover{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px;
 }
@@ -115,6 +121,17 @@
     position: absolute;
     right: 20px;
     color: #e7e7e7;
+}
+
+@media screen and (max-width: 1300px){
+    .filtered-map{
+        display: none;
+    }
+
+    .filtered-page{
+        justify-content: center;
+    }
+
 }
 
 

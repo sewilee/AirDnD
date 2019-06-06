@@ -1,9 +1,17 @@
 class Api::ListingsController < ApplicationController
     def index
-        @listings = Listing.all
+        if (bounds && params[:searchFilter] || params[:searchFilter])
+            new_list = Listing.where(location_type: params[:searchFilter])
+        elsif bounds
+            new_list = Listing.in_bounds(bounds)
+                # .group_by(:id)
+        else
+            new_list = Listing.all
+        end
+        @listings = new_list
     end
 
-    def create
+    def creates
         @listing = Listing.new(listing_params)
         if @listing.save
             render :show
@@ -45,4 +53,9 @@ class Api::ListingsController < ApplicationController
             photos: []
         )
     end
+
+    def bounds 
+        params[:bounds]
+    end
+
 end

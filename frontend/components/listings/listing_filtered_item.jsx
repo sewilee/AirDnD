@@ -50,16 +50,16 @@ class ListingFilteredItem extends React.Component {
 
                 <div className="filter-item-info">
                     <div className="filter-listing-info">
-                        <i className="fas fa-scroll"></i>
+                        {/* <i className="fas fa-scroll"></i> */}
                         <h4>{location_type.toUpperCase()}</h4>
                         <h3>{title}</h3>
                         <div className="filter-details">
-                            <p className="filter-info-text"> {`${max_players} players max`} &#183; {`PHB ${edition}`} &#183; {expansions} &#183; {`${num_bath} bath`}</p>
+                            <p className="filter-info-text"> {`${max_players} players`} &#183; {edition} &#183; {expansions}</p>
                         </div>
                     </div>
                     <div className="filter-item-rating">
                         <div className="filter-rating-icon">
-                            {ratingIcon}<span>10</span>
+                            {ratingIcon} {/*<span>10</span>*/}
                         </div>
                         <p className="filter-rates-text">
                             <i className="fas fa-coins"></i>

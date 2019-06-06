@@ -33,14 +33,14 @@ export const HostedBy = (host) => {
     )
 };
 
-export const Neighborhood = (city) => {
+export const Neighborhood = (props) => {
     return(
         <div className="listing-other-info">
             <div>
                 <h4 className="listing-header-citymap">The neighborhood</h4>
             </div>
             <div className="listing-info-map">
-                <ListingMap />
+                <ListingMap singleListing={props.singleListing} fetchListing={props.fetchListing}/>
             </div>
         </div>
     )

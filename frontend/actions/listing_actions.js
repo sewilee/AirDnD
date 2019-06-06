@@ -18,9 +18,9 @@ const receiveListing = (listing) => {
     });
 };
 
-export const fetchListings = () => {
+export const fetchListings = (filters) => {
     return (dispatch) => {
-        return APIListingUtil.fetchListings().then( (res) => {
+        return APIListingUtil.fetchListings(filters).then( (res) => {
             dispatch(receiveListings(res));
         });
     };
