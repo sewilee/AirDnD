@@ -89,10 +89,9 @@ class ListingShow extends React.Component{
                                 <div className="listing-detail-container">
                                     <h6 className="listing-details-header">{location_type}</h6>
                                     <div className="listing-details">
-                                        <span className="listing-info-text">{`${max_players} players max`}</span>
-                                        <span className="listing-info-text">{`PHB ${edition}`}</span>
+                                        <span className="listing-info-text">{`${max_players} players`}</span>
+                                        <span className="listing-info-text">{`${edition}`}</span>
                                         <span className="listing-info-text">{expansions}</span>
-                                        <span className="listing-info-text">{`${num_bath} bath`}</span>
                                     </div>
                                 </div>
                             </li>
@@ -105,13 +104,13 @@ class ListingShow extends React.Component{
                         </div>
                         <div>
                             <HostedBy host={hostInfo}/>
-                            <Neighborhood />
+                            <Neighborhood singleListing={this.props.listing} fetchListing={this.props.fetchListing}/>
                             <Cancellations cancelType="Strict"/>
                         </div>
                     </main>
-                    <aside className="listing-show-book">
-                        <BookingBox rate={rate}/>
-                    </aside>
+                    {/* <aside className="listing-show-book"> */}
+                        {/* <BookingBox rate={rate}/> */}
+                    {/* </aside> */}
                 </section>
             </div>
         )

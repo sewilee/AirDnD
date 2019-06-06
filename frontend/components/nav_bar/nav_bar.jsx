@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UserDropdown from '../dropdown/user_dropdown';
 import HostDropdown from '../dropdown/host_dropdown';
-import Search from '../search/search';
+import SearchContainer from '../search/search_container';
 import { remove } from 'lodash';
 
 const LeftNav = (props) => {
@@ -10,7 +10,7 @@ const LeftNav = (props) => {
     let search = null;
     if(page != "splash"){
         search = (
-            <Search path={path}/>
+            <SearchContainer path={path}/>
         );
     }
 
