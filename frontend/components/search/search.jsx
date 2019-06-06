@@ -13,6 +13,36 @@ class Search extends React.Component{
         this.handleFilter = this.handleFilter.bind(this);
     }
 
+    checkFilter(input){
+        const types = {
+            City: ["tarven", "bar", "city", "blacksmith"],
+            Fortification: ["castle", "tower", "keep", "fort", "dungeon"],
+            Wilderness: ["forest", "woods", "island", "swamp", "ocean", "cave"],
+            "Religious Location": ["church", "temple", "sanctuary", "monastery", "tomb", "shrine", "religious"],
+            "The Underdark": ["underground", "underdark"],
+        }
+        const filterKeys = Object.keys(types);
+        for(let i = 0; i < filterKeys.length; i++){
+            if(types[filterKeys[i]].indexOf(input) !== -1){
+                return filterKeys[i];
+            }
+        }
+
+        return null;
+    }
+
+    componentDidMount(){
+        let pathName = this.props.path.location.pathname;
+        if(pathName === "/search/"){
+            pathName = pathName.split("/"); // ["search", "city"]
+            if(pathName[2] !== -1){
+                const filter = pathName[2].split("%20").join(" ");
+                const type = this.checkFilter(filter);
+                this.handleFilter(type);
+            }
+        }
+    }
+
     updateSearch(e){
         this.setState({
             search: e.currentTarget.value
@@ -20,7 +50,8 @@ class Search extends React.Component{
     }
 
     handleFilter(input){
-        this.props.changeFilter("searchFilter", input)
+        const type = this.checkFilter(input)
+        this.props.changeFilter("searchFilter", type)
     }
 
     handleSearch(e){

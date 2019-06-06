@@ -10,7 +10,6 @@ class ListingMap extends React.Component{
     }
 
     componentDidMount(){
-        debugger
         const{ singleListing, listings } = this.props
 
         let mapOptions;
@@ -44,6 +43,7 @@ class ListingMap extends React.Component{
         } else {
             this.MarkerManager.updateMarker(this.props.listings);
         }
+        
     }
     // componentDidMount(){
     //     const mapOptions = {

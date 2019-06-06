@@ -5,16 +5,23 @@ class MarkerManager {
         this.updateMarker = this.updateMarker.bind(this)
     }
 
+    componentDidUpdate(){
+        // debugger
+    }
+
     updateMarker(listings){
         const listingObj = {};
         
         listings.forEach( (listing) => {listingObj[listing.id] = listing})
-        listings.filter( (listing) => {!this.markers[listing.id]})
+        let newList = listings.filter( (listing) => !this.markers[listing.id])
+        newList.forEach( (listing) => {this.createMarkerFromListing(listing)});
+        let remove = Object.keys(this.markers).filter( (listingId) => {
 
-        listings.forEach( (listing) => {this.createMarkerFromListing(listing)});
-        Object.keys(this.markers)
-            .filter( (listingId) => {!listingObj[listingId]})
-            .forEach( (listingId) => this.removeMarker(this.markers[listingId]));
+            if(!listingObj[listingId]){
+                return listingId
+            }
+        });
+        remove.forEach( (listingId) => this.removeMarker(this.markers[listingId]));
     }
 
     createMarkerFromListing(listing){
@@ -28,8 +35,13 @@ class MarkerManager {
     }
 
     removeMarker(marker){
+        // debugger
+        // this.markers[marker.listingId].setVisible(false);
+        marker.setMap(null);
+        // debugger
         this.markers[marker.listingId].setMap(null);
         delete this.markers[marker.listingId];
+        // debugger
     }
 }
 

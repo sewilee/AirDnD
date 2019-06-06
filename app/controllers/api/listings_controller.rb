@@ -1,19 +1,14 @@
 class Api::ListingsController < ApplicationController
     def index
-        if (bounds && params[:searchFilter])
-            debugger
-            new_list = Listing
-                .where(location_type: params[:searchFilter])
-            debugger
+        if (bounds && params[:searchFilter] || params[:searchFilter])
+            new_list = Listing.where(location_type: params[:searchFilter])
         elsif bounds
             new_list = Listing.in_bounds(bounds)
-            debugger
                 # .group_by(:id)
         else
             new_list = Listing.all
         end
         @listings = new_list
-        debugger
     end
 
     def creates

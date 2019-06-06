@@ -4,10 +4,12 @@ import { fetchListings } from '../../actions/listing_actions';
 import { changeFilter } from '../../actions/filter_actions';
 import ListingFilteredItem from './listing_filtered_item';
 import ListingMap from '../map/listing_map';
+import MarkerManager from '../../util/marker_manager';
 
 const msp = (state, ownProps) => {
     return ({
         listings: Object.values(state.entities.listings),
+        filters: state.ui.filters,
     });
 };
 
@@ -23,9 +25,12 @@ class ListingFiltered extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        
-    }
+    // componentDidUpdate(prepProps) {
+    //     if(this.props.listings.length !== prepProps.listings.length){
+    //         debugger
+    //         MarkerManager.updateMarker(this.props.listings);
+    //     }
+    // }
 
     render() {
         const listings = this.props.listings.map((listing) => {
