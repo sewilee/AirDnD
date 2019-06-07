@@ -1,24 +1,33 @@
-# README
+# Air D&D | [Live Demo](https://air-d-n-d.herokuapp.com/#/)
+Making your Dungeon & Dragon's campaign search simpler. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Demo](https://air-d-n-d.herokuapp.com/#/) | Inspired by AirBnB
 
-Things you may want to cover:
+## Key Features
+A few things you can do with Air D&D:
+![](https://airdnd-dev.s3.amazonaws.com/readme/map-airdnd.png)
+* User Authentication
+* View all the local D&D campaigns in New York City
+* Filter the search by campaign type (ex: forest, church, castle...etc)
+* View each campaign description, rules, and perks.
+* Book a campaign of your choice. (required login to book.)
 
-* Ruby version
+## Technologies Used
+Backend development
+* Ruby on Rails
+* PostgreSQL
 
-* System dependencies
+Frontend development
+* React-Redux
 
-* Configuration
+Web services
+* Amazon Web Services
+* Google maps
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Future Features
+* Edit/Delete Bookings
+* Review and ratings
+* User Show Page
+* Save Campaigns
+* Search Campaigns by locations
+* Messaging
