@@ -63,7 +63,7 @@ class ListingFilteredItem extends React.Component {
                         </div>
                         <p className="filter-rates-text">
                             <i className="fas fa-coins"></i>
-                            {rate} GP/night
+                            {rate} gp/night
                         </p>
                     </div>
                 </div>

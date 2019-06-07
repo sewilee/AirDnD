@@ -9,6 +9,7 @@ require 'open-uri'
 
 User.delete_all
 Listing.delete_all
+Booking.delete_all
 
 user1 = User.create(
     email: "demouser@demo.com",
@@ -87,11 +88,11 @@ listing1 = Listing.create(
     title: "Air Ashari",
     description: "The Ashari are a multiracial people divided into four tribes: Air, Earth, Water, and Fire. Each of the four tribes live in locations where the Elemental Planes have bled into the Material Plane. The Ashari make it their duty to guard these portals, ensuring that nothing dangerous is able to pass between the planes.-$-The Ashari are, for the most part, insular, living in remote areas and not interacting much with the outside world or even each other. Their tribes are made up of a diversity of races.-$-In their role as guardians of the Elemental Planes portals, the Ashari have developed deep connections to their respective elements that influence each Ashari's culture. Their leaders are usually skilled in druidic or other nature magics, but their societies include a variety of professions and classes aside from druids.",
     rate: 50,
-    city: "Woodhaven, New York",
+    city: "New York, New York",
     address: "103 Headquarters Road",
     location_type: "Wilderness",
-    latitude: 44.131347,
-    longitude: -110.998935,
+    latitude: 40.742779,
+    longitude: -73.989888,
     num_bath: 0,
     expansion: "false",
     edition_num: 5,
@@ -115,11 +116,11 @@ listing2 = Listing.create(
     title: "Greyskull Keep",
     description: "Greyskull Keep was the home of Vox Machina. It is located in Tal'Dorei, just outside the slums of Emon on the southern side.-$-After first saving the city of Emon, Sovereign Uriel Tal'Dorei III and the Council of Tal'Dorei rewarded them with the construction of Greyskull. It took six months to build.  Following Vox Machina's adventures in Whitestone, Sovereign Uriel agreed to make Greyskull Keep the Whitestone Embassy in Emon.-$-Greyskull Keep is located on top of a grassy hill surrounded by a river outside of the wall of the Abdar's Promenade district. A massive gate blocks the entrance to the courtyard of the keep, usually guarded by at least one person at all times. An iron bell is situated at the top of the keep to alert everyone inside of new arrivals.",
     rate: 600,
-    city: "Alexandria Bay, New York",
+    city: "New York, New York",
     address: "1 Heart Island",
     location_type: "Fortification",
-    latitude: 44.344372,
-    longitude: -75.922657,
+    latitude: 40.729711,
+    longitude: -73.978004,
     num_bath: 1,
     expansion: "false",
     edition_num: 5,
@@ -146,8 +147,8 @@ listing3 = Listing.create(
     city: "New York, New York",
     address: "45 Zadash Gate",
     location_type: "City",
-    latitude: 44.32372,
-    longitude: -75.92967,
+    latitude: 40.714118,
+    longitude: -73.997388,
     num_bath: 2,
     expansion: "false",
     edition_num: 5,
@@ -173,7 +174,7 @@ listing4 = Listing.create(
     rate: 5,
     city: "New York, New York",
     address: "E rd",
-    location_type: "City",
+    location_type: "Fortification",
     latitude: 40.751693,
     longitude: -73.959634,
     num_bath: 0,
@@ -305,3 +306,19 @@ listing8.photos.attach(io: forge2, filename: "forge-02.jpg")
 listing8.photos.attach(io: forge3, filename: "forge-03.jpg")
 listing8.photos.attach(io: forge4, filename: "forge-04.jpg")
 listing8.photos.attach(io: forge5, filename: "forge-05.jpg")
+
+book1 = Booking.create(
+    listing_id: listing5[:id],
+    guest_id: user3[:id],
+    start_date: Date.new(2019, 9, 10),
+    end_date: Date.new(2019, 9, 12),
+    players: 4,
+)
+
+book2 = Booking.create(
+    listing_id: listing5[:id],
+    guest_id: user6[:id],
+    start_date: Date.new(2019, 8, 3),
+    end_date: Date.new(2019, 8, 9),
+    players: 4,
+)
