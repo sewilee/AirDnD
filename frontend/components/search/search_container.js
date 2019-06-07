@@ -6,6 +6,8 @@ import Search from './search';
 const msp = (state, ownProps) => {
     return({
         listings: Object.values(state.entities.listings),
+        page: ownProps.page,
+        path: ownProps.path,
     });
 };
 

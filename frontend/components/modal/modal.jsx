@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+import CreateBookingContainer from '../bookings/create_booking_container';
+import ConfirmedBooking from '../bookings/booking_submitted';
 
 const msp = (state) => {
     return({
@@ -28,6 +30,12 @@ const Modal = (props) => {
             break;
         case "signup":
             component = <SignupFormContainer />
+            break;
+        case "book":
+            component = <CreateBookingContainer />
+            break;
+        case "booking-submitted":
+            component = <ConfirmedBooking />
             break;
         default:
             return null;

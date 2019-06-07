@@ -5,10 +5,6 @@ class MarkerManager {
         this.updateMarker = this.updateMarker.bind(this)
     }
 
-    componentDidUpdate(){
-        // debugger
-    }
-
     updateMarker(listings){
         const listingObj = {};
         
@@ -35,13 +31,9 @@ class MarkerManager {
     }
 
     removeMarker(marker){
-        // debugger
-        // this.markers[marker.listingId].setVisible(false);
         marker.setMap(null);
-        // debugger
         this.markers[marker.listingId].setMap(null);
         delete this.markers[marker.listingId];
-        // debugger
     }
 }
 

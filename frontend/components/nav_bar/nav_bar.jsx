@@ -126,7 +126,7 @@ class NavBar extends React.Component{
         
         const loggedIn = (
             <header className={`nav-bar${navBarClass}`}>
-                <LeftNav page={this.props.page}/>
+                <LeftNav page={this.props.page} path={this.props.path}/>
                 <nav className="nav-rightside">
                     <ul>
                         <li className="nav-btn">

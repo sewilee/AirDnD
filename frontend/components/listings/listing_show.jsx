@@ -1,6 +1,6 @@
 import React from 'react';
 import ListingImages from './lising_show_images';
-import BookingBox from './listing_show_booking'
+import CreateBookingContainer from '../bookings/create_booking_container';
 import {
     Cancellations,
     HostedBy,
@@ -108,10 +108,18 @@ class ListingShow extends React.Component{
                             <Cancellations cancelType="Strict"/>
                         </div>
                     </main>
-                    {/* <aside className="listing-show-book"> */}
-                        {/* <BookingBox rate={rate}/> */}
-                    {/* </aside> */}
+                    <aside className="listing-book-aside">
+                        <CreateBookingContainer rate={rate} maxPlayers={max_players} listingId={this.props.listingId}/>
+                    </aside>
                 </section>
+                <footer className="listing-book-footer">
+                    <section>
+                        rates
+                    </section>
+                    <section>
+                        <button onClick={() => this.props.openModal("book")}>Roll for it</button>
+                    </section>
+                </footer>
             </div>
         )
     }

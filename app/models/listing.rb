@@ -12,6 +12,11 @@ class Listing < ApplicationRecord
     foreign_key: :host_id,
     class_name: :User
 
+    has_many :bookings,
+    primary_key: :id,
+    foreign_key: :listing_id,
+    class_name: :Booking
+
     has_many_attached :photos
 
     def self.in_bounds(bounds)

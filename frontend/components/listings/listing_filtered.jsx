@@ -27,7 +27,6 @@ class ListingFiltered extends React.Component {
 
     // componentDidUpdate(prepProps) {
     //     if(this.props.listings.length !== prepProps.listings.length){
-    //         debugger
     //         MarkerManager.updateMarker(this.props.listings);
     //     }
     // }
