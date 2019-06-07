@@ -37,24 +37,25 @@ class BookingForm extends React.Component{
     }
 
     handleSubmit(e){
-        e.preventDefault
+        e.preventDefault();
         if(this.props.currentUserId){
             if(validDate(this.state.start_date, this.state.end_date)){
                 const booking = merge({}, this.state)
                 this.props.createBooking(booking);
                 this.props.openModal("booking-submitted")
-                // this.setState({
-                //     start_date: "",
-                //     end_date: "",
-                //     players: "",
-                //     errors: "",
-                // })
+                this.setState({
+                        start_date: "",
+                        end_date: "",
+                        players: "",
+                        errors: "",
+                    })
             }else{
                 this.setState({
                     errors: "Please enter valid dates",
                 })
             }
-        } else{
+        } else {
+            e.stopPropagation();
             this.props.openModal("login");
         }
     }

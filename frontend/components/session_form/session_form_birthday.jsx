@@ -37,7 +37,7 @@ const Birthday = (props) => {
 
     const birthDay = days.map( day => {
         if(day < 10){
-            return <option key={day} value={`0${day}`}>{`0${day}`}</option>
+            return <option key={day} value={day}>{`0${day}`}</option>
         } else {
             return <option key={day} value={day}>{day}</option>
         }
@@ -45,7 +45,7 @@ const Birthday = (props) => {
     
     const birthMonth = months.map( month => {
         if(month < 10){
-            return <option key={month} value={`0${month}`} >{`0${month}`}: {dndMonths[month]}</option>
+            return <option key={month} value={month} >{`0${month}`}: {dndMonths[month]}</option>
         } else {
             return <option key={month} value={month} >{month}: {dndMonths[month]}</option>
         }

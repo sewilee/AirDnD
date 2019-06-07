@@ -47,12 +47,11 @@ const validateEmail = (email) => {
 
 const validateBirthday = (birthday) => {
     const day = Number(birthday.split("-")[2]);
-    const date = new Date(`${birthday} 00:00:00 GMT-04:00`);
+    const date = new Date(`${birthday} 00:00:00 GMT-05:00`);
     const isValidDate = (Boolean(+date) && date.getDate() === day)
 
     const validAge = new Date(birthday);
     validAge.setFullYear(validAge.getFullYear() + 18);
-
     if (birthday === null || birthday === "") return {birthday: "Birthday cannot be blank"};
     if (!isValidDate) return { birthday: "Enter a valid birthday" };
     if (validAge > new Date()) return { birthday: "You must be at least Level 18 to sign up"};

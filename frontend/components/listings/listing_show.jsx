@@ -10,7 +10,7 @@ import {
 const locationTypeIcon = (type) => {
     if (type === "City") { return <i className="fas fa-university"></i>}
     if (type === "Fortification") { return <i className="fab fa-fort-awesome"></i>}
-    if (type === "Religious Locations") { return <i className="fas fa-church"></i>}
+    if (type === "Religious Location") { return <i className="fas fa-church"></i>}
     if (type === "Wilderness") { return <i className="fas fa-tree"></i>}
     if (type === "The Underdark") { return <i className="fas fa-spider"></i>}
 }

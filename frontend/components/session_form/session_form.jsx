@@ -25,7 +25,8 @@ class SessionForm extends React.Component {
   } 
 
   componentDidMount(){
-    this.props.clearErrors()
+    // e.stopPropagation();
+    this.props.clearErrors();
   }
 
   update(field) {
@@ -58,7 +59,6 @@ class SessionForm extends React.Component {
       const birthObj = {year: 0, month: 1, day: 2};
 
       birthArr[birthObj[field]] = e.currentTarget.value;
-      
       this.setState({
         birthday: birthArr.join('-'),
       })
