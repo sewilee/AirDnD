@@ -1,16 +1,19 @@
-.main{
+.main,
+.root,
+.splash-page{
     width: 100%;
+    height: 100%;
 }
 
 .splash-page{
-    /* temp ^^^^^^*/
-    background-image: image-url('castle_02.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    // background-position: center;
-    height: 1000px;
-    z-index: -1;
-    width: 100%;
+    background-image: image-url('final_boss.jpg');
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+	
+  /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
 }
 
  

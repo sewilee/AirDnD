@@ -43,7 +43,7 @@ class ListingIndexItem extends React.Component{
                     <div>
                         <p className="listing-item-text">
                             <i className="fas fa-coins"></i>
-                            {rate} GP per night
+                            {rate} gp per night
                         </p>
                     </div>
                     <div className="listing-item-rating">

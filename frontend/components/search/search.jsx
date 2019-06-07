@@ -32,13 +32,15 @@ class Search extends React.Component{
     }
 
     componentDidMount(){
-        let pathName = this.props.path.location.pathname;
-        if(pathName === "/search/"){
-            pathName = pathName.split("/"); // ["search", "city"]
-            if(pathName[2] !== -1){
-                const filter = pathName[2].split("%20").join(" ");
-                const type = this.checkFilter(filter);
-                this.handleFilter(type);
+        if (this.props.path){
+            let pathName = this.props.path.location.pathname;
+            if(pathName === "/search/"){
+                pathName = pathName.split("/"); // ["search", "city"]
+                if(pathName[2] !== -1){
+                    const filter = pathName[2].split("%20").join(" ");
+                    const type = this.checkFilter(filter);
+                    this.handleFilter(type);
+                }
             }
         }
     }
@@ -69,12 +71,19 @@ class Search extends React.Component{
     }
 
     render(){
+        let className = "search-bar";
+        let submitButton = "search-submit"
+        if(this.props.page === "front-page"){ 
+            className = "front-searchbar";
+            submitButton = "front-submit"
+        }
+
         return(
-            <div className="search-bar">
+            <div className={className}>
                 <form onSubmit={this.handleSearch}>
                     <i className="fas fa-search"></i>
                     <input type="search" placeholder="Search" onChange={this.updateSearch}/>
-                    <input type="submit" value="" className="search-submit"/>
+                    <input type="submit" value="" className={submitButton} value="Search"/>
                 </form>
             </div> 
         )
