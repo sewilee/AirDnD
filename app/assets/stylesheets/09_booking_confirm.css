@@ -1,0 +1,53 @@
+.booking-confirm-page{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 80px;
+    /* height: 100%; */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.confirm-border {
+    display: flex;
+    padding: 24px;
+    width: 500px;
+    height: 700px;
+    color: #484848;
+    font-size: 14px;
+}
+
+.confirm-border h1 {
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+
+.confirm-border h3 {
+    font-size: 16px;
+    padding: 8px 0;
+}
+
+.confirm-border p {
+    padding-bottom: 8px;
+}
+
+.confirm-dates {
+    padding-top: 24px;
+}
+
+
+.confirm-border i {
+    color: #7e7e7e;
+    padding: 0 8px;
+}
+
+.confirm-title{
+    display: flex;
+    flex-direction: column;
+}
+
+.confirm-img {
+    width: 100%;
+    height: 100%;
+}

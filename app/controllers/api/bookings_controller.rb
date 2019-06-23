@@ -1,6 +1,7 @@
 class Api::BookingsController < ApplicationController
     def index
-        @booking = Booking.where(guest_id: current_user.id).include(:listing)
+        # @bookings = Booking.all
+        @bookings = Booking.where(guest_id: current_user.id).includes(:listing)
         render :index
     end
 

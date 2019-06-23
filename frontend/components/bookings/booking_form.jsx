@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-dom';
 import { merge } from 'lodash';
 import { Dates, Players } from './booking_items';
 import { validDate } from './booking_validations';
@@ -15,7 +16,6 @@ class BookingForm extends React.Component{
             players: "2",
             errors: "",
         }
-
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -40,15 +40,20 @@ class BookingForm extends React.Component{
         e.preventDefault();
         if(this.props.currentUserId){
             if(validDate(this.state.start_date, this.state.end_date)){
-                const booking = merge({}, this.state)
-                this.props.createBooking(booking);
-                this.props.openModal("booking-submitted")
-                this.setState({
-                        start_date: "",
-                        end_date: "",
-                        players: "",
-                        errors: "",
-                    })
+                const { listingInfo, createBooking} = this.props;
+                const booking = merge({}, this.state);
+                this.props.path.history.push({
+                    pathname: `/listings/${this.props.listingId}/payment/v1`,
+                    state: {props: {listingInfo, createBooking, booking, days: this.getDays()}}
+                });
+                // this.props.createBooking(booking);
+                // this.props.openModal("booking-submitted");
+                // this.setState({
+                //         start_date: "",
+                //         end_date: "",
+                //         players: "",
+                //         errors: "", 
+                //     });
             }else{
                 this.setState({
                     errors: "Please enter valid dates",
@@ -61,7 +66,7 @@ class BookingForm extends React.Component{
     }
 
     render() {
-        const { rate } = this.props;
+        const { rate, maxPlayers } = this.props.listingInfo;
         const { start_date, end_date } = this.state;
         let totalCost = null;
         if(validDate(start_date, end_date)){
@@ -102,7 +107,7 @@ class BookingForm extends React.Component{
                 <section className="booking-info">
                     <Dates handleInput={this.handleInput}/>
                     {errors}
-                    <Players maxPlayers={this.props.maxPlayers} handleInput={this.handleInput}/>
+                    <Players maxPlayers={maxPlayers} handleInput={this.handleInput}/>
                     {totalCost}
                 </section>
                 <input type="submit" value="Roll for it" className="booking-submit"/>

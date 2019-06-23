@@ -51,12 +51,17 @@ class ListingShow extends React.Component{
         } = this.props.listing;
         
         let images, blurb = null;
-        if (photoUrls) { images = <ListingImages photoUrls={this.props.listing.photoUrls}/>}
+        
+        let listingInfo = null;
 
+        if (photoUrls) { 
+            images = <ListingImages photoUrls={this.props.listing.photoUrls}/>
+            listingInfo = {title, city, location_type, photo: photoUrls[0], rate, maxPlayers: max_players}
+        }
+        
         if (description){ 
             blurb = historyBlurb(description);
-        }
-
+        }        
         const edition = phbEdition(edition_num);
         let expansions = "Core rules only"
         if(!Object.keys(this.props.listing).length){
@@ -109,7 +114,7 @@ class ListingShow extends React.Component{
                         </div>
                     </main>
                     <aside className="listing-book-aside">
-                        <CreateBookingContainer rate={rate} maxPlayers={max_players} listingId={this.props.listingId}/>
+                        <CreateBookingContainer listingId={this.props.listingId} path={this.props.path} listingInfo={listingInfo}/>
                     </aside>
                 </section>
                 <footer className="listing-book-footer">

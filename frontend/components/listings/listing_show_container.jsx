@@ -10,6 +10,7 @@ const msp = (state, ownProps) => {
     return ({
         listingId: listingId,
         listing: state.entities.listings[listingId] || {},
+        path: {history: ownProps.listing.history},
     });
 };
 

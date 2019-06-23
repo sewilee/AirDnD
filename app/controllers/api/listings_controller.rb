@@ -43,6 +43,7 @@ class Api::ListingsController < ApplicationController
             :rate,
             :city,
             :address,
+            :edition_num,
             :location_type,
             :longitude,
             :latitude,

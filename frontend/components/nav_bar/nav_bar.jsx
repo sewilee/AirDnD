@@ -37,6 +37,11 @@ class NavBar extends React.Component{
         }
         this.handleDropdown = this.handleDropdown.bind(this);
         this.closeAllDropdown = this.closeAllDropdown.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(path){
+        this.props.path.history.push(`/${path}`)
     }
     
     closeAllDropdown(){
@@ -140,13 +145,17 @@ class NavBar extends React.Component{
                             <div className="nav-service-text">
                                 <button>Saved</button>   
                             </div>
-                        </li>
+                        </li> */}
 
                         <li className="nav-btn">
-                            <div className="nav-service-text">
-                                <button>Trips</button> 
+                            <div className="nav-service">
+                                <button onClick={() => this.handleClick("trips")}>
+                                    <div className="nav-service-text">
+                                        Trips
+                                    </div>
+                                </button> 
                             </div>
-                        </li> */}
+                        </li>
 
                         {/* <li className="nav-btn">
                             <div className="nav-service-text">

@@ -8,6 +8,7 @@ const msp = (state, ownProps) => {
         booking: state.entities.bookings,
         currentUserId: state.session.id,
         formType: "Book",
+        path: ownProps.path,
     });
 };
 

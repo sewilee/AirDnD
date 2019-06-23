@@ -11,6 +11,8 @@ import Splash from './pages/splash';
 import Landing from './pages/landing';
 import Show from './pages/show'
 import Filtered from './pages/filtered';
+import Trips from './pages/trips';
+import Payment from './pages/payment';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -19,6 +21,8 @@ const App = () => {
         <div className="main">
             <Modal />
             <Switch>
+                <ProtectedRoute path="/trips" component={Trips} />
+                <ProtectedRoute path="/listings/:id/payment/:type" component={Payment} />
                 <Route path="/search/:type" component={Filtered}/>
                 <Route path="/search" component={Filtered}/>
                 <Route path="/listings/:id" component={Show} />
