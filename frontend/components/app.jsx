@@ -21,7 +21,7 @@ const App = () => {
         <div className="main">
             <Modal />
             <Switch>
-                <ProtectedRoute path="/trips" component={Trips} />
+                <ProtectedRoute path="/campaigns" component={Trips} />
                 <ProtectedRoute path="/listings/:id/payment/:type" component={Payment} />
                 <Route path="/search/:type" component={Filtered}/>
                 <Route path="/search" component={Filtered}/>

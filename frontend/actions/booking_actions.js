@@ -18,10 +18,10 @@ const receiveBook = (booking) => {
     })
 };
 
-const removeBook = (id) => {
+const removeBook = (booking) => {
     return({
         type: REMOVE_BOOK,
-        bookingId: id,
+        bookingId: booking.id,
     })
 };
 

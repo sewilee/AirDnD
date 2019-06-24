@@ -1,4 +1,5 @@
 import React from 'react';
+// import Calendar from '../calendar/calendar';
 
 export const Dates = (props) => {
     const { handleInput } = props;
@@ -7,9 +8,14 @@ export const Dates = (props) => {
         <div className="booking-date">
             <p className="booking-text-small">Dates</p>
             <div className="booking-calendar">
-                <input type="date" onChange={handleInput("start_date")}/>
-                <i className="fas fa-feather-alt"></i>
-                <input type="date" onChange={handleInput("end_date")}/>
+                <div className="booking-date">
+                    <p className="booking-text-small">Dates</p>
+                    <div className="booking-calendar">
+                        <input type="date" onChange={handleInput("start_date")}/>
+                        <i className="fas fa-feather-alt"></i>
+                        <input type="date" onChange={handleInput("end_date")}/>
+                    </div>
+                </div>
             </div>
         </div>
     )

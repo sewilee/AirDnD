@@ -28,7 +28,7 @@ class Search extends React.Component{
             }
         }
 
-        return null;
+        return input;
     }
 
     componentDidMount(){

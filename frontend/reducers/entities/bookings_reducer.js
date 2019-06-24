@@ -18,8 +18,9 @@ const bookingReducer = (state = {}, action) => {
         case RECEIVE_BOOK:
             return merge({}, state, action.booking)
         case REMOVE_BOOK:
-            let newState = Object.merge({}, state);
-            delete newState[action.BookingId]
+            let newState = merge({}, state);
+            delete newState.bookings[action.bookingId]
+            debugger
             return newState;
         default: 
             return state;

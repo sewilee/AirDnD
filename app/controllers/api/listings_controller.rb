@@ -1,13 +1,15 @@
 class Api::ListingsController < ApplicationController
     def index
         if (bounds && params[:searchFilter] || params[:searchFilter])
-            new_list = Listing.where(location_type: params[:searchFilter])
+            # new_list = Listing.where(location_type: params[:searchFilter])
+            new_list = Listing.where("UPPER(listings.location_type) LIKE :query OR UPPER(listings.city) LIKE :query OR UPPER(listings.title) LIKE :query", query: "%#{params[:searchFilter].upcase}%")
+            new_list = new_list.uniq
         elsif bounds
             new_list = Listing.in_bounds(bounds)
-                # .group_by(:id)
         else
             new_list = Listing.all
         end
+        # debugger
         @listings = new_list
     end
 

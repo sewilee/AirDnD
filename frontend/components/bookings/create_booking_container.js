@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import BookingForm from './booking_form';
-import { createBooking } from '../../actions/booking_actions';
+import { createBooking, fetchBookings } from '../../actions/booking_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
@@ -15,6 +15,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => {
     return({
         createBooking: (booking) => dispatch(createBooking(booking)),
+        fetchBookings: (guestId) => dispatch(fetchBookings(guestId)),
         openModal: (modal) => dispatch(openModal(modal)),
     });
 };

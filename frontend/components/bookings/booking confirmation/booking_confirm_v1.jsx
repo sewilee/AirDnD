@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment'
 
 function handleSubmit(booking, func, history){
     func(booking);
@@ -7,9 +8,19 @@ function handleSubmit(booking, func, history){
 
 const BookingV1 = ({props, history}) => {
     const { booking, listingInfo, createBooking, days } = props;
+
     const subPrice = listingInfo.rate * days;
     const serviceFee = Math.floor(listingInfo.rate / 25);
     const total = serviceFee + subPrice;
+
+    const start = moment(booking.start_date).format('LL');
+    const end = moment(booking.end_date).format('LL');
+
+    // debugger
+
+    booking.start_date = booking.start_date._d;
+    booking.end_date = booking.end_date._d;
+
 
     let totalCost = (
         <div className="booking-rate-info">
@@ -27,6 +38,8 @@ const BookingV1 = ({props, history}) => {
             </li>
         </div>
     );
+
+    // debugger
     return (
         <main className="booking-confirm-page">
             <section className="confirm-border">
@@ -45,9 +58,9 @@ const BookingV1 = ({props, history}) => {
                         </p>
                         <p>
                             <i className="far fa-calendar"></i>
-                            <span>{booking.start_date}</span>
+                            <span>{start}</span>
                             <i className="fas fa-arrow-right"></i>
-                            <span>{booking.end_date}</span>
+                            <span>{end}</span>
                         </p>
                         {totalCost}
                     </div>

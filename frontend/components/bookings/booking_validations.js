@@ -1,12 +1,14 @@
-export const validDate = (start, end) => {
-    if (start && end ){
-        const startDate = new Date(start);
-        const endDate = new Date(end);
-        if (startDate > endDate){
+import moment from 'moment';
+
+export const validDate = (start, end, bookings = []) => {
+
+    for(let i = 0; i < bookings.length; i++){
+        let existBookStart = moment(bookings[i].start_date);
+        let existBookEnd = moment(bookings[i].end_date);
+    
+        if(start.isBetween(existBookStart, existBookEnd, null, []) || end.isBetween(existBookStart, existBookEnd, null, [])){
             return false;
-        } else{
-            return true;
         }
     }
-    return false
+    return true;
 };

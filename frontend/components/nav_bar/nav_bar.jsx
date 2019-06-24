@@ -149,9 +149,9 @@ class NavBar extends React.Component{
 
                         <li className="nav-btn">
                             <div className="nav-service">
-                                <button onClick={() => this.handleClick("trips")}>
+                                <button onClick={() => this.handleClick("campaigns")}>
                                     <div className="nav-service-text">
-                                        Trips
+                                        Campaigns
                                     </div>
                                 </button> 
                             </div>
