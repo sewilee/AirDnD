@@ -20,17 +20,26 @@
 }
 
 .footer-bar-splash {
-    /* font-weight: bold; */
+    position: absolute;
+    bottom: 0;
     border: none;
+    color: #c2262f;
 }
 
-.footer-bar a,
-.footer-bar-splash a {
+.footer-bar a{
     text-decoration: none;
     color: #7e7e7e;
 }
 
-.footer-bar a:hover,
-.footer-bar-splash a:hover {
+.footer-bar-splash a {
+    text-decoration: none;
     color: #c2262f;
+}
+
+.footer-bar a:hover{
+    color: #c2262f;
+}
+
+.footer-bar-splash a:hover {
+    color: #e7e7e7;
 }
