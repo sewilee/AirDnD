@@ -23,7 +23,7 @@ class Api::ListingsController < ApplicationController
     end
 
     def show
-        listing = Listing.where(id: params[:id]).includes(:bookings, :host)
+        listing = Listing.where(id: params[:id]).includes(:bookings, :host, :reviews)
         @listing = listing[0]
         # @host = User.find(@listing.host_id)
         render :show

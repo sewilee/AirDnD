@@ -21,13 +21,13 @@ class BookingIndex extends React.Component{
 
         let books = (
             <>
-            <p>Oh no! You have no upcoming campaigns. Start exploring ideas for your next game.</p>
-            <img className="booking-notfound" src={window.vox_machina}/>
-            <p className="booking-notfound-p">Feature Image Credit: Amanda Oliver Elm  @flyboy_elm</p>
+                <p>Oh no! You have no upcoming campaigns. Start exploring ideas for your next game.</p>
+                <img className="booking-notfound" src={window.vox_machina}/>
+                <p className="booking-notfound-p">Feature Image Credit: Amanda Oliver Elm  @flyboy_elm</p>
             </>
         )
-        if (Object.values(bookings).length){
-            debugger
+
+        if (bookings instanceof Object && Object.values(bookings).length){
             books = Object.values(bookings).map( book => {
                 return (
                     <BookingIndexItem key={book.id} booking={book} listing={listings[book.listing_id]} deleteBooking={deleteBooking}/>

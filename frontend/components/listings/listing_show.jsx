@@ -1,6 +1,7 @@
 import React from 'react';
 import ListingImages from './lising_show_images';
 import CreateBookingContainer from '../bookings/create_booking_container';
+import ReviewIndexContainer from '../reviews/review_index_container';
 import {
     Cancellations,
     HostedBy,
@@ -111,6 +112,7 @@ class ListingShow extends React.Component{
                             <HostedBy host={hostInfo}/>
                             <Neighborhood singleListing={this.props.listing} fetchListing={this.props.fetchListing}/>
                             <Cancellations cancelType="Strict"/>
+                            <ReviewIndexContainer />
                         </div>
                     </main>
                     <aside className="listing-book-aside">
