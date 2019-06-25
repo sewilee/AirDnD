@@ -9,6 +9,11 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+    has_many :reviews,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Review
+
     has_many :listings,
     primary_key: :id, 
     foreign_key: :host_id,
