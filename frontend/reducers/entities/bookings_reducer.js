@@ -25,6 +25,6 @@ const bookingReducer = (state = {}, action) => {
         default: 
             return state;
     }
-}
+};
 
 export default bookingReducer;

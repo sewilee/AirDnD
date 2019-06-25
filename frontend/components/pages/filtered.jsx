@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import ListingFilter from '../listings/listing_filtered';
+import Footer from '../footer/footer';
 
 const Filtered = (props) => {
     return (
@@ -9,6 +10,7 @@ const Filtered = (props) => {
             <div className="filtered-page">
                 < ListingFilter />
             </div>
+            < Footer />
         </div>
     )
 }

@@ -7,3 +7,11 @@ json.bookings do
         end
     end
 end
+
+json.reivews do
+    @listing.reviews.each do |review|
+        json.set! review.id do
+            json.extract! review, :id, :author_id, :listing_id, :body, :rating, :created_at
+        end
+    end
+end 
