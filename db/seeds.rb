@@ -10,6 +10,7 @@ require 'open-uri'
 User.delete_all
 Listing.delete_all
 Booking.delete_all
+Review.delete_all
 
 user1 = User.create(
     email: "demouser@demo.com",
@@ -321,4 +322,26 @@ book2 = Booking.create(
     start_date: Date.new(2019, 8, 3),
     end_date: Date.new(2019, 8, 9),
     players: 4,
+)
+
+book3 = Booking.create(
+    listing_id: listing3[:id],
+    guest_id: user6[:id],
+    start_date: Date.new(2019, 9, 3),
+    end_date: Date.new(2019, 9, 9),
+    players: 3,
+)
+
+review1 = Review.create(
+    listing_id: listing5[:id],
+    author_id: user6[:id],
+    body: "The DM was great! The story in very interactive. Can't wait to campaign with her again.",
+    rating: 4,
+)
+
+review2 = Review.create(
+    listing_id: listing3[:id],
+    author_id: user6[:id],
+    body: "The story was a bit weird, felt like we were just constantly at the bar.",
+    rating: 2,
 )

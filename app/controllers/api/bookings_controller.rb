@@ -1,8 +1,10 @@
 class Api::BookingsController < ApplicationController
     def index
         # @bookings = Booking.all
-        @bookings = Booking.where(guest_id: current_user.id).includes(:listing)
-        render :index
+        if(current_user)
+            @bookings = Booking.where(guest_id: current_user.id).includes(:listing)
+            render :index
+        end
     end
 
     def create

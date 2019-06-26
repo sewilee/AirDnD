@@ -11,8 +11,9 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index
-        @reviews = Review.all
-        render json: @reviews
+        id = params[:listing_id]
+        @reviews = Review.where(listing_id: id).includes(:author)
+        render :index
     end
 
     private

@@ -11,10 +11,6 @@ class BookingIndex extends React.Component{
         fetchBookings(currentUserId);
     }
 
-    componentDidUpdate(prevProps){
-        // debugger
-    }
-
     render(){
         const { bookings, listings } = this.props.bookings;
         const { deleteBooking } = this.props;

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewIndexItem from './review_index_item';
 
 class ReviewIndex extends React.Component{
     constructor(props){
@@ -7,24 +8,60 @@ class ReviewIndex extends React.Component{
 
     componentDidMount(){
         const { fetchReviews, listId } = this.props;
-        fetchReviews(listId);
+        fetchReviews(Number(listId));
+    }
+
+    avgRating(reviews){
+        let ratingSum = 0;
+        const iconRating = [];
+
+        reviews.forEach( review => {
+            ratingSum += review.rating;
+        });
+
+        const avgSum = ratingSum / reviews.length;
+        
+        for(let i = 0; i < 5; i++){
+            if(i < avgSum){
+                iconRating.push(<i className="fas fa-star"></i>)
+            } else {
+                iconRating.push(<i className="far fa-star"></i>)
+            }
+        }
+        return iconRating;
     }
 
     render(){
-        const { reviews } = this.props;
+        const { review, author } = this.props.reviews;
+        let reviews;
+        let reviewLength;
+        let iconRating;
+
         let showReviews = (
             <h6 className="listing-details-header">There are currently no reviews.</h6>
-        )
-        // debugger
+            )
+            
+        if(review){ 
+            reviews = Object.values(review)
+            if(reviews.length){
+                reviewLength = reviews.length;
+                iconRating = this.avgRating(reviews);
+                showReviews = reviews.map((review) => {
+                    return <ReviewIndexItem key={review.id} review={review} author={author[review.author_id]}/>
+                })
+
+            }
+        }
+        
         return(
             <div className="listing-other-info">
-                <h3 className="listing-other-header pad-bottom">Reviews</h3>
-                {showReviews}
-                {/* <div className="policy">
-                    <h4 className="listing-details-header bordered-top">Cancellations</h4>
-                    <h6 className="listing-details-header">{cancelType} · Free cancellation for 48 hours</h6>
-                    <p className="listing-info-text">After that, cancel up to {day} days before check-in and get a full refund, minus the service fee.</p>
-                </div> */}
+                <div className="review-header">
+                    <h3 className="listing-other-header pad-bottom">{`${reviewLength} Reviews`}</h3>
+                    <ul className="review-rating-icons">{iconRating}</ul>
+                </div>
+                <ul className="reviews">
+                    {showReviews}
+                </ul>
             </div>
         )
     }

@@ -16,8 +16,6 @@ const BookingV1 = ({props, history}) => {
     const start = moment(booking.start_date).format('LL');
     const end = moment(booking.end_date).format('LL');
 
-    // debugger
-
     booking.start_date = booking.start_date._d;
     booking.end_date = booking.end_date._d;
 
@@ -39,7 +37,6 @@ const BookingV1 = ({props, history}) => {
         </div>
     );
 
-    // debugger
     return (
         <main className="booking-confirm-page">
             <section className="confirm-border">

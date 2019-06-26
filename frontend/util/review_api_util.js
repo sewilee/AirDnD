@@ -2,7 +2,7 @@ export const fetchReviews = (listId) => {
     return $.ajax({
         method: "get",
         url: `/api/listings/${listId}/reviews`,
-        data: { listId },
+        // data: { listId },
     })
 };
 

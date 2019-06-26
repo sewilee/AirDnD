@@ -112,7 +112,7 @@ class ListingShow extends React.Component{
                             <HostedBy host={hostInfo}/>
                             <Neighborhood singleListing={this.props.listing} fetchListing={this.props.fetchListing}/>
                             <Cancellations cancelType="Strict"/>
-                            <ReviewIndexContainer />
+                            <ReviewIndexContainer listId={this.props.listingId}/>
                         </div>
                     </main>
                     <aside className="listing-book-aside">

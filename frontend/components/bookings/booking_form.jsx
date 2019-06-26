@@ -69,7 +69,6 @@ class BookingForm extends React.Component{
                         state: {props: {listingInfo, createBooking, booking, days: this.getDays()}}
                     });
                 } else {
-                    debugger
                     this.setState({
                         start_date: null,
                         end_date: null,

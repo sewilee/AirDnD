@@ -15,7 +15,7 @@ class Booking < ApplicationRecord
 
 
     def invalid_booking
-        return true if :start_date < :end_date else return false
+        return true if :start_date < :end_date else false
     end
 
 end
