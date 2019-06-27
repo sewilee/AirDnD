@@ -21,7 +21,8 @@
 }
 
 .listing-item-rating-icon,
-ul.review-rating-icons{
+ul.review-rating-icons,
+.review-header span{
     padding: 0 0 24px 12px;
     font-size: 14px;
     color: #008489;
@@ -52,4 +53,6 @@ ul.review-rating-icons i{
     padding: 8px 0;
     font-size: 14px;
 }
+
+
 

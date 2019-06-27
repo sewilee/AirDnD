@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewIndexItem from './review_index_item';
+import ReviewCreateContainer from './review_create_container';
 
 class ReviewIndex extends React.Component{
     constructor(props){
@@ -34,7 +35,7 @@ class ReviewIndex extends React.Component{
     render(){
         const { review, author } = this.props.reviews;
         let reviews;
-        let reviewLength;
+        let numReviews;
         let iconRating;
 
         let showReviews = (
@@ -44,7 +45,7 @@ class ReviewIndex extends React.Component{
         if(review){ 
             reviews = Object.values(review)
             if(reviews.length){
-                reviewLength = reviews.length;
+                numReviews = reviews.length;
                 iconRating = this.avgRating(reviews);
                 showReviews = reviews.map((review) => {
                     return <ReviewIndexItem key={review.id} review={review} author={author[review.author_id]}/>
@@ -56,12 +57,14 @@ class ReviewIndex extends React.Component{
         return(
             <div className="listing-other-info">
                 <div className="review-header">
-                    <h3 className="listing-other-header pad-bottom">{`${reviewLength} Reviews`}</h3>
-                    <ul className="review-rating-icons">{iconRating}</ul>
+                    <h3 className="listing-other-header pad-bottom">Reviews</h3>
+                    <ul className="review-rating-icons" >{iconRating}</ul>
+                    <span>{numReviews}</span>
                 </div>
                 <ul className="reviews">
                     {showReviews}
                 </ul>
+                {/* <ReviewCreateContainer /> */}
             </div>
         )
     }
