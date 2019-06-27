@@ -1,6 +1,24 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+const ratingIcon = (avgRate) => {
+
+    const iconRating = [];
+
+    for (let i = 0; i < 5; i++) {
+        if (i < avgRate) {
+            iconRating.push(<i key={i} className="fas fa-star"></i>)
+        } else {
+            iconRating.push(<i key={i} className="far fa-star"></i>)
+        }
+    }
+    return (
+        <div className="listing-item-rating-icon">
+            {iconRating}
+        </div>
+    );
+};
+
 class ListingFilteredItem extends React.Component {
     constructor(props) {
         super(props);
@@ -21,17 +39,8 @@ class ListingFilteredItem extends React.Component {
 
     
     render() {
-        const ratingIcon = (
-            <div className="listing-item-rating-icon">
-                <i className="fas fa-meteor"></i>
-                <i className="fas fa-meteor"></i>
-                <i className="fas fa-meteor"></i>
-                <i className="fas fa-meteor"></i>
-                <i className="fas fa-meteor"></i>
-            </div>
-        )
         
-        const { title, rate, location_type,num_bath, expansion, edition_num, max_players  } = this.props.listing;
+        const { title, rate, location_type, edition_num, max_players, avgRate  } = this.props.listing;
         let image_link = window.img_notfound;
 
         const edition = this.phbEdition(edition_num);
@@ -59,7 +68,7 @@ class ListingFilteredItem extends React.Component {
                     </div>
                     <div className="filter-item-rating">
                         <div className="filter-rating-icon">
-                            {ratingIcon} {/*<span>10</span>*/}
+                            {ratingIcon(avgRate)}
                         </div>
                         <p className="filter-rates-text">
                             <i className="fas fa-coins"></i>
