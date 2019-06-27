@@ -20,7 +20,7 @@ class ReviewIndex extends React.Component{
             ratingSum += review.rating;
         });
 
-        const avgSum = ratingSum / reviews.length;
+        const avgSum = Math.floor(ratingSum / reviews.length);
         
         for(let i = 0; i < 5; i++){
             if(i < avgSum){

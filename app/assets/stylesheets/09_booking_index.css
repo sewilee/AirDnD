@@ -27,6 +27,7 @@
 }
 
 .book-index-items-li{
+    position: relative;
     box-sizing: border-box;
     display: flex;
     width: 800px;
@@ -103,6 +104,7 @@
 .book-info-dtls{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .book-remove{
@@ -133,4 +135,24 @@
     color: #7e7e7e;
     font-size: 12px;
     text-align: right;
+}
+
+.book-index-items-li.past > *{
+    z-index: 10;
+    position: relative;
+    opacity: .5;
+}
+
+.book-index-items-li.past::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #e7e7e7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    z-index: 0;
+    /* mix-blend-mode: color; */
 }

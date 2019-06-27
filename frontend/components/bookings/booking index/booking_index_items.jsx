@@ -34,8 +34,16 @@ class BookingIndexItem extends React.Component {
         let image_link = window.img_notfound;
         if (this.props.listing.photoUrls.length) { image_link = this.props.listing.photoUrls[0] }
 
+        let cancelGame = <button className="book-remove" onClick={this.handleRemove}>Cancel Game</button>;
+        if(status === "approved"){ cancelGame = null }
+
+        let bookClass = "book-index-items-li"
+        const today = new Date();
+        const endDate = new Date(end_date)
+        if (endDate < today){ bookClass = "book-index-items-li past" }
+        
         return (
-            <li className="book-index-items-li">
+            <li className={bookClass}>
                 <div className="book-item" onClick={this.handleClick}>
                     <img src={image_link} />
                 </div>
@@ -60,7 +68,7 @@ class BookingIndexItem extends React.Component {
                                 <i className="fas fa-arrow-right"></i>
                                 <span>{end_date}</span>
                             </p>
-                            <button className="book-remove" onClick={this.handleRemove}>Cancel Game</button>
+                            {cancelGame}
                         </div>
                     </div>
                 </div>

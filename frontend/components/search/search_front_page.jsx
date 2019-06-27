@@ -17,7 +17,7 @@ const SearchFrontPage = (props) => {
                     <h6 className="front-search-label" >CAMPAIGN LOCATION</h6>
                     <SearchContainer path={props.path} page="front-page"/>
                 </li>
-                <li className="front-dates">
+                {/* <li className="front-dates">
                     <div>
                         <h6 className="front-search-label">START DATE</h6>
                         <input type="date" />
@@ -26,13 +26,13 @@ const SearchFrontPage = (props) => {
                         <h6 className="front-search-label">END DATE</h6>
                         <input type="date" />
                     </div>
-                </li>
-                <li className="front-players">
+                </li> */}
+                {/* <li className="front-players">
                     <h6 className="front-search-label">PARTY SIZE</h6>
                     <select className="booking-players-input">
                         {playerOptions}
                     </select>
-                </li>
+                </li> */}
             </section>
         </div>
     )

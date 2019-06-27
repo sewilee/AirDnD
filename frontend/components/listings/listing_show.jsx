@@ -119,14 +119,14 @@ class ListingShow extends React.Component{
                         <CreateBookingContainer listingId={this.props.listingId} path={this.props.path} listingInfo={listingInfo}/>
                     </aside>
                 </section>
-                <footer className="listing-book-footer">
+                {/* <footer className="listing-book-footer">
                     <section>
                         rates
                     </section>
                     <section>
                         <button onClick={() => this.props.openModal("book")}>Roll for it</button>
                     </section>
-                </footer>
+                </footer> */}
             </div>
         )
     }

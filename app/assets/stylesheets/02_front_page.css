@@ -4,7 +4,7 @@
     top: 120px;
     left: 80px;
     width: 450px;
-    height: 500px;
+    height: 300px;
     padding: 32px;
     border-radius: 5px;
     background-color: white;
@@ -85,9 +85,8 @@
 }
 
 .front-submit{
-
     position: absolute;
-    bottom: -269px;
+    bottom: -80px;
     width: 30%;
     right: 0;
     background-color: #ff5a5f;

@@ -310,7 +310,7 @@ listing8.photos.attach(io: forge5, filename: "forge-05.jpg")
 
 book1 = Booking.create(
     listing_id: listing5[:id],
-    guest_id: user3[:id],
+    guest_id: user1[:id],
     start_date: Date.new(2019, 9, 10),
     end_date: Date.new(2019, 9, 12),
     players: 4,
@@ -318,7 +318,7 @@ book1 = Booking.create(
 
 book2 = Booking.create(
     listing_id: listing5[:id],
-    guest_id: user6[:id],
+    guest_id: user1[:id],
     start_date: Date.new(2019, 8, 3),
     end_date: Date.new(2019, 8, 9),
     players: 4,
@@ -326,10 +326,11 @@ book2 = Booking.create(
 
 book3 = Booking.create(
     listing_id: listing3[:id],
-    guest_id: user6[:id],
-    start_date: Date.new(2019, 9, 3),
-    end_date: Date.new(2019, 9, 9),
+    guest_id: user1[:id],
+    start_date: Date.new(2018, 9, 3),
+    end_date: Date.new(2018, 9, 9),
     players: 3,
+    status: "approved",
 )
 
 review1 = Review.create(
@@ -343,5 +344,19 @@ review2 = Review.create(
     listing_id: listing3[:id],
     author_id: user6[:id],
     body: "The story was a bit weird, felt like we were just constantly at the bar.",
+    rating: 2,
+)
+
+review3 = Review.create(
+    listing_id: listing3[:id],
+    author_id: user8[:id],
+    body: "He kept killing off all the players. It was a TPK!",
+    rating: 1,
+)
+
+review4 = Review.create(
+    listing_id: listing3[:id],
+    author_id: user7[:id],
+    body: "Nothing made sense.",
     rating: 2,
 )
