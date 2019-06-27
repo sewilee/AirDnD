@@ -357,6 +357,41 @@ review3 = Review.create(
 review4 = Review.create(
     listing_id: listing3[:id],
     author_id: user7[:id],
-    body: "Nothing made sense.",
+    body: "Pretty Fun.",
+    rating: 3,
+)
+
+review5 = Review.create(
+    listing_id: listing1[:id],
+    author_id: user7[:id],
+    body: "Wished to see more puzzles. Less fighting.",
+    rating: 2,
+)
+
+review6 = Review.create(
+    listing_id: listing8[:id],
+    author_id: user7[:id],
+    body: "Amazing!! Best one ever!",
+    rating: 5,
+)
+
+review7 = Review.create(
+    listing_id: listing6[:id],
+    author_id: user7[:id],
+    body: "Too much shopping for my taste.",
+    rating: 1,
+)
+
+review8 = Review.create(
+    listing_id: listing6[:id],
+    author_id: user3[:id],
+    body: "They had glowing blue poop. SOLD!",
+    rating: 4,
+)
+
+review8 = Review.create(
+    listing_id: listing7[:id],
+    author_id: user3[:id],
+    body: "Alot of undead. Constantly fighting undeads.",
     rating: 2,
 )
