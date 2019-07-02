@@ -9,6 +9,7 @@
 .main-image{
     width: 50%;
     height: calc(100% + 1px);
+    object-fit: cover;
 }
 
 .side-image{
