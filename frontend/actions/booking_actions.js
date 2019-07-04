@@ -4,17 +4,18 @@ export const RECEIVE_BOOKS = "RECEIVE_BOOKS";
 export const RECEIVE_BOOK = "RECEIVE_BOOK";
 export const REMOVE_BOOK = "REMOVE_BOOK";
 
-const receieveBooks = (bookings) => {
+const receieveBooks = ({bookings, listings}) => {
     return ({
         type: RECEIVE_BOOKS,
         bookings,
+        listings,
     })
 };
 
-const receiveBook = (booking) => {
+const receiveBook = ({booking}) => {
     return ({
-    type: RECEIVE_BOOK,
-    booking,
+        type: RECEIVE_BOOK,
+        booking,
     })
 };
 

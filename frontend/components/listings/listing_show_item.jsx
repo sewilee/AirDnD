@@ -1,8 +1,8 @@
 import React from 'react';
 import ListingMap from '../map/listing_map';
 
-export const HostedBy = (host) => {
-    const { fname, created_at } = host.host;
+export const HostedBy = ({host}) => {
+    const { fname, created_at } = host;
     const month = created_at.split("-")[1];
     const monthName = {
         "01": "January",

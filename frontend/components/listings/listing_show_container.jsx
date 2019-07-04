@@ -6,11 +6,14 @@ import ListingShow from './listing_show';
 
 
 const msp = (state, ownProps) => {
-    const listingId = ownProps.listing.match.params.id
+    const listingId = Number(ownProps.path.match.params.id);
     return ({
         listingId: listingId,
-        listing: state.entities.listings[listingId] || {},
-        path: {history: ownProps.listing.history},
+        listings: state.entities.listings,
+        users: state.entities.users,
+        bookings: state.entities.bookings,
+        reviews: state.entities.reviews,
+        path: ownProps.path,
     });
 };
 

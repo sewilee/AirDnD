@@ -7,7 +7,7 @@ const Show = (props) => {
     return (
         <div className="show-page">
             < NavBarContainer path={props}/>
-            < ListingShowContainer listing={props}/>
+            < ListingShowContainer path={props}/>
             < Footer />
         </div>
     )

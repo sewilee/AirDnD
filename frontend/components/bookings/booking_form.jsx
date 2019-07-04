@@ -136,31 +136,33 @@ class BookingForm extends React.Component{
         }
 
         return (
-            <form className="booking-container" onSubmit={this.handleSubmit}>
-                <section className="booking-rate">
-                    <i className="fas fa-coins"></i>
-                    <span className="booking-cost">  {rate}</span>
-                    <span className="booking-text-small">  gp per night</span>
-                </section>
-                <section className="booking-info">
-                    <DateRangePicker
-                        startDate={this.state.start_date}
-                        startDateId="start_date"
-                        endDate={this.state.end_date}
-                        endDateId="end_date"
-                        startDatePlaceholderText="Start"
-                        endDatePlaceholderText="End"
-                        onDatesChange={({ startDate, endDate }) => this.setState({ start_date: startDate, end_date: endDate })}
-                        focusedInput={this.state.focusedInput}
-                        onFocusChange={focusedInput => this.setState({ focusedInput })}
-                        numberOfMonths={1}
-                    />
-                    {errors}
-                    <Players maxPlayers={maxPlayers} handleInput={this.handleInput}/>
-                    {totalCost}
-                </section>
-                <input type="submit" value="Roll for it" className="booking-submit"/>
-            </form>
+            <div className="booking-fixed">
+                <form className="booking-container" onSubmit={this.handleSubmit}>
+                    <section className="booking-rate">
+                        <i className="fas fa-coins"></i>
+                        <span className="booking-cost">  {rate}</span>
+                        <span className="booking-text-small">  gp per night</span>
+                    </section>
+                    <section className="booking-info">
+                        <DateRangePicker
+                            startDate={this.state.start_date}
+                            startDateId="start_date"
+                            endDate={this.state.end_date}
+                            endDateId="end_date"
+                            startDatePlaceholderText="Start"
+                            endDatePlaceholderText="End"
+                            onDatesChange={({ startDate, endDate }) => this.setState({ start_date: startDate, end_date: endDate })}
+                            focusedInput={this.state.focusedInput}
+                            onFocusChange={focusedInput => this.setState({ focusedInput })}
+                            numberOfMonths={1}
+                        />
+                        {errors}
+                        <Players maxPlayers={maxPlayers} handleInput={this.handleInput}/>
+                        {totalCost}
+                    </section>
+                    <input type="submit" value="Roll for it" className="booking-submit"/>
+                </form>
+            </div>
         )
     } 
 }
