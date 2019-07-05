@@ -2,6 +2,7 @@ import React from 'react';
 import ListingImages from './lising_show_images';
 import CreateBookingContainer from '../bookings/create_booking_container';
 import ReviewIndexContainer from '../reviews/review_index_container';
+import moment from 'moment';
 import {
     Cancellations,
     HostedBy,
@@ -35,10 +36,31 @@ class ListingShow extends React.Component{
         super(props);
     }
 
+    reviewForm(){
+        const { currentUserId, bookings, users } = this.props
+        let currentUser = users[currentUserId];
+        let bookingId = currentUser.booking_ids
+
+        if(bookingId.length === 0){return false;}
+        
+        for(let i = 0; i < bookingId.length; i ++ ){
+            if (bookings[bookingId[i]]){
+                let endDate = moment(bookings[bookingId[i]].end_date);
+                let dateString = endDate.fromNow();
+                dateString = dateString.split("ago");
+                if(dateString.length === 2){
+                    return true;
+                }
+            }
+        }
+        return false;
+
+    }
+
     componentDidMount(){
         this.props.fetchListing(this.props.listingId);
     }
-
+    
     componentDidUpdate(prevProps) {
         if(prevProps.listingId !== this.props.listingId){
             this.props.fetchListing(this.props.listingId);
@@ -46,17 +68,29 @@ class ListingShow extends React.Component{
     }
 
     render(){
-        const { 
-            title, description, city, num_bath, hostInfo, language, rate,
-            edition_num, expansion,location_type, max_players, min_player, photoUrls,
-        } = this.props.listing;
+        const { listingId } = this.props;
+        const currentListing = this.props.listings[listingId];
+        let images, blurb, listingInfo;
         
-        let images, blurb = null;
-        
-        let listingInfo = null;
+        if (currentListing === undefined){
+            return null;
+        }
 
+        let prevBooking = false;
+        let bookingIds = currentListing.book_ids;
+        if(bookingIds && Object.values(bookingIds).length){
+            prevBooking = this.reviewForm();
+        }
+        
+        const { 
+            title, description, city, host_id, rate,
+            edition_num, expansion,location_type, max_players, photoUrls,
+        } = currentListing;
+
+        const hostInfo = this.props.users[host_id]
+        
         if (photoUrls) { 
-            images = <ListingImages photoUrls={this.props.listing.photoUrls}/>
+            images = <ListingImages photoUrls={photoUrls}/>
             listingInfo = {title, city, location_type, photo: photoUrls[0], rate, maxPlayers: max_players}
         }
         
@@ -65,9 +99,8 @@ class ListingShow extends React.Component{
         }        
         const edition = phbEdition(edition_num);
         let expansions = "Core rules only"
-        if(!Object.keys(this.props.listing).length){
-            return null;
-        }
+
+
         return(
             <div className="listing-show-page">
                 <section className="listing-show-img">
@@ -110,13 +143,13 @@ class ListingShow extends React.Component{
                         </div>
                         <div>
                             <HostedBy host={hostInfo}/>
-                            <Neighborhood singleListing={this.props.listing} fetchListing={this.props.fetchListing}/>
+                            <Neighborhood singleListing={currentListing} fetchListing={this.props.fetchListing}/>
                             <Cancellations cancelType="Strict"/>
-                            <ReviewIndexContainer listId={this.props.listingId}/>
+                            <ReviewIndexContainer listId={this.props.listingId} prevBooking={prevBooking}/>
                         </div>
                     </main>
                     <aside className="listing-book-aside">
-                        <CreateBookingContainer listingId={this.props.listingId} path={this.props.path} listingInfo={listingInfo}/>
+                        <CreateBookingContainer listingId={listingId} path={this.props.path} listingInfo={listingInfo}/>
                     </aside>
                 </section>
                 {/* <footer className="listing-book-footer">

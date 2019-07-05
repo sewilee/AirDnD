@@ -3,10 +3,10 @@ import ReviewIndex from './review_index';
 import { fetchReviews } from '../../actions/review_actions';
 
 const msp = (state, ownProps) => {
-    
-    let reviews = state.entities.reviews;
     return ({
-        reviews,
+        // currentUserId: state.session.id,
+        reviews: state.entities.reviews,
+        users: state.entities.users,
         listId: ownProps.listId,
     });
 };

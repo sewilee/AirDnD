@@ -24,34 +24,42 @@ class ReviewIndex extends React.Component{
         
         for(let i = 0; i < 5; i++){
             if(i < avgSum){
-                iconRating.push(<i className="fas fa-star"></i>)
+                iconRating.push(<i className="fas fa-star" key={i}></i>)
             } else {
-                iconRating.push(<i className="far fa-star"></i>)
+                iconRating.push(<i className="far fa-star" key={i}></i>)
             }
         }
         return iconRating;
     }
 
     render(){
-        const { review, author } = this.props.reviews;
-        let reviews;
+        const { reviews, users, prevBooking } = this.props;
+        // const currentUser = users[currentUserId];
+        const { listId } = this.props;
+
+        let allReviews = Object.values(reviews);
         let numReviews;
         let iconRating;
+        let reviewForm = null;
+        if(prevBooking){
+            reviewForm = <ReviewCreateContainer listId={listId} />
+        }
+
 
         let showReviews = (
             <h6 className="listing-details-header">There are currently no reviews.</h6>
             )
             
-        if(review){ 
-            reviews = Object.values(review)
-            if(reviews.length){
-                numReviews = reviews.length;
-                iconRating = this.avgRating(reviews);
-                showReviews = reviews.map((review) => {
-                    return <ReviewIndexItem key={review.id} review={review} author={author[review.author_id]}/>
-                })
+        if(allReviews.length){ 
+            // allReviews = Object.values(reviews)
+            // if(reviews.length){
+            numReviews = allReviews.length;
+            iconRating = this.avgRating(allReviews);
+            showReviews = allReviews.map((review) => {
+                return <ReviewIndexItem key={review.id} review={review} author={users[review.author_id]}/>
+            })
 
-            }
+            // }
         }
         
         return(
@@ -64,7 +72,7 @@ class ReviewIndex extends React.Component{
                 <ul className="reviews">
                     {showReviews}
                 </ul>
-                {/* <ReviewCreateContainer /> */}
+                {reviewForm}
             </div>
         )
     }

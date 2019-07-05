@@ -7,6 +7,7 @@ const msp = (state, ownProps) => {
         path: ownProps.path,
         currentUserId: state.session.id, 
         bookings: state.entities.bookings,
+        listings: state.entities.listings,
     });
 };
 

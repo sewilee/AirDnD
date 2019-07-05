@@ -12,7 +12,7 @@ class BookingIndex extends React.Component{
     }
 
     render(){
-        const { bookings, listings } = this.props.bookings;
+        const { bookings, listings } = this.props;
         const { deleteBooking } = this.props;
 
         let books = (

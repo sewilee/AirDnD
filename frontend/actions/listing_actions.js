@@ -4,17 +4,21 @@ export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS";
 export const RECEIVE_LISTING = "RECEIVE_LISTING";
 export const RECEIVE_HOST_INFO = "RECEIVE_HOST_INFO"
 
-const receiveListings = (listings) => {
+const receiveListings = ({listings, hostInfo}) => {
     return ({
         type: RECEIVE_LISTINGS,
         listings,
+        hostInfo,
     });
 };
 
-const receiveListing = (listing) => {
+const receiveListing = ({listing, hostInfo, bookings, reviews}) => {
     return ({
         type: RECEIVE_LISTING,
         listing,
+        hostInfo,
+        bookings,
+        reviews,
     });
 };
 

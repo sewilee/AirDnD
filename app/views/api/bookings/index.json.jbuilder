@@ -10,10 +10,11 @@ if @bookings
     json.listings do 
         @bookings.each do |booking|
             json.set! booking.listing_id do
-                json.extract! booking.listing, :id, :title, :location_type, :edition_num, :expansion
-                if (booking.listing.photos.attached?)
-                    json.photoUrls booking.listing.photos.map {|file| url_for(file)}
-                end
+                json.partial! 'api/listings/listing', listing: booking.listing
+                # json.extract! booking.listing, :id, :title, :location_type, :edition_num, :expansion
+                # if (booking.listing.photos.attached?)
+                #     json.photoUrls booking.listing.photos.map {|file| url_for(file)}
+                # end
             end
         end
     end

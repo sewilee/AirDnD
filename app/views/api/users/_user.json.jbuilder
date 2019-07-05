@@ -1,7 +1,5 @@
-json.extract! user, :id, :email, :fname, :lname, :birthday
-json.bookings do 
-    user.bookings.each do |book|
-        json.set! book.listing_id do 
-        end
-    end
+json.extract! user, :id, :email, :fname, :lname, :birthday, :created_at
+json.booking_ids user.bookings.pluck(:id)
+if user.photo.attached?
+    json.photoUrl url_for(host.photo)
 end

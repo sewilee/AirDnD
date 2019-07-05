@@ -7,7 +7,7 @@ class ReviewForm extends React.Component{
         this.state = {
             body: "",
             rating: "",
-            listing_id: "",
+            listing_id: Number(this.props.listId),
         }
 
         this.handleInput = this.handleInput.bind(this);
@@ -30,18 +30,34 @@ class ReviewForm extends React.Component{
     }
 
     render(){
+        const { rating } = this.state;
+        let radioRating = [];
+        for(let i = 1; i < 6; i++){
+            if(rating >= i){
+                radioRating.push(
+                    <label key={i}>
+                        <input type="radio" name="rating" value={i} onChange={this.handleInput("rating")}/>
+                        <i className="fas fa-star"></i>
+                    </label>
+                )
+            } else {
+                radioRating.push(
+                    <label key={i}>
+                        <input type="radio" name="rating" value={i} onChange={this.handleInput("rating")} />
+                        <i className="far fa-star"></i>
+                    </label>
+                )
+            }
+        }
+
         return(
             <div className="review-form">
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <input type="radio" name="rating" value="1" onChange={this.handleInput("rating")}/>
-                        <input type="radio" name="rating" value="2" onChange={this.handleInput("rating")}/>
-                        <input type="radio" name="rating" value="3" onChange={this.handleInput("rating")}/>
-                        <input type="radio" name="rating" value="4" onChange={this.handleInput("rating")}/>
-                        <input type="radio" name="rating" value="5" onChange={this.handleInput("rating")}/>
+                    <div className="image-radio">
+                        {radioRating}
                     </div>
-                    <input type="textarea" defaultValue={this.state.body} onChange={this.handleInput("body")}/>    
-                    <input type="submit" value="Add Review"/>
+                    <input type="text" defaultValue={this.state.body} onChange={this.handleInput("body")}/>    
+                    <input type="submit" value="Add Review" className="review-submit"/>
                 </form>
             </div>
         )
