@@ -17,7 +17,7 @@
     json.hostInfo do 
         host = listing.host
         json.set! host.id do 
-            json.partial! 'api/users/user', user: host
+            json.partial! "api/users/host", host: host
             # json.extract! host, :fname, :lname, :email, :created_at
             #     if host.photo.attached?
             #         json.photoUrl url_for(host.photo)

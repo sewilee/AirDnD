@@ -14,6 +14,7 @@ const msp = (state, ownProps) => {
         bookings: state.entities.bookings,
         reviews: state.entities.reviews,
         path: ownProps.path,
+        currentUserId: state.session.id,
     });
 };
 

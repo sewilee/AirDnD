@@ -33,15 +33,17 @@ class ReviewIndex extends React.Component{
     }
 
     render(){
-        const { reviews, users } = this.props;
+        const { reviews, users, prevBooking } = this.props;
+        // const currentUser = users[currentUserId];
         const { listId } = this.props;
+
         let allReviews = Object.values(reviews);
         let numReviews;
         let iconRating;
         let reviewForm = null;
-        // if(currentUser){
-        //     reviewForm = <ReviewCreateContainer listId={listId} />
-        // }
+        if(prevBooking){
+            reviewForm = <ReviewCreateContainer listId={listId} />
+        }
 
 
         let showReviews = (

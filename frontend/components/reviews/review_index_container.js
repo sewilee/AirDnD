@@ -4,6 +4,7 @@ import { fetchReviews } from '../../actions/review_actions';
 
 const msp = (state, ownProps) => {
     return ({
+        // currentUserId: state.session.id,
         reviews: state.entities.reviews,
         users: state.entities.users,
         listId: ownProps.listId,
