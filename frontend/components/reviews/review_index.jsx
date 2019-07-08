@@ -34,7 +34,6 @@ class ReviewIndex extends React.Component{
 
     render(){
         const { reviews, users, prevBooking } = this.props;
-        // const currentUser = users[currentUserId];
         const { listId } = this.props;
 
         let allReviews = Object.values(reviews);
@@ -51,17 +50,12 @@ class ReviewIndex extends React.Component{
             )
             
         if(allReviews.length){ 
-            // allReviews = Object.values(reviews)
-            // if(reviews.length){
             numReviews = allReviews.length;
             iconRating = this.avgRating(allReviews);
             showReviews = allReviews.map((review) => {
                 return <ReviewIndexItem key={review.id} review={review} author={users[review.author_id]}/>
             })
-
-            // }
         }
-        
         return(
             <div className="listing-other-info">
                 <div className="review-header">

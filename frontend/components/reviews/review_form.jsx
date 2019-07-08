@@ -8,6 +8,7 @@ class ReviewForm extends React.Component{
             body: "",
             rating: "",
             listing_id: Number(this.props.listId),
+            error: "",
         }
 
         this.handleInput = this.handleInput.bind(this);
@@ -24,13 +25,27 @@ class ReviewForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        const { createReview } = this.props;
-        const review = merge({}, this.state);
-        createReview(review);
+        const { body, rating } = this.state;
+        if(!body || !rating){
+            let note = "Rating"
+            if(body === ""){ note = "Review" }
+            this.setState((prevState) => {
+                return { ...prevState, error: `${note} box cannot be empty.` };
+            })
+        } else {
+            const { createReview } = this.props;
+            const review = merge({}, this.state);
+            this.setState({
+                body: "",
+                rating: "",
+                error: "",
+            });
+            createReview(review);
+        }
     }
 
     render(){
-        const { rating } = this.state;
+        const { rating, error } = this.state;
         let radioRating = [];
         for(let i = 1; i < 6; i++){
             if(rating >= i){
@@ -49,14 +64,14 @@ class ReviewForm extends React.Component{
                 )
             }
         }
-
         return(
             <div className="review-form">
                 <form onSubmit={this.handleSubmit}>
                     <div className="image-radio">
                         {radioRating}
                     </div>
-                    <input type="text" defaultValue={this.state.body} onChange={this.handleInput("body")}/>    
+                    <input type="text" value={this.state.body} onChange={this.handleInput("body")}/>    
+                    <p className="error-text">{error}</p>
                     <input type="submit" value="Add Review" className="review-submit"/>
                 </form>
             </div>
