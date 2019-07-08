@@ -68,7 +68,7 @@ class ListingShow extends React.Component{
     }
 
     render(){
-        const { listingId } = this.props;
+        const { listingId, currentUserId } = this.props;
         const currentListing = this.props.listings[listingId];
         let images, blurb, listingInfo;
         
@@ -78,8 +78,11 @@ class ListingShow extends React.Component{
 
         let prevBooking = false;
         let bookingIds = currentListing.book_ids;
-        if(bookingIds && Object.values(bookingIds).length){
-            prevBooking = this.reviewForm();
+
+        if(currentUserId){
+            if(bookingIds && Object.values(bookingIds).length){
+                prevBooking = this.reviewForm();
+            }
         }
         
         const { 
