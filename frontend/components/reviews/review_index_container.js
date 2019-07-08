@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import ReviewIndex from './review_index';
-import { fetchReviews } from '../../actions/review_actions';
+import { fetchReviews, deleteReview } from '../../actions/review_actions';
 
 const msp = (state, ownProps) => {
     return ({
@@ -8,11 +8,13 @@ const msp = (state, ownProps) => {
         reviews: state.entities.reviews,
         users: state.entities.users,
         listId: ownProps.listId,
+        currentUserId: state.session.id,
     });
 };
 
 const mdp = (dispatch) => {
     return ({
+        deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
         fetchReviews: (listId) => dispatch(fetchReviews(listId)),
     });
 };

@@ -33,7 +33,7 @@ class ReviewIndex extends React.Component{
     }
 
     render(){
-        const { reviews, users, prevBooking } = this.props;
+        const { reviews, users, prevBooking, deleteReview, currentUserId } = this.props;
         const { listId } = this.props;
 
         let allReviews = Object.values(reviews);
@@ -53,7 +53,7 @@ class ReviewIndex extends React.Component{
             numReviews = allReviews.length;
             iconRating = this.avgRating(allReviews);
             showReviews = allReviews.map((review) => {
-                return <ReviewIndexItem key={review.id} review={review} author={users[review.author_id]}/>
+                return <ReviewIndexItem key={review.id} review={review} author={users[review.author_id]} deleteReview={deleteReview} currentUserId={currentUserId}/>
             })
         }
         return(

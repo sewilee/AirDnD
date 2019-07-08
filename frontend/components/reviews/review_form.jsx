@@ -51,14 +51,14 @@ class ReviewForm extends React.Component{
             if(rating >= i){
                 radioRating.push(
                     <label key={i}>
-                        <input type="radio" name="rating" value={i} onChange={this.handleInput("rating")}/>
+                        <input type="radio" name="rating" value={i} checked={rating === i} onChange={this.handleInput("rating")}/>
                         <i className="fas fa-star"></i>
                     </label>
                 )
             } else {
                 radioRating.push(
                     <label key={i}>
-                        <input type="radio" name="rating" value={i} onChange={this.handleInput("rating")} />
+                        <input type="radio" name="rating" value={i} checked={rating === i} onChange={this.handleInput("rating")} />
                         <i className="far fa-star"></i>
                     </label>
                 )
@@ -70,7 +70,8 @@ class ReviewForm extends React.Component{
                     <div className="image-radio">
                         {radioRating}
                     </div>
-                    <input type="text" value={this.state.body} onChange={this.handleInput("body")}/>    
+                    {/* <input type="text" value={this.state.body} onChange={this.handleInput("body")}/>     */}
+                    <textarea value={this.state.body} onChange={this.handleInput("body")}></textarea>
                     <p className="error-text">{error}</p>
                     <input type="submit" value="Add Review" className="review-submit"/>
                 </form>

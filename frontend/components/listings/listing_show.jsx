@@ -36,16 +36,20 @@ class ListingShow extends React.Component{
         super(props);
     }
 
-    reviewForm(){
+    reviewForm(listBooks){
         const { currentUserId, bookings, users } = this.props
         let currentUser = users[currentUserId];
-        let bookingId = currentUser.booking_ids
-
-        if(bookingId.length === 0){return false;}
+        let userBooks = currentUser.booking_ids
         
-        for(let i = 0; i < bookingId.length; i ++ ){
-            if (bookings[bookingId[i]]){
-                let endDate = moment(bookings[bookingId[i]].end_date);
+        if(userBooks.length === 0){return false;}
+
+        const commonBooks = userBooks.filter(function (val) {
+            return listBooks.indexOf(val) != -1;
+        });
+
+        for(let i = 0; i < userBooks.length; i ++ ){
+            if (bookings[commonBooks[i]]){
+                let endDate = moment(bookings[commonBooks[i]].end_date);
                 let dateString = endDate.fromNow();
                 dateString = dateString.split("ago");
                 if(dateString.length === 2){
@@ -81,7 +85,7 @@ class ListingShow extends React.Component{
 
         if(currentUserId){
             if(bookingIds && Object.values(bookingIds).length){
-                prevBooking = this.reviewForm();
+                prevBooking = this.reviewForm(bookingIds);
             }
         }
         

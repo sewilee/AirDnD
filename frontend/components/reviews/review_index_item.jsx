@@ -23,17 +23,26 @@ const createdDate = (date) => {
 
 
 const ReviewIndexItem = (props) => {
-    const { body, created_at } = props.review;
+    const { body, created_at, id } = props.review;
     const { fname } = props.author;
+    const authorId = props.author.id;
+    const { deleteReview, currentUserId } = props;
+    let removeButton = null;
+    if(currentUserId === authorId){
+        removeButton = <button className="review-remove" onClick={() => deleteReview(id)}>Remove</button>
+    }
 
     return(
         <li className="review-items">
-            <div className="review-author">
-                <img src={window.user_icon_d20} />
-                <div>
-                    <h3>{fname}</h3>
-                    <h6>{createdDate(created_at)}</h6>
+            <div className="review-author-box">
+                <div className="review-author">
+                    <img src={window.user_icon_d20} />
+                    <div>
+                        <h3>{fname}</h3>
+                        <h6>{createdDate(created_at)}</h6>
+                    </div>
                 </div>
+                {removeButton}
             </div>
             <p>{body}</p>
         </li>

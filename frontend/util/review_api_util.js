@@ -13,3 +13,10 @@ export const createReview = (review) => {
         data: { review },
     })
 };
+
+export const deleteReview = (id) => {
+    return $.ajax({
+        method: "delete",
+        url: `/api/reviews/${id}`
+    })
+}
