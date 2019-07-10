@@ -15,7 +15,10 @@ const listingReducer = (state = {}, action) => {
                 return state;
             }
         case RECEIVE_LISTINGS:
-            return action.listings;
+            if(action.listings === undefined){
+                return state;
+            } else 
+                return action.listings;
 
         case RECEIVE_LISTING:
             // const newListing = { [action.listing.id]: action.listing }

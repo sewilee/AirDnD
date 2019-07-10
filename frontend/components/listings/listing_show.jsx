@@ -80,6 +80,17 @@ class ListingShow extends React.Component{
             return null;
         }
 
+        const { 
+            title, description, city, host_id, rate,
+            edition_num, expansion,location_type, max_players, photoUrls,
+        } = currentListing;
+
+        const hostInfo = this.props.users[host_id]
+
+        if (hostInfo === undefined) {
+            return null;
+        }
+
         let prevBooking = false;
         let bookingIds = currentListing.book_ids;
 
@@ -89,12 +100,7 @@ class ListingShow extends React.Component{
             }
         }
         
-        const { 
-            title, description, city, host_id, rate,
-            edition_num, expansion,location_type, max_players, photoUrls,
-        } = currentListing;
 
-        const hostInfo = this.props.users[host_id]
         
         if (photoUrls) { 
             images = <ListingImages photoUrls={photoUrls}/>
@@ -106,7 +112,6 @@ class ListingShow extends React.Component{
         }        
         const edition = phbEdition(edition_num);
         let expansions = "Core rules only"
-
 
         return(
             <div className="listing-show-page">
