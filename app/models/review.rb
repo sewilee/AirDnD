@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-    validates :author_id, :listing_id, :body, :rating, presence: true
+    validates :author_id, :listing_id, :body, :rating, :communication, :gameplay, :story, :roleplay, :combat, :dm, presence: true
 
     belongs_to :author,
     primary_key: :id,

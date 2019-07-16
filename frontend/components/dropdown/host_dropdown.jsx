@@ -18,7 +18,7 @@ const HostDropdown = (props) => {
                             of the game -the rules, the setting, the action and ultimately,
                             the fun. This is a great deal of power, and you must use it wisely.
                         </p>
-                        <p className="host-dropdown-text source">-Dunegon Master Guild</p>
+                        <p className="host-dropdown-text source">-Dungeon Master Guild</p>
                     </div>
                 </li>
                 {/* <li className="host-dropdown-btn">

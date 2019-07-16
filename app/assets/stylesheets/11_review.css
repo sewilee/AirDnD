@@ -1,3 +1,4 @@
+/* review header */
 .reviews{
     display: flex;
     flex-direction: column;
@@ -32,9 +33,37 @@ ul.review-rating-icons,
     color: #008489;
 }
 
-ul.review-rating-icons i{
+.review-rating-icons i{
     padding: 2px;
 }
+
+
+.ratings {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.multi-rating {
+    width: 50%;
+    padding-right: 24px;
+}
+
+.multi-rating li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.multi-rating li span {
+    padding-bottom: 8px;
+}
+
+.multi-rating li p {
+    font-size: 14px;
+    color: #7e7e7e;
+}
+
+/* review indexs */
 
 .review-author-box{
     display: flex;
@@ -65,6 +94,7 @@ ul.review-rating-icons i{
 
 .image-radio {
     padding-top: 18px;
+    display: flex;
 }
 
 .image-radio input{

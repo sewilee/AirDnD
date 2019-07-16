@@ -1,7 +1,7 @@
 @reviews.each do |review|
     json.review do
         json.set! review.id do 
-            json.extract! review, :id, :author_id, :body, :rating, :created_at
+            json.extract! review, :id, :author_id, :body, :created_at
         end
     end
 
@@ -15,4 +15,16 @@
         end
     end
 end
-
+if @reviews.length > 0
+    json.review do
+        json.average do 
+            json.rating @rating
+            json.communication @communication
+            json.gameplay @gameplay
+            json.story @story
+            json.roleplay @roleplay
+            json.combat @combat
+            json.dm @dm
+        end
+    end
+end
