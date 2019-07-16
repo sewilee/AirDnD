@@ -1,11 +1,7 @@
 .footer-bar,
 .footer-bar-splash {
-    /* position: absolute; */
-    /* left: 0; */
-    /* bottom: 0; */
     height: 60px;
     width: 100%;
-    /* overflow: hidden; */
 
     display: flex;
     justify-content: center;
@@ -15,8 +11,6 @@
     border-top: 1px solid #e7e7e7;
     font-size: 14px;
     color: #7e7e7e;
-
-    /* z-index: 25; */
 }
 
 .footer-bar-splash {

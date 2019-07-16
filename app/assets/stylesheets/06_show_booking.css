@@ -171,7 +171,6 @@
 
 @media screen and (max-width: 1300px){
     .listing-book-footer{
-        /* position: fixed; */
         bottom: 0;
         border: 1px solid black;
         z-index: 3px;
