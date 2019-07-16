@@ -12,6 +12,8 @@
                 json.avgRate rate_sum / listing.reviews.length
             end
         end
+
+
     end
 
     json.hostInfo do 
