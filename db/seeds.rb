@@ -333,119 +333,119 @@ book3 = Booking.create(
     status: "approved",
 )
 
-review1 = Review.create(
-    listing_id: listing5[:id],
-    author_id: user6[:id],
-    body: "The DM was great! The story in very interactive. Can't wait to campaign with her again.",
-    rating: 4,
-    communication: 3,
-    gameplay: 4,
-    story: 5,
-    roleplay: 4,
-    combat: 3,
-    dm: 5,
-)
+# review1 = Review.create(
+#     listing_id: listing5[:id],
+#     author_id: user6[:id],
+#     body: "The DM was great! The story in very interactive. Can't wait to campaign with her again.",
+#     rating: 4,
+#     communication: 3,
+#     gameplay: 4,
+#     story: 5,
+#     roleplay: 4,
+#     combat: 3,
+#     dm: 5,
+# )
 
-review2 = Review.create(
-    listing_id: listing3[:id],
-    author_id: user6[:id],
-    body: "The story was a bit weird, felt like we were just constantly at the bar.",
-    rating: 3,
-    communication: 3,
-    gameplay: 3,
-    story: 1,
-    roleplay: 2,
-    combat: 4,
-    dm: 2,
-)
+# review2 = Review.create(
+#     listing_id: listing3[:id],
+#     author_id: user6[:id],
+#     body: "The story was a bit weird, felt like we were just constantly at the bar.",
+#     rating: 3,
+#     communication: 3,
+#     gameplay: 3,
+#     story: 1,
+#     roleplay: 2,
+#     combat: 4,
+#     dm: 2,
+# )
 
-review3 = Review.create(
-    listing_id: listing3[:id],
-    author_id: user8[:id],
-    body: "He kept killing off all the players. It was a TPK!",
-    rating: 1,
-    communication: 1,
-    gameplay: 1,
-    story: 1,
-    roleplay: 1,
-    combat: 1,
-    dm: 1,
-)
+# review3 = Review.create(
+#     listing_id: listing3[:id],
+#     author_id: user8[:id],
+#     body: "He kept killing off all the players. It was a TPK!",
+#     rating: 1,
+#     communication: 1,
+#     gameplay: 1,
+#     story: 1,
+#     roleplay: 1,
+#     combat: 1,
+#     dm: 1,
+# )
 
-review4 = Review.create(
-    listing_id: listing3[:id],
-    author_id: user7[:id],
-    body: "Pretty Fun.",
-    rating: 3,
-    communication: 3,
-    gameplay: 3,
-    story: 4,
-    roleplay: 3,
-    combat: 2,
-    dm: 3,
-)
+# review4 = Review.create(
+#     listing_id: listing3[:id],
+#     author_id: user7[:id],
+#     body: "Pretty Fun.",
+#     rating: 3,
+#     communication: 3,
+#     gameplay: 3,
+#     story: 4,
+#     roleplay: 3,
+#     combat: 2,
+#     dm: 3,
+# )
 
-review5 = Review.create(
-    listing_id: listing1[:id],
-    author_id: user7[:id],
-    body: "Wished to see more puzzles. Less fighting.",
-    rating: 2,
-    communication: 2,
-    gameplay: 2,
-    story: 3,
-    roleplay: 1,
-    combat: 3,
-    dm: 3,
-)
+# review5 = Review.create(
+#     listing_id: listing1[:id],
+#     author_id: user7[:id],
+#     body: "Wished to see more puzzles. Less fighting.",
+#     rating: 2,
+#     communication: 2,
+#     gameplay: 2,
+#     story: 3,
+#     roleplay: 1,
+#     combat: 3,
+#     dm: 3,
+# )
 
-review6 = Review.create(
-    listing_id: listing8[:id],
-    author_id: user7[:id],
-    body: "Amazing!! Best one ever!",
-    rating: 5,
-    communication: 5,
-    gameplay: 5,
-    story: 5,
-    roleplay: 5,
-    combat: 5,
-    dm: 5,
-)
+# review6 = Review.create(
+#     listing_id: listing8[:id],
+#     author_id: user7[:id],
+#     body: "Amazing!! Best one ever!",
+#     rating: 5,
+#     communication: 5,
+#     gameplay: 5,
+#     story: 5,
+#     roleplay: 5,
+#     combat: 5,
+#     dm: 5,
+# )
 
-review7 = Review.create(
-    listing_id: listing6[:id],
-    author_id: user7[:id],
-    body: "Too much shopping for my taste.",
-    rating: 1,
-    communication: 1,
-    gameplay: 1,
-    story: 1,
-    roleplay: 1,
-    combat: 1,
-    dm: 1,
-)
+# review7 = Review.create(
+#     listing_id: listing6[:id],
+#     author_id: user7[:id],
+#     body: "Too much shopping for my taste.",
+#     rating: 1,
+#     communication: 1,
+#     gameplay: 1,
+#     story: 1,
+#     roleplay: 1,
+#     combat: 1,
+#     dm: 1,
+# )
 
-review8 = Review.create(
-    listing_id: listing6[:id],
-    author_id: user3[:id],
-    body: "They had glowing blue poop. SOLD!",
-    rating: 4,
-    communication: 3,
-    gameplay: 4,
-    story: 5,
-    roleplay: 4,
-    combat: 3,
-    dm: 5,
-)
+# review8 = Review.create(
+#     listing_id: listing6[:id],
+#     author_id: user3[:id],
+#     body: "They had glowing blue poop. SOLD!",
+#     rating: 4,
+#     communication: 3,
+#     gameplay: 4,
+#     story: 5,
+#     roleplay: 4,
+#     combat: 3,
+#     dm: 5,
+# )
 
-review8 = Review.create(
-    listing_id: listing7[:id],
-    author_id: user3[:id],
-    body: "Alot of undead. Constantly fighting undeads.",
-    rating: 2,
-    communication: 2,
-    gameplay: 2,
-    story: 2,
-    roleplay: 2,
-    combat: 2,
-    dm: 2,
-)
+# review8 = Review.create(
+#     listing_id: listing7[:id],
+#     author_id: user3[:id],
+#     body: "Alot of undead. Constantly fighting undeads.",
+#     rating: 2,
+#     communication: 2,
+#     gameplay: 2,
+#     story: 2,
+#     roleplay: 2,
+#     combat: 2,
+#     dm: 2,
+# )
