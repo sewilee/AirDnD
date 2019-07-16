@@ -112,7 +112,7 @@
     color: #7e7e7e;
     background-color: white;
     padding: 8px;
-    z-index: 5;
+    /* z-index: 3; */
     border: 1px solid #7c7c7c;
     border-radius: 5px;
 }
