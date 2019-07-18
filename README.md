@@ -1,10 +1,11 @@
-![](app/assets/images/ReadMe/title_04.png)
+![](app/assets/images/ReadMe/title_03.png)
 
-                Where D&D players can search and book campaigns in their area. 
+Where D&D players can search and book campaigns in their area. 
 
 [Live Demo](https://air-d-n-d.herokuapp.com/#/) | Inspired by AirBnB
 
 ![](app/assets/images/ReadMe/airdnd-clip.gif)
+
 
 ## Technologies
 * JavaScript
