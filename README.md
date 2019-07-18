@@ -18,21 +18,140 @@ Where D&D players can search and book campaigns in their area.
 * Google Map API
 
 ## Features
-A few things you can do with Air D&D:
 * User Authentication
 
-    ![](app/assets/images/ReadMe/code-snippet_01.png)
-* View all the local D&D campaigns in New York City
-* Filter the search by map, campaign type, name, location
+    * Certain features and pages are unavailiable unless users are logged in. This is achieved by redirecting the users to another path if such condition is met. 
+
+    ```
+    const Protected = ({ component: Component, path, loggedIn, exact }) => (
+    <Route path={path} exact={exact} render={(props) => (
+        loggedIn ? (
+        <Component {...props} />
+        ) : (
+            <Redirect to="/listings" />
+        )
+    )} />
+    );
+    ```
+    ```
+    const App = () => {
+        return (
+            <div className="main">
+                <Modal />
+                <Switch>
+                    <ProtectedRoute path="/campaigns" component={Trips} />
+                    <ProtectedRoute path="/listings/:id/payment/:type" component={Payment} />
+                    <Route path="/search/:type" component={Filtered}/>
+                    <Route path="/search" component={Filtered}/>
+                    <Route path="/listings/:id" component={Show} />
+                    <Route path="/listings" component={Landing}/>
+                    <Route exact path ="/" component={Splash}/>
+                </Switch>
+            </div>
+        );
+    };
+    ```
+* Filter the search by map, campaign type, name, or location.
+
+    * Utilized Google Map API to allow users to interactively filter out results based on the bounds of the map.
 
     ![](app/assets/images/ReadMe/screen-shot_02.png)
-    ![](app/assets/images/ReadMe/code-snippet_02.png)
+    ```
+    registerListeners(){
+        google.maps.event.addListener(this.map, "idle", () =>{
+            const bounds = this.map.getBounds();
+            const northEast = bounds.getNorthEast();
+            const southWest = bounds.getSouthWest();
+            const newBounds = {
+                northEast: { lat: northEast.lat(), lng: northEast.lng() },
+                southWest: { lat: southWest.lat(), lng: southWest.lng() },
+            }
+            this.props.changeFilter("bounds", newBounds);
+        });
+    }
+    ```
+    ```
+    def index
+        if (bounds && params[:searchFilter] || params[:searchFilter])
+            new_list = Listing.in_bounds(bounds).where("UPPER(listings.location_type) LIKE :query OR UPPER(listings.city) LIKE :query OR UPPER(listings.title) LIKE :query", query: "%#{params[:searchFilter].upcase}%").includes(:reviews)
+            new_list = new_list.uniq
+        elsif bounds
+            new_list = Listing.includes(:reviews).in_bounds(bounds)
+        else
+            new_list = Listing.all.includes(:reviews)
+        end
+        @listings = new_list
+    end
+    ```
 * View each campaign description, rules, and perks.
-* Book a campaign of your choice. (required login to book.)
-* View All Booked Campaigns
+* Book a campaign of your choice / View all Booked Campaigns (required login to book.)
 
-    ![](app/assets/images/ReadMe/screen-shot_03.png)
-* Review and rate booked campaigns.
+    * Used [React-Dates](https://github.com/airbnb/react-dates) Library to display Calendar for booking. 
+
+    ![](app/assets/images/ReadMe/airdnd-date-clip.gif)
+
+    * Booking Index: depending on whether you have booked campaigns or not, different pages will be shown.
+
+    ![](app/assets/images/ReadMe/screen-shot_04.png)
+
+    ```
+    render(){
+        const { bookings, listings } = this.props;
+        const { deleteBooking } = this.props;
+        let books = (
+            <>
+                <p>Oh no! You have no upcoming campaigns. Start exploring ideas for your next game.</p>
+                <img className="booking-notfound" src={window.vox_machina}/>
+                <p className="booking-notfound-p">Feature Image Credit: Amanda Oliver Elm  @flyboy_elm</p>
+            </>
+        )
+        if (bookings instanceof Object && Object.values(bookings).length){
+            books = Object.values(bookings).map( book => {
+                return (
+                    <BookingIndexItem key={book.id} booking={book} listing={listings[book.listing_id]} deleteBooking={deleteBooking}/>
+                )
+            });
+        }
+        return(
+            <section className="book-page">
+                <div className="book-index-items">
+                    <h1>Upcoming plans</h1>
+                    {books}
+                </div>
+            </section>
+        )
+    }
+    ```
+* Review and Rate booked campaigns.
+
+    * Unlike most rating features which have only (1) rating feature, this application has multiple rating columns and an overall rating system (similiar to Airbnb). 
+
+    ![](app/assets/images/ReadMe/screen-shot_05.png)
+
+    ```
+    def create
+        @review = Review.new(review_params)
+        @review.author_id = current_user.id
+        @review.listing_id = params[:review][:listing_id]
+
+        avg_rating = [
+            @review.communication, 
+            @review.gameplay,
+            @review.story,
+            @review.roleplay,
+            @review.combat,
+            @review.dm].sum / 5
+        
+        @review.rating = avg_rating
+
+        if @review.save
+            render json: @review
+        else
+            render @review.errors.full_messages, status: 422
+        end
+    end
+    ```
+    * Users can only review on campaigns if they have booked that particular campaign before and the date has passed. 
 
     ![](app/assets/images/ReadMe/screen-shot_01.png)
 

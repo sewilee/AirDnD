@@ -98,7 +98,6 @@ class ReviewForm extends React.Component{
                     <div className="image-radio">
                         {showRating}
                     </div>
-                    {/* <input type="text" value={this.state.body} onChange={this.handleInput("body")}/>     */}
                     <textarea value={this.state.body} onChange={this.handleInput("body")}></textarea>
                     <p className="error-text">{error}</p>
                     <input type="submit" value="Add Review" className="review-submit"/>
