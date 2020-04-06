@@ -11,8 +11,11 @@ export const updateFilter = (filter, value) => {
 }
 
 export const changeFilter = (filter, value) => {
+    debugger
     return (dispatch, getState) => {
+        debugger
         dispatch(updateFilter(filter, value));
+        debugger
         return fetchListings(getState().ui.filters)(dispatch);
     };
 };

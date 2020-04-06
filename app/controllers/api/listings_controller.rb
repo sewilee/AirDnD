@@ -1,5 +1,6 @@
 class Api::ListingsController < ApplicationController
     def index
+        debugger
         if (bounds && params[:searchFilter] || params[:searchFilter])
             new_list = Listing.in_bounds(bounds).where("UPPER(listings.location_type) LIKE :query OR UPPER(listings.city) LIKE :query OR UPPER(listings.title) LIKE :query", query: "%#{params[:searchFilter].upcase}%").includes(:reviews)
             new_list = new_list.uniq
